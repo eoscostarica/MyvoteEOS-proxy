@@ -1,0 +1,12 @@
+{
+  "translations": {
+    "login": "Iniciar sesión",
+    "users": "Usuarios",
+    "products": "Productos",
+    "productsTitle": "Listado de productos",
+    "usersTitle": "Listado de usuarios",
+    "logout": "Salir",
+    "htmlTitle": "EOSCR Web App Boilerplate",
+    "headerTitle": "Titulo secundario"
+  }
+}
