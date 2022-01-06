@@ -1,18 +1,14 @@
-# EOSCR Web App Boilerplate
+# Soul of EOS Proxy Website
 
 [![N|Solid](https://github.com/eoscostarica/eos-rate/raw/master/docs/eoscostarica-logo-black.png)](https://eoscostarica.io/)
 
-![](https://img.shields.io/github/license/eoscostarica/webapp-boilerplate) ![](https://img.shields.io/badge/code%20style-standard-brightgreen.svg) ![](https://img.shields.io/badge/%E2%9C%93-collaborative_etiquette-brightgreen.svg) ![](https://img.shields.io/twitter/follow/eoscostarica.svg?style=social&logo=twitter) ![](https://img.shields.io/github/forks/eoscostarica/webapp-boilerplate?style=social)
+![](https://img.shields.io/github/license/eoscostarica/soul-of-EOS-proxy) ![](https://img.shields.io/badge/code%20style-standard-brightgreen.svg) ![](https://img.shields.io/badge/%E2%9C%93-collaborative_etiquette-brightgreen.svg) ![](https://img.shields.io/twitter/follow/eoscostarica.svg?style=social&logo=twitter) ![](https://img.shields.io/github/forks/eoscostarica/soul-of-EOS-proxy?style=social)
 
-A highly scalable skeleton with best practices, ideal for React Web App projects quick start
-
-## Version
-
-- 0.1.0
+The EOS based proxy facilitates the transition into a truly democratic based chain that is free from Pareto control by voting for BP’s that do not engage with direct vote rebate.
 
 # Features!
 
-This boilerplate features all the latest tools and practices in the industry.
+This project features all the latest tools and practices in the industry.
 
 - _React.js_ - **React 16**✨, React Router 5
 - _Rematch/core_ - Rematch a Redux Framework
@@ -39,13 +35,13 @@ Copy the `.env.example` then update the environment variables according to your 
 cp .env.example .env
 ```
 
-_If you want to the boilerplate using UAL login integration, please make sure that `REACT_APP_USE_UAL` env variable is set as true._
+_If you want to the website using UAL login integration, please make sure that `REACT_APP_USE_UAL` env variable is set as true._
 
 ## Development
 
 ### Quick start
 
-1.  Clone this repo using `git clone --depth=1 https://github.com/eoscostarica/webapp-boilerplate.git <YOUR_PROJECT_NAME>`
+1.  Clone this repo using `git clone --depth=1 https://github.com/eoscostarica/soul-of-EOS-proxy.git <YOUR_PROJECT_NAME>`
 2.  Move to the appropriate directory: `cd <YOUR_PROJECT_NAME>`.
 3.  Run `yarn` in order to install dependencies.
     _At this point you can run `yarn start` to see the example app at `http://localhost:3000`._
@@ -55,7 +51,7 @@ _If you want to the boilerplate using UAL login integration, please make sure th
 Within the download you'll find the following directories and files:
 
 ```
-eoscrwebappboilerplate/
+/
 ├── public
 │   ├── index.html
 │   └── manifest.json
@@ -92,23 +88,8 @@ MIT © [EOS Costa Rica](https://eoscostarica.io)
 
 Please Read EOS Costa Rica's [Open Source Contributing Guidelines](https://developers.eoscostarica.io/docs/open-source-guidelines).
 
-Please report bugs big and small by [opening an issue](https://github.com/eoscostarica/webapp-boilerplate/issues)
+Please report bugs big and small by [opening an issue](https://github.com/eoscostarica/soul-of-EOS-proxy/issues)
 
-## Contributors
-
-Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
-
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/xavier506"><img src="https://avatars0.githubusercontent.com/u/5632966?v=4" width="100px;" alt="Xavier Fernandez"/><br /><sub><b>Xavier Fernandez</b></sub></a><br /><a href="#ideas-xavier506" title="Ideas, Planning, & Feedback">🤔</a> <a href="#blog-xavier506" title="Blogposts">📝</a> <a href="#talk-xavier506" title="Talks">📢</a> <a href="#infra-xavier506" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
- <td align="center"><a href="https://github.com/tetogomez">
-      <img src="https://avatars3.githubusercontent.com/u/10634375?s=460&v=4" width="100px;" alt="Teto Gomez"/><br /><sub><b>Teto Gomez</b></sub></a><br /><a href="https://github.com/eoscostarica/eosrate/commits?author=tetogomez" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/eoscostarica/eosrate/commits?author=tetogomez" title="Code">💻</a> <a href="#review-tetogomez" title="Reviewed Pull Requests">👀</a></td>
-      <td align="center"><a href="https://github.com/adriexnet">
-      <img src="https://avatars3.githubusercontent.com/u/5375168?s=460&u=542a27a00b761d98851991c6a6d5f78d7b35a2b2&v=4" width="100px;" alt="Adriel Diaz"/><br /><sub><b>Adriel Diaz</b></sub></a><br /><a href="https://github.com/eoscostarica/eosrate/commits?author=adriexnet" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/eoscostarica/eosrate/commits?author=adriexnet" title="Code">💻</a> <a href="#review-adriexnet" title="Reviewed Pull Requests">👀</a></td>
-  </tr>
-</table>
-
-This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
 
 ## About EOS Costa Rica
 

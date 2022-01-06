@@ -13,7 +13,7 @@ TitlePage.propTypes = {
 }
 
 TitlePage.defaultProps = {
-  title: 'EOSCR Web App Boilerplate'
+  title: 'Soul of EOS proxy'
 }
 
 export default TitlePage
