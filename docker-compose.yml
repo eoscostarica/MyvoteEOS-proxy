@@ -2,7 +2,7 @@ version: '3'
 
 services:
   webapp:
-    container_name: eoscr-webapp
+    container_name: webapp
     build:
       context: ./
       dockerfile: Dockerfile

@@ -5,16 +5,16 @@ import { TokenPocket } from 'ual-token-pocket'
 import { MeetOne } from 'ual-meetone'
 import { Anchor } from 'ual-anchor'
 
-const appName = process.env.REACT_APP_EOS_APP_NAME || 'eoscrwebappboilerplate'
+const appName = process.env.REACT_APP_EOS_APP_NAME || 'soul-of-eos-proxy'
 const network = {
   chainId:
     process.env.REACT_APP_EOS_CHAIN_ID ||
-    'e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473',
+    '2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840',
   rpcEndpoints: [
     {
       blockchain: 'eos',
       protocol: process.env.REACT_APP_EOS_API_PROTOCOL || 'https',
-      host: process.env.REACT_APP_EOS_API_HOST || 'jungle2.eosio.cr',
+      host: process.env.REACT_APP_EOS_API_HOST || 'jungle.eosio.cr',
       port: parseInt(process.env.REACT_APP_EOS_API_PORT || '443')
     }
   ]
