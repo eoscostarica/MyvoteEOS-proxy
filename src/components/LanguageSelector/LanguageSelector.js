@@ -34,6 +34,14 @@ const LanguageSelector = ({ alt }) => {
     {
       value: 'es',
       label: 'Español'
+    },
+    {
+      value: 'ko',
+      label: '한국인'
+    },
+    {
+      value: 'zh',
+      label: '中文'
     }
   ]
 
