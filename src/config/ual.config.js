@@ -4,6 +4,7 @@ import { Lynx } from 'ual-lynx'
 import { TokenPocket } from 'ual-token-pocket'
 import { MeetOne } from 'ual-meetone'
 import { Anchor } from 'ual-anchor'
+import { Wombat } from 'ual-wombat'
 
 const appName = process.env.REACT_APP_EOS_APP_NAME || 'soul-of-eos'
 const network = {
@@ -23,6 +24,7 @@ const authenticators = [
   new Lynx([network]),
   new Ledger([network]),
   new Scatter([network], { appName }),
+  new Wombat([network], { appName }),
   new TokenPocket([network]),
   new MeetOne([network.chainId]),
   new Anchor([network], { appName })

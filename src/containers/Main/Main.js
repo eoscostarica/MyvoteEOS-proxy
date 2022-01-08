@@ -49,7 +49,7 @@ const Main = ({
             <img
               className={classes.logo}
               alt="Logo"
-              src="https://eoscostarica.io/wp-content/uploads/2019/07/EOSCRlogo-main-darkOverWhite-1.png"
+              src="/images/logo-dark.png"
             />
           </RouterLink>
           {topbarContent}

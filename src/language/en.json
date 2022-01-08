@@ -1,10 +1,10 @@
 {
   "translations": {
     "login": "Login",
-    "users": "Users",
-    "products": "Products",
-    "productsTitle": "Products list",
-    "usersTitle": "Users list",
+    "home": "Home",
+    "homeTitle": "Welcome to Soul of EOS Proxy",
+    "news": "News",
+    "newsTitle": "EOS News",
     "logout": "Logout",
     "htmlTitle": "Soul of EOS Proxy",
     "headerTitle": "Secondary Title"

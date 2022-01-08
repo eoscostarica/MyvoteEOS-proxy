@@ -2,7 +2,11 @@
   "translations": {
     "login": "로그인",
     "logout": "로그아웃",
+    "home": "홈",
+    "homeTitle": "Welcome to Soul of EOS Proxy",
+    "news": "News",
+    "newsTitle": "EOS News",
     "htmlTitle": "Soul of EOS Proxy",
-    "headerTitle": "Titulo secundario"
+    "headerTitle": "Secondary Title"
   }
 }

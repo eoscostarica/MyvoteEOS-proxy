@@ -1441,29 +1441,7 @@
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.1.tgz#076d78ce99822258cf813ecc1e7fa460fa74d052"
   integrity sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==
 
-"@greymass/eosio@0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@greymass/eosio/-/eosio-0.5.2.tgz#b7fa20937e6378277534e97b828ea871f1804953"
-  integrity sha512-3qMnm4o3B5GZ0cXK/AaKYyDkFLISHSkO3G0hPtn9aYdzNKuefyacyKWKQjQKC4kKLsNoJQd7d1ldAkV8Z0+0gA==
-  dependencies:
-    bn.js "^4.11.9"
-    brorand "^1.1.0"
-    elliptic "^6.5.4"
-    hash.js "^1.0.0"
-    tslib "^2.0.3"
-
-"@greymass/eosio@^0.4.0":
-  version "0.4.9"
-  resolved "https://registry.yarnpkg.com/@greymass/eosio/-/eosio-0.4.9.tgz#429b0426c0781421903e866612b383953e10e414"
-  integrity sha512-gzSqkJETH3jVPGhgeMI4u6ZFPxnc9GzDTJyvjM59YzrIn/FdqGtB2CKNWJoUdHR8aek85ZkTPx1hhl9rCVWh1A==
-  dependencies:
-    bn.js "^4.11.9"
-    brorand "^1.1.0"
-    elliptic "^6.5.4"
-    hash.js "^1.0.0"
-    tslib "^2.0.3"
-
-"@greymass/eosio@^0.5.0":
+"@greymass/eosio@^0.5.0", "@greymass/eosio@^0.5.2":
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/@greymass/eosio/-/eosio-0.5.3.tgz#12bec8dcc9d455529c56bc4336d0073184bcb9d7"
   integrity sha512-HI3NfqaHG7JsZqnKAPcKR4ARYhIabstNu5pWYLRyNxWuzYfFHyfktfU+5I2Y+87igHCPR8iRKc/te0ZTW0QoBw==
@@ -2082,7 +2060,7 @@
     isomorphic-ws "^4.0.1"
     ws "^6.1.0"
 
-"@scatterjs/core@^2.7.51":
+"@scatterjs/core@^2.7.51", "@scatterjs/core@^2.7.54":
   version "2.7.54"
   resolved "https://registry.yarnpkg.com/@scatterjs/core/-/core-2.7.54.tgz#c82f539b6f77f96be93817c3e1f6d0799cf53193"
   integrity sha512-BtV44dvEPajDmDfn+jpGE9kHIlPyz70ttd96+LIokdRUR+lf5E33rMpJGH+OEFwxGDhY8tDS6SYlyIU8ohCFHw==
@@ -2100,6 +2078,13 @@
   integrity sha512-yPdMllV2duTHHw21YCcA5Xi8068qGCatmvIC6dv+V1h20AuSpAwnW1FmB3ST4MN7ZTrLrnxzlLkUesZv+aGOVw==
   dependencies:
     "@scatterjs/core" "^2.7.51"
+
+"@scatterjs/eosjs2@^1.5.36":
+  version "1.5.36"
+  resolved "https://registry.yarnpkg.com/@scatterjs/eosjs2/-/eosjs2-1.5.36.tgz#457ed69f181a6a19eb053352662bfb25726d0f74"
+  integrity sha512-osx/shuwiB59ql0XTVCZ/D9T3AZf+RA0lRnUa0Gya9M21GGBt6YHdxO2jxkmJHjEpfxE7FIwV3dRDj9T1swd2g==
+  dependencies:
+    "@scatterjs/core" "^2.7.54"
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"
@@ -2962,11 +2947,11 @@ anchor-link-browser-transport@^3.2.5:
     tslib "^2.0.3"
 
 anchor-link@^3.3.4:
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/anchor-link/-/anchor-link-3.3.4.tgz#11a21f138bd143e68289005d81cad7be589bc94f"
-  integrity sha512-9Wc2KTV6HLk50IXA3KEqWekLq0kSuKLQXXlIYliYCJnuTh3pZsjyg3jAo1ltjvtFiSEZdzo7wBcAre6RxEn3AA==
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/anchor-link/-/anchor-link-3.3.5.tgz#aa987e32bca4b9316d4cb0b0f8b5bf79a5f5a729"
+  integrity sha512-zZZ7MiF+L0/hIcH5+yf9Saur9jYxp2kGAyggjXMLW4ofRuA9mQrA3o1CFEjj0DviIVL+JLHOxoR2hOG7WnXBEg==
   dependencies:
-    "@greymass/eosio" "^0.4.0"
+    "@greymass/eosio" "^0.5.0"
     asmcrypto.js "^2.3.2"
     eosio-signing-request "^2.2.0"
     fetch-ponyfill "^7.1.0"
@@ -4061,9 +4046,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001125, caniuse-lite@^1.0.30001286:
-  version "1.0.30001296"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001296.tgz#d99f0f3bee66544800b93d261c4be55a35f1cec8"
-  integrity sha512-WfrtPEoNSoeATDlf4y3QvkwiELl9GyPLISV5GejTbbQRtQx4LhsXmc9IQ6XCL2d7UxCyEzToEZNMeqR79OUw8Q==
+  version "1.0.30001297"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001297.tgz#ea7776ccc4992956582cae5b8fea127fbebde430"
+  integrity sha512-6bbIbowYG8vFs/Lk4hU9jFt7NknGDleVAciK916tp6ft1j+D//ZwwL6LbF1wXMQ32DMSjeuUV8suhh6dlmFjcA==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -5348,9 +5333,9 @@ ejs@^2.6.1:
   integrity sha512-7vmuyh5+kuUyJKePhQfRQBhXV5Ce+RnaeeQArKu1EAMpL3WbgMt5WG6uQZpEVvYSSsxMXRKOewtDk9RaTKXRlA==
 
 electron-to-chromium@^1.3.564, electron-to-chromium@^1.4.17:
-  version "1.4.37"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.37.tgz#eedd53cad229ae2d1632b958a92a3d7d7b27f553"
-  integrity sha512-XIvFB1omSAxYgHYX48sC+HR8i/p7lx7R+0cX9faElg1g++h9IilCrJ12+bQuY+d96Wp7zkBiJwMOv+AhLtLrTg==
+  version "1.4.38"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.38.tgz#10ea58d73d36b13e78d5024f3b74a352d3958d01"
+  integrity sha512-WhHt3sZazKj0KK/UpgsbGQnUUoFeAHVishzHFExMxagpZgjiGYSC9S0ZlbhCfSH2L2i+2A1yyqOIliTctMx7KQ==
 
 elliptic@6.5.0:
   version "6.5.0"
@@ -6198,9 +6183,9 @@ fast-diff@^1.1.2:
   integrity sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==
 
 fast-glob@^3.1.1:
-  version "3.2.7"
-  resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.7.tgz#fd6cb7a2d7e9aa7a7846111e85a196d6b2f766a1"
-  integrity sha512-rYGMRwip6lUMvYD3BTScMwT1HtAs2d71SMv66Vrxs0IekGZEjhM0pcMfjQPnknBt2zeCwQMEupiN02ZP4DiT1Q==
+  version "3.2.9"
+  resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.9.tgz#8f55f664b68a236bd29fa165817fc44f2b11faba"
+  integrity sha512-MBwILhhD92sziIrMQwpqcuGERF+BH99ei2a3XsGJuqEKcSycAL+w0HWokFenZXona+kjFr82Lf71eTxNRC06XQ==
   dependencies:
     "@nodelib/fs.stat" "^2.0.2"
     "@nodelib/fs.walk" "^1.2.3"
@@ -12922,12 +12907,12 @@ ua-parser-js@^0.7.30:
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.31.tgz#649a656b191dffab4f21d5e053e27ca17cbff5c6"
   integrity sha512-qLK/Xe9E2uzmYI3qLeOmI0tEOt+TBBQyUIAh4aAgU05FVYzeZrKUdkAZfBNVGRaHVgV0TDkdEngJSw/SyQchkQ==
 
-ual-anchor@^1.0.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/ual-anchor/-/ual-anchor-1.1.2.tgz#4fc54237b45017d79964c01e246e0abec0e1790d"
-  integrity sha512-DrWE+01qdE3rLv8LAfKRE+eKC1OB18srDHb855XR6Vuua8XFAjZHBVwNqnjuesO5Xp3x2jUIiFpUvHn8I7jJ3w==
+ual-anchor@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/ual-anchor/-/ual-anchor-1.1.4.tgz#bb5382ae1695bbf381fd66c531f12a572ef7ffcc"
+  integrity sha512-5mE/hOxCDwx4GF5as7c4NOwKnk8eIdVxD7LShLMXcAgSUqiC/cBoXBPplcneV19kKCAYueudp9OSQzkqMVxvbQ==
   dependencies:
-    "@greymass/eosio" "0.5.2"
+    "@greymass/eosio" "^0.5.2"
     anchor-link "^3.3.4"
     anchor-link-browser-transport "^3.2.5"
     elliptic "6.5.4"
@@ -12993,6 +12978,17 @@ ual-token-pocket@^0.3.0:
   dependencies:
     tp-eosjs "1.5.2"
     universal-authenticator-library "0.3.0"
+
+ual-wombat@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/ual-wombat/-/ual-wombat-0.3.3.tgz#18eeb6195f4e380ba9d36b452395b8f79cf2cbaa"
+  integrity sha512-h6JRr9vYFwnWVbmmIDvYjJXuNvw+smirP75PnZF5WRVV/BU5mCpEhrrRg48hV+XUSPUyh+nsm9+Lm2euKdeF7Q==
+  dependencies:
+    "@scatterjs/core" "^2.7.54"
+    "@scatterjs/eosjs2" "^1.5.36"
+    elliptic "^6.5.3"
+    eosjs "^21.0.3"
+    universal-authenticator-library "^0.3.0"
 
 unbox-primitive@^1.0.1:
   version "1.0.1"
@@ -13073,7 +13069,7 @@ universal-authenticator-library@0.1.0:
   resolved "https://registry.yarnpkg.com/universal-authenticator-library/-/universal-authenticator-library-0.1.0.tgz#187e6a85f43e75d4d76b66c228c9e4b59770d4af"
   integrity sha512-45nl80BWf+9WA8vTMXunMicZmHPm4wWdxNnSlL65cCP4OjA1ra4IuH+T7+Ko3P6IfXSfS9+VNCuXai3fip+taA==
 
-universal-authenticator-library@0.3.0:
+universal-authenticator-library@0.3.0, universal-authenticator-library@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/universal-authenticator-library/-/universal-authenticator-library-0.3.0.tgz#c9001f1739578fae5b8c32c4d3e754ad681f541a"
   integrity sha512-G/D9S1/b0fwRHPWHi+bPKjqHb/A5BqiOQ3k/R3MYPQQa0yxStn+Gf3oZjKKFnj9ZhELZ6FHOFRTXzcn/ggxXDg==
