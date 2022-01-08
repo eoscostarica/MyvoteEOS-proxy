@@ -12,7 +12,7 @@ const App = ({ ual }) => (
           <Component ual={ual} />
         </Route>
       ))}
-      <Redirect exact from="/" to="/dashboard" />
+      <Redirect exact from="/" to="/home" />
       <Redirect to="/not-found" />
     </Switch>
   </BrowserRouter>
