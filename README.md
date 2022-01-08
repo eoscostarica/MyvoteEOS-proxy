@@ -1,6 +1,6 @@
 # Soul of EOS Proxy Website
 
-[![N|Solid](https://github.com/eoscostarica/eos-rate/raw/master/docs/eoscostarica-logo-black.png)](https://eoscostarica.io/)
+[![N|Solid](./docs/soul-of-eos-logo.png)](https://soulofeos.io/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7e88118e-c0d0-4bf3-966f-d485946cb06b/deploy-status)](https://app.netlify.com/sites/soul-of-eos/deploys) ![](https://img.shields.io/github/license/eoscostarica/soul-of-EOS-proxy) ![](https://img.shields.io/badge/code%20style-standard-brightgreen.svg) ![](https://img.shields.io/badge/%E2%9C%93-collaborative_etiquette-brightgreen.svg) ![](https://img.shields.io/twitter/follow/eoscostarica.svg?style=social&logo=twitter) ![](https://img.shields.io/github/forks/eoscostarica/soul-of-EOS-proxy?style=social)
 
@@ -89,7 +89,6 @@ MIT © [EOS Costa Rica](https://eoscostarica.io)
 Please Read EOS Costa Rica's [Open Source Contributing Guidelines](https://developers.eoscostarica.io/docs/open-source-guidelines).
 
 Please report bugs big and small by [opening an issue](https://github.com/eoscostarica/soul-of-EOS-proxy/issues)
-
 
 ## About EOS Costa Rica
 

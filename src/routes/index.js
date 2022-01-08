@@ -1,11 +1,11 @@
-import Dashboard from './Dashboard'
+import Home from './Home'
 import NotFound from './NotFound'
 
 export default [
   {
-    name: 'dashboard',
-    path: '/dashboard',
-    component: Dashboard
+    name: 'home',
+    path: '/',
+    component: Home
   },
   {
     name: 'notFound',
