@@ -11,7 +11,7 @@ ACTION souleosproxy::addproxy(name proxy) {
   auto proxy_itr = _proxy.find(proxy.value);
   if (proxy_itr == _proxy.end()) {
     // Create a proxy record if it does not exist
-    _proxy.emplace(proxy, [&](auto& row) {
+    _proxy.emplace(_self, [&](auto& row) {
       row.proxy = proxy;
     });
   }
@@ -44,7 +44,7 @@ ACTION souleosproxy::addproducer(name producer) {
   auto producer_itr = _producer.find(producer.value);
   if (producer_itr == _producer.end()) {
     // Create a producer record if it does not exist
-    _producer.emplace(producer, [&](auto& row) {
+    _producer.emplace(_self, [&](auto& row) {
       row.producer = producer;
     });
   }
