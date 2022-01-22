@@ -24,7 +24,7 @@ This project features all the latest tools and practices in the industry.
 
 ## Installation
 
-### Before to start
+### Getting Started
 
 Somethings you need before getting started:
 
@@ -57,6 +57,7 @@ Within the download you'll find the following directories and files:
 
 ```
 /
+|── contract
 ├── public
 │   ├── index.html
 │   └── manifest.json
@@ -84,6 +85,10 @@ Within the download you'll find the following directories and files:
 ├── nginx.conf
 └── package.json
 ```
+
+## Smart Contract
+
+Deployed on Jungle3 testnet as: [`souleosproxy`](https://jungle3.bloks.io/account/souleosproxy)
 
 ## License
 
