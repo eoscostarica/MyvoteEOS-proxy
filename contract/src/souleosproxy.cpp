@@ -1,7 +1,7 @@
 #include <souleosproxy.hpp>
 
 ACTION souleosproxy::addproxy(name proxy) {
-  // TODO: check( is_proxy(proxy), "only for registered proxies can be included" );
+  check( is_proxy(proxy), "only for registered proxies can be included" );
   require_auth(_self);
 
   // Init the proxies table
@@ -34,7 +34,7 @@ ACTION souleosproxy::rmproxy(name proxy) {
 }
 
 ACTION souleosproxy::addproducer(name producer) {
-  // TODO: check( is_blockproducer(producer), "only for registered block producers can be included" );
+  check( is_blockproducer(producer), "Only registered block producers can be included" );
   require_auth(_self);
 
   // Init the producer table
@@ -65,8 +65,7 @@ ACTION souleosproxy::rmproducer(name producer) {
   _producer.erase( producer_itr );
 }
 
-ACTION souleosproxy::clear()
-{
+ACTION souleosproxy::clear() {
     require_auth( get_self() );
 
     proxy_table _proxy( get_self(), get_self().value );
