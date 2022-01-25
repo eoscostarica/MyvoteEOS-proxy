@@ -1,6 +1,6 @@
 {
     "____comment": "This file was generated with eosio-abigen. DO NOT EDIT ",
-    "version": "eosio::abi/1.1",
+    "version": "eosio::abi/1.2",
     "types": [],
     "structs": [
         {
@@ -73,27 +73,27 @@
         {
             "name": "addproducer",
             "type": "addproducer",
-            "ricardian_contract": ""
+            "ricardian_contract": "---\nspec_version: 0.0.2\ntitle: Add Block Producer\nsummary: This action will either insert or update an entry in the producers table. If an entry exists with the same name as the specified user parameter, the record is updated. If a record does not exist, a new record is created. The data is stored in the multi index table. The ram costs are paid by the smart contract.\nicon:\n---"
         },
         {
             "name": "addproxy",
             "type": "addproxy",
-            "ricardian_contract": ""
+            "ricardian_contract": "---\nspec_version: 0.0.2\ntitle: Add Proxy\nsummary: This action will either insert or update an entry in the proxies table. If an entry exists with the same name as the specified user parameter, the record is updated. If a record does not exist, a new record is created. The data is stored in the multi index table. The ram costs are paid by the smart contract.\nicon:\n---"
         },
         {
             "name": "clear",
             "type": "clear",
-            "ricardian_contract": ""
+            "ricardian_contract": "---\nspec_version: 0.0.2\ntitle: Clear\nsummary: This action will remove all entries from both proxy and producer tables. It is meant for development purposes only.\nicon:\n---"
         },
         {
             "name": "rmproducer",
             "type": "rmproducer",
-            "ricardian_contract": ""
+            "ricardian_contract": "---\nspec_version: 0.0.2\ntitle: Remove Block Producer\nsummary: This action will remove an entry from the producers table if an entry in the multi index table exists with the specified name.\nicon:\n---"
         },
         {
             "name": "rmproxy",
             "type": "rmproxy",
-            "ricardian_contract": ""
+            "ricardian_contract": "---\nspec_version: 0.0.2\ntitle: Remove Proxy\nsummary: This action will remove an entry from the proxies table if an entry in the multi index table exists with the specified name.\nicon:\n---"
         }
     ],
     "tables": [
@@ -112,6 +112,29 @@
             "key_types": []
         }
     ],
-    "ricardian_clauses": [],
-    "variants": []
+    "kv_tables": {},
+    "ricardian_clauses": [
+        {
+            "id": "Data Storage",
+            "body": "This smart contract will store data added by the user. The user consents to the storage of this data by signing the transaction."
+        },
+        {
+            "id": "Data Usage",
+            "body": "This smart contract will store user data. The smart contract will not use the stored data for any purpose outside store and delete."
+        },
+        {
+            "id": "Data Ownership",
+            "body": "The user of this smart contract verifies that the data is owned by the smart contract, and that the smart contract can use the data in accordance to the terms defined in the Ricardian Contract."
+        },
+        {
+            "id": "Data Distirbution",
+            "body": "The smart contract promises to not actively share or distribute the address data. The user of the smart contract understands that data stored in a multi index table is not private data and can be accessed by any user of the blockchain."
+        },
+        {
+            "id": "Data Future",
+            "body": "The smart contract promises to only use the data in accordance of the terms defined in the Ricardian Contract, now and at all future dates."
+        }
+    ],
+    "variants": [],
+    "action_results": []
 }
