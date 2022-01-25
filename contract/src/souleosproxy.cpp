@@ -1,7 +1,7 @@
 #include <souleosproxy.hpp>
 
 ACTION souleosproxy::addproxy(name proxy) {
-  check( is_proxy(proxy), "only for registered proxies can be included" );
+  check( is_proxy(proxy), "Only registered proxies can be included" );
   require_auth(_self);
 
   // Init the proxies table
