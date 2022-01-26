@@ -14,7 +14,7 @@ const useStyles = makeStyles(styles)
 
 const HomeFrontLayer = () => {
   const classes = useStyles()
-  const { t } = useTranslation('translations')
+  const { t } = useTranslation('homePage')
 
   return (
     <div className={classes.HomeFrontLayerRoot}>
@@ -29,131 +29,115 @@ const HomeFrontLayer = () => {
         <span className={classes.headerMessage}>{t('secondaryText')}</span>
         <span className={classes.headerHashtag}>{t('noVoteBuy')}</span>
         <Button className={classes.headerDownloadBtn}>
-          Download intro PDF
+          {t('downloadButton')}
         </Button>
-
         <div className={classes.headerOptionsBtns}>
           <div className="boxGroup">
             <span className={clsx('textLabel', classes.marginExtra)}>
-              Are you a BP?
+              {t('homeText.text1')}
             </span>
             <Button className={classes.optionBtn} variant="contained">
-              Join the Alliance
+              {t('joinAlliance')}
             </Button>
           </div>
           <div className="boxGroup">
-            <span className="textLabel">
-              Do you keep your EOS on centralized exhanges?
-            </span>
+            <span className="textLabel">{t('homeText.text2')}</span>
             <Button className={classes.optionBtn} variant="contained">
-              Tell your exchange
+              {t('tellExchange')}
             </Button>
           </div>
           <div className="boxGroup">
             <span className={clsx('textLabel', classes.marginExtra)}>
-              Are you an on-chain account holder?
+              {t('homeText.text3')}
             </span>
             <Button className={classes.optionBtn} variant="contained">
-              Delegate your vote
+              {t('delegateVote')}
             </Button>
           </div>
         </div>
-
-        <span className={classes.titleHeader}>Join the Movement</span>
-
+        <span className={classes.titleHeader}>{t('joinMovement')}</span>
         <div className={classes.headerOptionsInfo}>
           <div className="boxGroup">
             <span className="coloredLabel">17</span>
-            <span className="infoLabel">BPs joined the alliance</span>
+            <span className="infoLabel"> {t('homeText.text4')}</span>
           </div>
           <div className="boxGroup">
             <span className="coloredLabel">12,246</span>
-            <span className="infoLabel">Number of Hashtags</span>
+            <span className="infoLabel"> {t('homeText.text5')}</span>
           </div>
           <div className="boxGroup">
             <span className="coloredLabel">152</span>
-            <span className="infoLabel">Holders delegating their vote</span>
+            <span className="infoLabel"> {t('homeText.text6')}</span>
           </div>
         </div>
-
         <div className={classes.joinBox}>
           <TextField
             className="textField"
-            placeholder="If you support #NoVoteBuy enter your email and sign up here"
+            placeholder={t('placeholder')}
             variant="outlined"
           />
           <Button className="joinBtn" variant="contained">
-            Join
+            {t('join')}
           </Button>
         </div>
       </div>
       <div className={classes.aboutSection}>
         <div className="secondaryBoxColor">
-          <span className="aboutTitle">What is Soul of EOS proxy</span>
-          <span className="aboutInfo">
-            The EOS based proxy facilitates the transition into a truly
-            democratic based chain that is free from Pareto control by voting
-            for BP’s that do not engage with direct vote rebate.
-          </span>
+          <span className="aboutTitle">{t('whatIsSoul')}</span>
+          <span className="aboutInfo">{t('homeText.text7')}</span>
         </div>
-
-        <span className="aboutTitle">Why?</span>
+        <span className="aboutTitle">{t('why')}</span>
         <span className={clsx('infoLabel', classes.extraMarginBttom)}>
-          EOS came with the vision of becoming a governed blockchain.
+          {t('homeText.text8')}
         </span>
         <span className={clsx('infoLabel', classes.extraMarginBttom)}>
-          But without no-vote-buy rule, DPoS isn’t much different than all PoW
-          or PoS in which the consensus is captured by the pareto distribution.
+          {t('homeText.text9')}
         </span>
         <span className={clsx('infoLabel', classes.extraMarginBttom)}>
-          EOS is on the verge of becoming the only blockchain that is free from
-          the grip of pareto distribution with fractal democracy.
+          {t('homeText.text10')}
         </span>
         <span className={clsx('infoLabel', classes.extraMarginBttom)}>
-          But it needs support from the BPs.
+          {t('homeText.text11')}
         </span>
-
         <div className="secondaryBoxColor">
-          <span className="aboutTitle">Vision</span>
-          <span className="infoLabel">Holders delegating their vote</span>
+          <span className="aboutTitle">{t('vision')}</span>
+          <span className="infoLabel">{t('homeText.text12')}</span>
         </div>
-
         <span className={clsx('aboutTitle', classes.coreValueTitle)}>
-          Core Values
+          {t('coreValues')}
         </span>
 
         <div className={classes.valuesBox}>
           <div className="valuesWrapper">
             <div className="coreTitle">
               <img alt="legitimacy" src="/images/legitimacy.svg" />
-              <span className="coreTitleLabel">Legitimacy</span>
+              <span className="coreTitleLabel">{t('legitimacy')}</span>
             </div>
             <div className={classes.coreInfo}>
               <span className={classes.coreInfoLabel}>
-                Strengthen the legitimacy of the consensus by unsold votes
+                {t('homeText.text13')}
               </span>
             </div>
           </div>
           <div className="valuesWrapper">
             <div className="coreTitle">
               <img alt="accountability" src="/images/accountability.svg" />
-              <span className="coreTitleLabel">Accountability</span>
+              <span className="coreTitleLabel">{t('accountability')}</span>
             </div>
             <div className={classes.coreInfo}>
               <span className={classes.coreInfoLabel}>
-                Hold BPs accountable with regular integrity check up calls and
-                reports
+                {t('homeText.text14')}
               </span>
             </div>
           </div>
           <div className="valuesWrapper">
             <div className="coreTitle">
               <img alt="interest alignment" src="/images/interest.svg" />
-              <span className="coreTitleLabel">Interest Alignment</span>
+              <span className="coreTitleLabel">{t('interestAlignment')}</span>
             </div>
             <div className={classes.coreInfo}>
               <span className={classes.coreInfoLabel}>
-                Heal the governance with greater alignment of interests
+                {t('homeText.text15')}
               </span>
             </div>
           </div>
@@ -163,7 +147,7 @@ const HomeFrontLayer = () => {
         <span
           className={clsx(classes.generalTitle, classes.secondaryColorTitle)}
         >
-          BPs joining #novotebuy Alliance
+          {t('joinTitle')}
         </span>
         {/* remove this map when add BE integration */}
         <div className={classes.bpsBox}>
@@ -173,39 +157,35 @@ const HomeFrontLayer = () => {
         </div>
       </div>
       <div className={classes.bpsCriteria}>
-        <span className={classes.generalTitle}>BP Selection Criteria</span>
-        <span className="subTitleCriteria">Eligibility</span>
+        <span className={classes.generalTitle}>{t('selectionCriteria')}</span>
+        <span className="subTitleCriteria">{t('eligibility')}</span>
 
         <div className={classes.valuesBox}>
           <div className={classes.coreInfo}>
             <span className={clsx(classes.coreInfoLabel, 'criteriaLabel')}>
-              Disclose existing vote rebate relationships and provide reasonable
-              cessation plan
+              {t('homeText.text16')}
             </span>
           </div>
           <div className={classes.coreInfo}>
             <span className={clsx(classes.coreInfoLabel, 'criteriaLabel')}>
-              Have a real person's presence publicly available for regular check
-              up calls and be held accountable
+              {t('homeText.text17')}
             </span>
           </div>
           <div className={classes.coreInfo}>
             <span className={clsx(classes.coreInfoLabel, 'criteriaLabel')}>
-              Actively engage with the community to find a suitable way to align
-              interest of different players in the community via allocating
-              funds, etc.
+              {t('homeText.text18')}
             </span>
           </div>
         </div>
         <Button className={classes.optionBtn} variant="contained">
-          Join the Alliance
+          {t('joinAlliance')}
         </Button>
       </div>
       <div className={classes.exchageSection}>
         <span
           className={clsx(classes.generalTitle, classes.secondaryColorTitle)}
         >
-          Exchange Status
+          {t('exchangeStatus')}
         </span>
         {/* remove this map when add BE integration */}
         <div className={clsx(classes.bpsBox, classes.exchangeBox)}>
@@ -213,7 +193,7 @@ const HomeFrontLayer = () => {
             <div key={`img-${index}`} className="exchangeBox">
               <img alt="exchage" src={image} />
               <div className="twitBtn">
-                <span>Tweet to urge them</span>
+                <span>{t('twitToUrge')}</span>
                 <div className="divisorTwitBtn" />
                 <span>
                   <img
@@ -229,7 +209,7 @@ const HomeFrontLayer = () => {
         </div>
       </div>
       <div className={classes.membersSection}>
-        <span className={classes.generalTitle}>Participating EOS members</span>
+        <span className={classes.generalTitle}>{t('participating')}</span>
         {/* remove this map when add BE integration */}
         <div className={classes.bpsBox}>
           {membersArray.map((member, index) => (
@@ -242,14 +222,14 @@ const HomeFrontLayer = () => {
           ))}
         </div>
         <Button className={classes.optionBtn} variant="contained">
-          Delegate your vote
+          {t('delegateVote')}
         </Button>
       </div>
       <div className={classes.patnerSection}>
         <span
           className={clsx(classes.generalTitle, classes.secondaryColorTitle)}
         >
-          Supporting Partners
+          {t('supportPartner')}
         </span>
         {/* remove this map when add BE integration */}
         <div className={classes.bpsBox}>

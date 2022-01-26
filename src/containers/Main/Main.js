@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useTranslation } from 'react-i18next'
 import clsx from 'clsx'
 import { Link as RouterLink } from 'react-router-dom'
 import { makeStyles, useTheme } from '@mui/styles'
@@ -24,6 +25,7 @@ const Main = ({
 }) => {
   const classes = useStyles()
   const theme = useTheme()
+  const { t } = useTranslation('translations')
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true
   })
@@ -31,7 +33,6 @@ const Main = ({
   return (
     <Container
       component="main"
-      // maxWidth="xl"
       className={clsx({
         [classes.root]: true
       })}
@@ -54,22 +55,22 @@ const Main = ({
 
             <div>
               <RouterLink className={classes.menuLink} to="/">
-                home
+                {t('home')}
               </RouterLink>
               <RouterLink className={classes.menuLink} to="/">
-                about
+                {t('about')}
               </RouterLink>
               <RouterLink className={classes.menuLink} to="/">
-                BPs
+                {t('bPs')}
               </RouterLink>
               <RouterLink className={classes.menuLink} to="/">
-                Exchanges
+                {t('exchanges')}
               </RouterLink>
               <RouterLink className={classes.menuLink} to="/">
-                EOS HOLDER
+                {t('eosHolder')}
               </RouterLink>
               <RouterLink className={classes.menuLink} to="/">
-                news
+                {t('news')}
               </RouterLink>
             </div>
             <div>{topbarContent}</div>
@@ -91,37 +92,37 @@ const Main = ({
         {children}
       </div>
       <div className={classes.footer}>
-        <span className={classes.titleFooter}>Join the community</span>
+        <span className={classes.titleFooter}>{t('joinCommunity')}</span>
         <div className={classes.iconWrapper}>
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a href="#" target="_blank" rel="noopener noreferrer">
             <img
               className={classes.socialIcons}
               alt="Logo"
               src="/images/discord.svg"
             />
           </a>
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a href="#" target="_blank" rel="noopener noreferrer">
             <img
               className={classes.socialIcons}
               alt="Logo"
               src="/images/twitter.svg"
             />
           </a>
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a href="#" target="_blank" rel="noopener noreferrer">
             <img
               className={classes.socialIcons}
               alt="Logo"
               src="/images/telegram.svg"
             />
           </a>
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a href="#" target="_blank" rel="noopener noreferrer">
             <img
               className={classes.socialIcons}
               alt="Logo"
               src="/images/message.svg"
             />
           </a>
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a href="#" target="_blank" rel="noopener noreferrer">
             <img
               className={classes.socialIcons}
               alt="Logo"
@@ -129,9 +130,7 @@ const Main = ({
             />
           </a>
         </div>
-        <span className={classes.titleFooter}>
-          COPYRIGHT © 2022 SH CO. LTD. ALL RIGHTS RESERVED.
-        </span>
+        <span className={classes.titleFooter}>{t('copyRight')}</span>
       </div>
     </Container>
   )
