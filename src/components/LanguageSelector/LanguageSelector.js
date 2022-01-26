@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import clsx from 'clsx'
 import { Language as LanguageIcon } from '@mui/icons-material'
 import { useTranslation } from 'react-i18next'
 import Typography from '@mui/material/Typography'
@@ -47,23 +48,48 @@ const LanguageSelector = ({ alt }) => {
 
   return (
     <>
-      <IconButton className={classes.wrapper} onClick={handleClick}>
-        <LanguageIcon alt={alt} className={classes.iconLanguage} />
-        <Typography variant="h5" className={classes.languageText}>
-          {(i18n.language || '').toLocaleUpperCase().substring(0, 2)}
-        </Typography>
-      </IconButton>
-      <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
+      <div className={classes.languageDesktop}>
         {languages.length &&
-          languages.map((item) => (
-            <MenuItem
+          languages.map((item, index) => (
+            <div
               key={`language-menu-${item.label}`}
               onClick={() => handleClose(item.value)}
+              className={clsx(classes.menuBox, {
+                [classes.menuDivider]: !!index
+              })}
             >
-              {`${item.label} - ${(item.value || '').toLocaleUpperCase()}`}
-            </MenuItem>
+              <span
+                className={clsx({
+                  [classes.languageSelected]:
+                    (i18n.language || '').substring(0, 2) === item.value
+                })}
+              >{`${(item.value || '').toLocaleUpperCase()}`}</span>
+            </div>
           ))}
-      </Menu>
+      </div>
+      <div className={classes.laguangeMobile}>
+        <IconButton className={classes.wrapper} onClick={handleClick}>
+          <LanguageIcon alt={alt} className={classes.iconLanguage} />
+          <Typography variant="h5" className={classes.languageText}>
+            {(i18n.language || '').toLocaleUpperCase().substring(0, 2)}
+          </Typography>
+        </IconButton>
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+          {languages.length &&
+            languages.map((item) => (
+              <MenuItem
+                key={`language-menu-${item.label}`}
+                onClick={() => handleClose(item.value)}
+              >
+                {`${item.label} - ${(item.value || '').toLocaleUpperCase()}`}
+              </MenuItem>
+            ))}
+        </Menu>
+      </div>
     </>
   )
 }

@@ -3,7 +3,8 @@ import { EOSCR_THEME } from '@eoscostarica/eoscr-theme'
 
 export default {
   primary: {
-    ...EOSCR_THEME.palette.primary
+    ...EOSCR_THEME.palette.primary,
+    main: '#15151B'
   },
   secondary: {
     ...EOSCR_THEME.palette.secondary
