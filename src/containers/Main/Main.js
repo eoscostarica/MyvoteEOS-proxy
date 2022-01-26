@@ -61,7 +61,7 @@ const Main = ({
                 {t('about')}
               </RouterLink>
               <RouterLink className={classes.menuLink} to="/">
-                BPs
+                {t('bPs')}
               </RouterLink>
               <RouterLink className={classes.menuLink} to="/">
                 {t('exchanges')}
