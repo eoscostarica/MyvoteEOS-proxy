@@ -90,15 +90,11 @@ Within the download you'll find the following directories and files:
 
 Deployed on Jungle3 testnet as: [`souleosproxy`](https://jungle3.bloks.io/account/souleosproxy)
 
-## License
-
-MIT © [EOS Costa Rica](https://eoscostarica.io)
-
 ## Contributing
 
-Please Read EOS Costa Rica's [Open Source Contributing Guidelines](https://developers.eoscostarica.io/docs/open-source-guidelines).
+Let us know if you have any cool ideas for this project and please report bugs big and small by [opening an issue](https://github.com/eoscostarica/soul-of-EOS-proxy/issues/new/choose)
 
-Please report bugs big and small by [opening an issue](https://github.com/eoscostarica/soul-of-EOS-proxy/issues)
+Please Read EOS Costa Rica's [Open Source Contributing Guidelines](https://developers.eoscostarica.io/docs/open-source-guidelines).
 
 ## About EOS Costa Rica
 
@@ -112,3 +108,7 @@ Please report bugs big and small by [opening an issue](https://github.com/eoscos
 EOS Costa Rica is an independently-owned, self-funded, bare-metal Genesis block producer that provides stable and secure infrastructure for EOSIO blockchains. We support open source software for our community while offering enterprise solutions and custom smart contract development for our clients.
 
 [eoscostarica.io](https://eoscostarica.io)
+
+## License
+
+MIT © [EOS Costa Rica](https://eoscostarica.io)
