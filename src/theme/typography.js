@@ -1,6 +1,7 @@
 import { EOSCR_THEME } from '@eoscostarica/eoscr-theme'
 
 export default {
+  fontFamily: '"Montserrat", sans-serif',
   h1: {
     ...EOSCR_THEME.typography.h1
   },

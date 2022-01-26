@@ -31,44 +31,108 @@ const Main = ({
   return (
     <Container
       component="main"
-      maxWidth="xl"
+      // maxWidth="xl"
       className={clsx({
         [classes.root]: true
       })}
     >
-      <AppBar className={classes.appBar}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            onClick={() => setOpenSidebar(!openSidebar)}
-            className={classes.drawerToggle}
-          >
-            <MenuIcon />
-          </IconButton>
-          <RouterLink to="/">
+      <div>
+        <AppBar className={classes.appBar} position="static">
+          <Toolbar className={classes.toolbar}>
+            <div>
+              <IconButton
+                color="inherit"
+                onClick={() => setOpenSidebar(!openSidebar)}
+                className={classes.drawerToggle}
+              >
+                <MenuIcon />
+              </IconButton>
+              <RouterLink className={classes.sof} to="/">
+                Soul of EOS Proxy
+              </RouterLink>
+            </div>
+
+            <div>
+              <RouterLink className={classes.menuLink} to="/">
+                home
+              </RouterLink>
+              <RouterLink className={classes.menuLink} to="/">
+                about
+              </RouterLink>
+              <RouterLink className={classes.menuLink} to="/">
+                BPs
+              </RouterLink>
+              <RouterLink className={classes.menuLink} to="/">
+                Exchanges
+              </RouterLink>
+              <RouterLink className={classes.menuLink} to="/">
+                EOS HOLDER
+              </RouterLink>
+              <RouterLink className={classes.menuLink} to="/">
+                news
+              </RouterLink>
+            </div>
+            <div>{topbarContent}</div>
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          anchor="left"
+          classes={{ paper: classes.drawerPaper }}
+          onClose={() => setOpenSidebar(false)}
+          open={openSidebar}
+          variant="temporary"
+          className={clsx({
+            [classes.drawer]: true,
+            [classes.drawerDesktop]: isDesktop && openSidebar
+          })}
+        >
+          <div className={classes.drawerContent}>{sidebarContent}</div>
+        </Drawer>
+        {children}
+      </div>
+      <div className={classes.footer}>
+        <span className={classes.titleFooter}>Join the community</span>
+        <div className={classes.iconWrapper}>
+          <a href="" target="_blank" rel="noopener noreferrer">
             <img
-              className={classes.logo}
+              className={classes.socialIcons}
               alt="Logo"
-              src="/images/logo-dark.png"
+              src="/images/discord.svg"
             />
-          </RouterLink>
-          {topbarContent}
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        anchor="left"
-        classes={{ paper: classes.drawerPaper }}
-        onClose={() => setOpenSidebar(false)}
-        open={openSidebar}
-        variant="temporary"
-        className={clsx({
-          [classes.drawer]: true,
-          [classes.drawerDesktop]: isDesktop && openSidebar
-        })}
-      >
-        <div className={classes.drawerContent}>{sidebarContent}</div>
-      </Drawer>
-      {children}
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <img
+              className={classes.socialIcons}
+              alt="Logo"
+              src="/images/twitter.svg"
+            />
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <img
+              className={classes.socialIcons}
+              alt="Logo"
+              src="/images/telegram.svg"
+            />
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <img
+              className={classes.socialIcons}
+              alt="Logo"
+              src="/images/message.svg"
+            />
+          </a>
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <img
+              className={classes.socialIcons}
+              alt="Logo"
+              src="/images/medium.svg"
+            />
+          </a>
+        </div>
+        <span className={classes.titleFooter}>
+          COPYRIGHT © 2022 SH CO. LTD. ALL RIGHTS RESERVED.
+        </span>
+      </div>
     </Container>
   )
 }

@@ -36,8 +36,13 @@ export default (theme) => ({
   },
   // top bar
   sessionText: {
-    marginLeft: 5,
-    color: theme.palette.primary.contrastText,
+    fontStyle: 'normal',
+    fontWeight: '500 !important',
+    fontSize: '16px !important',
+    lineHeight: '20px !important',
+    textAlign: 'center',
+    letterSpacing: '-0.03em !important',
+    color: '#EEEEEE',
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'inline'
@@ -50,14 +55,18 @@ export default (theme) => ({
   box: {
     display: 'flex',
     justifyContent: 'flex-end',
-    flex: 1
+    flex: 1,
+    alignItems: 'center'
+  },
+  loginBtn: {
+    marginLeft: `${theme.spacing(1)} !important`
   },
   // Main Page
   rootMainPage: {
     width: '100%',
     height: '100%',
-    overflowY: 'hidden',
-    marginTop: theme.spacing(3)
+    overflowY: 'hidden'
+    // marginTop: theme.spacing(3)
   },
   // Main Page Backdrop
   backdrop: {
@@ -121,11 +130,11 @@ export default (theme) => ({
   // Layers
   layer: {
     height: '100%',
-    overflowY: 'auto',
-    padding: 16,
-    [theme.breakpoints.up('lg')]: {
-      paddingRight: theme.spacing(32),
-      paddingLeft: theme.spacing(32)
-    }
+    overflowY: 'auto'
+    // padding: theme.spacing(2)
+    // [theme.breakpoints.up('lg')]: {
+    //   paddingRight: theme.spacing(32),
+    //   paddingLeft: theme.spacing(32)
+    // }
   }
 })
