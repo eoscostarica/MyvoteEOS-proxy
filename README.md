@@ -7,7 +7,7 @@
 </p>
 <br/>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7e88118e-c0d0-4bf3-966f-d485946cb06b/deploy-status)](https://app.netlify.com/sites/no-vote-buy/deploys) ![](https://img.shields.io/github/license/eoscostarica/no-vote-buy-EOS-proxy) ![](https://img.shields.io/badge/code%20style-standard-brightgreen.svg) ![](https://img.shields.io/github/forks/eoscostarica/no-vote-buy-EOS-proxy?style=social)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7e88118e-c0d0-4bf3-966f-d485946cb06b/deploy-status)](https://app.netlify.com/sites/novotebuyeos/deploys) ![](https://img.shields.io/github/license/eoscostarica/no-vote-buy-EOS-proxy) ![](https://img.shields.io/badge/code%20style-standard-brightgreen.svg) ![](https://img.shields.io/github/forks/eoscostarica/no-vote-buy-EOS-proxy?style=social)
 
 The EOS based proxy facilitates the transition into a truly democratic based chain that is free from Pareto control by voting for BP’s that do not engage with direct vote rebate.
 
