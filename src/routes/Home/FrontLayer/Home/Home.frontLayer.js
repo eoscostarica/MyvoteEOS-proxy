@@ -7,6 +7,7 @@ import TextField from '@mui/material/TextField'
 
 import TitlePage from 'components/PageTitle'
 import { mockBps, BPSArray, membersArray, partnersArray } from 'utils/mockData'
+import { useSharedState } from 'context/state.context'
 
 import styles from './styles'
 
@@ -15,19 +16,21 @@ const useStyles = makeStyles(styles)
 const HomeFrontLayer = () => {
   const classes = useStyles()
   const { t } = useTranslation('homePage')
+  const [state] = useSharedState()
+
+  console.log({ state })
 
   return (
     <div className={classes.HomeFrontLayerRoot}>
       <TitlePage title={t('htmlTitle')} />
       <div className={classes.headerSection}>
-        <span className={classes.titleHeader}>{t('htmlTitle')}</span>
         <img
           className={classes.headerLogo}
           alt="Logo"
           src="/images/logo-dark.png"
         />
-        <span className={classes.headerMessage}>{t('secondaryText')}</span>
         <span className={classes.headerHashtag}>{t('noVoteBuy')}</span>
+        <span className={classes.headerMessage}>{t('secondaryText')}</span>
         <Button className={classes.headerDownloadBtn}>
           {t('downloadButton')}
         </Button>
@@ -81,7 +84,7 @@ const HomeFrontLayer = () => {
           </Button>
         </div>
       </div>
-      <div className={classes.aboutSection}>
+      <div id="about" className={classes.aboutSection}>
         <div className="secondaryBoxColor">
           <span className="aboutTitle">{t('whatIsSoul')}</span>
           <span className="aboutInfo">{t('homeText.text7')}</span>
@@ -99,63 +102,18 @@ const HomeFrontLayer = () => {
         <span className={clsx('infoLabel', classes.extraMarginBttom)}>
           {t('homeText.text11')}
         </span>
+
         <div className="secondaryBoxColor">
-          <span className="aboutTitle">{t('vision')}</span>
+          <span className="aboutTitle">{t('noVoteProxy')}</span>
           <span className="infoLabel">{t('homeText.text12')}</span>
         </div>
         <span className={clsx('aboutTitle', classes.coreValueTitle)}>
-          {t('coreValues')}
+          {t('keepBps')}
         </span>
+        <span className="infoLabel">{t('homeText.text13')}</span>
+        <span className="infoLabel">{t('homeText.text14')}</span>
+      </div>
 
-        <div className={classes.valuesBox}>
-          <div className="valuesWrapper">
-            <div className="coreTitle">
-              <img alt="legitimacy" src="/images/legitimacy.svg" />
-              <span className="coreTitleLabel">{t('legitimacy')}</span>
-            </div>
-            <div className={classes.coreInfo}>
-              <span className={classes.coreInfoLabel}>
-                {t('homeText.text13')}
-              </span>
-            </div>
-          </div>
-          <div className="valuesWrapper">
-            <div className="coreTitle">
-              <img alt="accountability" src="/images/accountability.svg" />
-              <span className="coreTitleLabel">{t('accountability')}</span>
-            </div>
-            <div className={classes.coreInfo}>
-              <span className={classes.coreInfoLabel}>
-                {t('homeText.text14')}
-              </span>
-            </div>
-          </div>
-          <div className="valuesWrapper">
-            <div className="coreTitle">
-              <img alt="interest alignment" src="/images/interest.svg" />
-              <span className="coreTitleLabel">{t('interestAlignment')}</span>
-            </div>
-            <div className={classes.coreInfo}>
-              <span className={classes.coreInfoLabel}>
-                {t('homeText.text15')}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className={classes.bpsSection}>
-        <span
-          className={clsx(classes.generalTitle, classes.secondaryColorTitle)}
-        >
-          {t('joinTitle')}
-        </span>
-        {/* remove this map when add BE integration */}
-        <div className={classes.bpsBox}>
-          {BPSArray.map((i, index) => (
-            <div key={`${i}-${index}`} className="boxExampleBps" />
-          ))}
-        </div>
-      </div>
       <div className={classes.bpsCriteria}>
         <span className={classes.generalTitle}>{t('selectionCriteria')}</span>
         <span className="subTitleCriteria">{t('eligibility')}</span>
@@ -181,6 +139,21 @@ const HomeFrontLayer = () => {
           {t('joinAlliance')}
         </Button>
       </div>
+
+      <div className={classes.bpsSection}>
+        <span
+          className={clsx(classes.generalTitle, classes.secondaryColorTitle)}
+        >
+          {t('joinTitle')}
+        </span>
+        {/* remove this map when add BE integration */}
+        <div className={classes.bpsBox}>
+          {BPSArray.map((i, index) => (
+            <div key={`${i}-${index}`} className="boxExampleBps" />
+          ))}
+        </div>
+      </div>
+
       <div className={classes.exchageSection}>
         <span
           className={clsx(classes.generalTitle, classes.secondaryColorTitle)}

@@ -13,13 +13,14 @@ import App from './App'
 import theme from './theme'
 import { client } from './graphql'
 import * as serviceWorker from './serviceWorker'
+import { SharedStateProvider } from './context/state.context'
 import './i18n'
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: 'webApp' // Change this name for project prefix
+  productionPrefix: 'soE'
 })
 
-const AppWithUAL = withUAL(App)
+const SharedStateProviderWithUAL = withUAL(SharedStateProvider)
 
 render(
   <UALProvider
@@ -27,16 +28,18 @@ render(
     authenticators={ualConfig.authenticators}
     appName={ualConfig.appName}
   >
-    <ApolloProvider client={client}>
-      <StylesProvider generateClassName={generateClassName}>
-        <CssBaseline />
-        <ThemeProvider theme={theme}>
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <AppWithUAL />
-          </LocalizationProvider>
-        </ThemeProvider>
-      </StylesProvider>
-    </ApolloProvider>
+    <SharedStateProviderWithUAL>
+      <ApolloProvider client={client}>
+        <StylesProvider generateClassName={generateClassName}>
+          <CssBaseline />
+          <ThemeProvider theme={theme}>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <App />
+            </LocalizationProvider>
+          </ThemeProvider>
+        </StylesProvider>
+      </ApolloProvider>
+    </SharedStateProviderWithUAL>
   </UALProvider>,
   document.getElementById('root')
 )

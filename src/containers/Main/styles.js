@@ -42,27 +42,70 @@ export default (theme) => ({
     padding: theme.spacing(2)
   },
   footer: {
-    padding: theme.spacing(3, 1, 1, 1),
+    padding: theme.spacing(3, 1, 3, 1),
     backgroundColor: '#1C1C24',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    width: '100%',
+    maxWidth: 1024,
+    [theme.breakpoints.up('smd')]: {
+      flexDirection: 'row',
+      alignItems: 'baseline'
+    }
   },
-  titleFooter: {
+  noVote: {
     fontStyle: 'normal',
-    fontWeight: '500',
-    fontSize: 16,
-    lineHeight: '20px',
-    letterSpacing: '-0.05em',
-    color: '#EEEEEE'
+    fontWeight: 'bold',
+    fontSize: '30px',
+    lineHeight: '60px',
+    textAlign: 'center',
+    letterSpacing: '-0.03em',
+    background: 'linear-gradient(277.32deg, #43378F 2.34%, #F53844 100%)',
+    '-webkit-background-clip': 'text',
+    '-webkit-text-fill-color': 'transparent'
   },
-  iconWrapper: {
+  footerLogo: {
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: 400,
-    margin: theme.spacing(3, 0)
+    '& img': {
+      width: 100
+    }
+  },
+  socialWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    '& div': {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      alignItems: 'center'
+    },
+    '& a': {
+      margin: `${theme.spacing(0, 0, 1, 0)} !important`
+    },
+    [theme.breakpoints.up('smd')]: {
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+      '& div': {
+        alignItems: 'flex-start',
+        marginLeft: theme.spacing(2)
+      }
+    }
+  },
+  socialTitle: {
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: '30px',
+    textAlign: 'center',
+    lineHeight: '73px',
+    letterSpacing: '0.03em',
+    color: '#FFFFFF'
   },
   sof: {
     fontStyle: 'normal',
@@ -78,7 +121,21 @@ export default (theme) => ({
     width: '100%',
     display: 'flex',
     justifyContent: 'space-between',
-    padding: '0 !important'
+    padding: '0 !important',
+    '& .menuDesktop': {
+      display: 'none'
+    },
+    '& .logoName': {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    [theme.breakpoints.up('md')]: {
+      padding: `${theme.spacing(0, 1)} !important`,
+      '& .menuDesktop': {
+        display: 'flex'
+      }
+    }
   },
   menuLink: {
     fontStyle: 'normal',
@@ -90,5 +147,12 @@ export default (theme) => ({
     textTransform: 'uppercase',
     textDecoration: 'none',
     margin: '0 8px'
+  },
+  footerBox: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    backgroundColor: '#1C1C24'
   }
 })

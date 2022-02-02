@@ -1,10 +1,6 @@
 export default (theme) => ({
-  HomeFrontLayerRoot: {
-    // paddingTop: theme.spacing(3),
-    // border: '2px solid purple'
-  },
   optionBtn: {
-    width: 291,
+    width: 280,
     height: 80,
     background: 'linear-gradient(94.32deg, #F53844 0%, #43378F 100%)',
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.15) !important',
@@ -32,30 +28,37 @@ export default (theme) => ({
     fontSize: '50px',
     lineHeight: '61px',
     letterSpacing: '0.01em',
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    textAlign: 'center'
   },
   headerLogo: {
     width: 126,
     height: 189,
-    marginBottom: theme.spacing(3)
+    margin: theme.spacing(3, 0)
   },
   headerMessage: {
+    width: '100%',
+    maxWidth: 600,
     fontStyle: 'normal',
     fontWeight: '500',
     fontSize: '18px',
     lineHeight: '22px',
     textAlign: 'center',
     letterSpacing: '-0.03em',
-    color: '#999999'
+    color: '#999999',
+    marginBottom: theme.spacing(2)
   },
   headerHashtag: {
-    margin: theme.spacing(4, 0),
+    margin: theme.spacing(1, 0),
     fontStyle: 'normal',
-    fontWeight: '600',
-    fontSize: '36px',
-    lineHeight: '44px',
+    fontWeight: 'bold',
+    fontSize: '70px',
+    lineHeight: '110px',
+    textAlign: 'center',
     letterSpacing: '-0.03em',
-    color: '#999999'
+    background: 'linear-gradient(277.32deg, #43378F 2.34%, #F53844 100%)',
+    '-webkit-background-clip': 'text',
+    '-webkit-text-fill-color': 'transparent'
   },
   headerDownloadBtn: {
     width: '214px',
@@ -73,17 +76,19 @@ export default (theme) => ({
   },
   headerOptionsBtns: {
     padding: theme.spacing(4, 0),
-    marginBottom: theme.spacing(20),
+    marginBottom: theme.spacing(6),
     marginTop: theme.spacing(2),
     maxWidth: 1024,
     width: '100%',
     display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
+    flexDirection: 'column',
+    alignItems: 'center',
     '& .boxGroup': {
       display: 'flex',
       flexDirection: 'column',
-      width: 291
+      width: 291,
+      marginBottom: theme.spacing(8),
+      alignItems: 'center'
     },
     '& .textLabel': {
       fontStyle: 'normal',
@@ -93,6 +98,12 @@ export default (theme) => ({
       textAlign: 'center',
       letterSpacing: '-0.03em',
       color: '#FFFFFF'
+    },
+    [theme.breakpoints.up('md')]: {
+      marginBottom: theme.spacing(15),
+      justifyContent: 'space-between',
+      alignItems: 'flex-end',
+      flexDirection: 'row'
     }
   },
   marginExtra: {
@@ -100,19 +111,19 @@ export default (theme) => ({
   },
   headerOptionsInfo: {
     padding: theme.spacing(5, 0),
-    marginBottom: theme.spacing(10),
     maxWidth: 1024,
     width: '100%',
     display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
+    flexDirection: 'column',
+    alignItems: 'center',
     '& .boxGroup': {
       display: 'flex',
       flexDirection: 'column',
-      width: 291
+      width: 291,
+      marginBottom: theme.spacing(8)
     },
     '& .coloredLabel': {
-      marginBottom: theme.spacing(5),
+      marginBottom: theme.spacing(2),
       fontStyle: 'normal',
       fontWeight: 'bold',
       fontSize: '90px',
@@ -131,15 +142,32 @@ export default (theme) => ({
       textAlign: 'center',
       letterSpacing: '-0.03em',
       color: '#EEEEEE'
+    },
+    [theme.breakpoints.up('md')]: {
+      marginBottom: theme.spacing(10),
+      justifyContent: 'space-between',
+      alignItems: 'flex-end',
+      flexDirection: 'row',
+      '& .coloredLabel': {
+        marginBottom: theme.spacing(5)
+      }
     }
   },
   joinBox: {
+    width: '100%',
+    maxWidth: 1024,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: theme.spacing(0, 1),
     '& .textField': {
-      width: 518,
+      width: '100%',
+      maxWidth: 518,
       height: 60,
       background: '#E3E6E8',
       boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.15)',
       borderRadius: 20,
+      marginBottom: theme.spacing(2),
       '& input': {
         height: 27,
         '&::placeholder': {
@@ -153,12 +181,11 @@ export default (theme) => ({
       }
     },
     '& .joinBtn': {
-      width: 100,
+      width: '100%',
       height: 60,
       background: 'linear-gradient(94.32deg, #F53844 0%, #43378F 100%)',
       boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.15)',
       borderRadius: 20,
-      marginLeft: '10px !important',
       fontStyle: 'normal',
       fontWeight: '600',
       fontSize: '18px',
@@ -167,6 +194,17 @@ export default (theme) => ({
       letterSpacing: '-0.03em',
       color: '#FFFFFF',
       textTransform: 'none !important'
+    },
+    [theme.breakpoints.up('sm')]: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      '& .textField': {
+        marginBottom: 0
+      },
+      '& .joinBtn': {
+        width: 100,
+        marginLeft: '10px !important'
+      }
     }
   },
   aboutSection: {
@@ -177,11 +215,15 @@ export default (theme) => ({
     '& .aboutTitle': {
       fontStyle: 'normal',
       fontWeight: 'bold',
-      fontSize: '60px',
+      fontSize: '55px',
       lineHeight: '73px',
+      textAlign: 'center',
       letterSpacing: '0.01em',
       color: '#FFFFFF',
-      marginBottom: theme.spacing(2)
+      marginBottom: theme.spacing(2),
+      [theme.breakpoints.up('md')]: {
+        fontSize: '60px'
+      }
     },
     '& .aboutInfo': {
       fontStyle: 'normal',
@@ -193,7 +235,8 @@ export default (theme) => ({
       color: '#999999',
       width: '100%',
       maxWidth: 796,
-      marginTop: theme.spacing(1)
+      marginTop: theme.spacing(1),
+      padding: theme.spacing(0, 1)
     },
     '& .secondaryBoxColor': {
       padding: theme.spacing(2, 0),
@@ -203,8 +246,11 @@ export default (theme) => ({
       flexDirection: 'column',
       alignItems: 'center',
       width: '100%',
-      height: 210,
-      justifyContent: 'center'
+      height: 'auto',
+      justifyContent: 'center',
+      [theme.breakpoints.up('md')]: {
+        height: 210
+      }
     },
     '& .infoLabel': {
       fontStyle: 'normal',
@@ -246,20 +292,27 @@ export default (theme) => ({
   },
   valuesBox: {
     display: 'flex',
-    justifyContent: 'space-between',
+    flexDirection: 'column',
+    alignItems: 'center',
     width: '100%',
     maxWidth: 1024,
-    marginBottom: theme.spacing(3)
+    marginBottom: theme.spacing(3),
+    [theme.breakpoints.up('md')]: {
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      flexDirection: 'row'
+    }
   },
   coreInfo: {
-    width: 330,
+    width: 300,
     height: 176,
     backgroundColor: '#1C1C24',
     borderRadius: 15,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginBottom: theme.spacing(3)
   },
   coreInfoLabel: {
     fontStyle: 'normal',
@@ -274,10 +327,14 @@ export default (theme) => ({
   generalTitle: {
     fontStyle: 'normal',
     fontWeight: 'bold',
-    fontSize: '60px',
+    fontSize: '55px',
+    textAlign: 'center',
     lineHeight: '73px',
     letterSpacing: '0.03em',
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '60px'
+    }
   },
   bpsSection: {
     padding: theme.spacing(9, 0),
@@ -293,6 +350,7 @@ export default (theme) => ({
   },
   bpsBox: {
     display: 'flex',
+    justifyContent: 'center',
     flexWrap: 'wrap',
     maxWidth: 1024,
     width: '100%',
@@ -319,7 +377,10 @@ export default (theme) => ({
       lineHeight: '34px',
       letterSpacing: '-0.03em',
       color: '#707070',
-      margin: theme.spacing(6, 0, 5, 0)
+      margin: theme.spacing(6, 0, 5, 0),
+      textAlign: 'center',
+      maxWidth: 900,
+      width: '100%'
     }
   },
   exchageSection: {
@@ -343,6 +404,7 @@ export default (theme) => ({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
+      marginTop: theme.spacing(2),
       padding: theme.spacing(0, 4),
       '& span': {
         fontStyle: 'normal',
@@ -363,7 +425,18 @@ export default (theme) => ({
       width: '100%',
       maxWidth: 500,
       justifyContent: 'space-between',
-      margin: theme.spacing(2, 0)
+      margin: theme.spacing(2, 0, 3, 0),
+      flexDirection: 'column'
+    },
+    [theme.breakpoints.up('sm')]: {
+      '& .exchangeBox': {
+        width: '50%'
+      }
+    },
+    [theme.breakpoints.up('lg')]: {
+      '& .exchangeBox': {
+        flexDirection: 'row'
+      }
     }
   },
   exchangeBox: {
@@ -377,7 +450,7 @@ export default (theme) => ({
     alignItems: 'center',
     '& .boxExampleMembers': {
       background: 'rgba(238, 238, 238, 0.6)',
-      width: 186,
+      width: 170,
       height: 91,
       margin: theme.spacing(1),
       display: 'flex',
@@ -396,6 +469,9 @@ export default (theme) => ({
     },
     '& .memberAmount': {
       color: '#505050'
+    },
+    [theme.breakpoints.up('sm')]: {
+      padding: theme.spacing(7, 1)
     }
   },
   patnerSection: {
@@ -404,7 +480,7 @@ export default (theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     '& .boxExamplePartner': {
-      width: 325, // 392
+      width: '100%',
       height: 150,
       background: 'rgba(238, 238, 238, 0.6)',
       display: 'flex',
@@ -414,6 +490,11 @@ export default (theme) => ({
       margin: theme.spacing(1),
       '& img': {
         width: '100%'
+      }
+    },
+    [theme.breakpoints.up('sm')]: {
+      '& .boxExamplePartner': {
+        width: '45%'
       }
     }
   }
