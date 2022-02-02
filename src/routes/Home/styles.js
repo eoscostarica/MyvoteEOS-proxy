@@ -12,13 +12,12 @@ export default (theme) => ({
     paddingBottom: 0
   },
   button: {
-    color: theme.palette.primary.dark,
-    padding: '10px 8px',
-    justifyContent: 'flex-start',
-    textTransform: 'none',
-    letterSpacing: 0,
-    width: '100%',
-    fontWeight: theme.typography.fontWeightMedium
+    color: `${theme.palette.primary.dark} !important`,
+    padding: '10px 8px !important',
+    justifyContent: 'flex-start !important',
+    textTransform: 'none !important',
+    letterSpacing: '0 !important',
+    width: '100%'
   },
   icon: {
     width: 24,
@@ -42,11 +41,7 @@ export default (theme) => ({
     lineHeight: '20px !important',
     textAlign: 'center',
     letterSpacing: '-0.03em !important',
-    color: '#EEEEEE',
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'inline'
-    }
+    color: '#EEEEEE'
   },
   link: {
     color: 'white',
@@ -56,7 +51,8 @@ export default (theme) => ({
     display: 'flex',
     justifyContent: 'flex-end',
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginRight: `${theme.spacing(1)} !important`
   },
   loginBtn: {
     marginLeft: `${theme.spacing(1)} !important`
@@ -66,7 +62,6 @@ export default (theme) => ({
     width: '100%',
     height: '100%',
     overflowY: 'hidden'
-    // marginTop: theme.spacing(3)
   },
   // Main Page Backdrop
   backdrop: {
@@ -131,10 +126,5 @@ export default (theme) => ({
   layer: {
     height: '100%',
     overflowY: 'auto'
-    // padding: theme.spacing(2)
-    // [theme.breakpoints.up('lg')]: {
-    //   paddingRight: theme.spacing(32),
-    //   paddingLeft: theme.spacing(32)
-    // }
   }
 })

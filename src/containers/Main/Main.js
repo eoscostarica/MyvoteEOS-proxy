@@ -40,7 +40,7 @@ const Main = ({
       <div>
         <AppBar className={classes.appBar} position="static">
           <Toolbar className={classes.toolbar}>
-            <div>
+            <div className="logoName">
               <IconButton
                 color="inherit"
                 onClick={() => setOpenSidebar(!openSidebar)}
@@ -53,23 +53,23 @@ const Main = ({
               </RouterLink>
             </div>
 
-            <div>
+            <div className="menuDesktop">
               <RouterLink className={classes.menuLink} to="/">
                 {t('home')}
               </RouterLink>
-              <RouterLink className={classes.menuLink} to="/">
+              <RouterLink className={classes.menuLink} to="#about">
                 {t('about')}
               </RouterLink>
-              <RouterLink className={classes.menuLink} to="/">
+              <RouterLink className={classes.menuLink} to="#bps">
                 {t('bPs')}
               </RouterLink>
-              <RouterLink className={classes.menuLink} to="/">
+              <RouterLink className={classes.menuLink} to="#exchages">
                 {t('exchanges')}
               </RouterLink>
-              <RouterLink className={classes.menuLink} to="/">
+              <RouterLink className={classes.menuLink} to="#holders">
                 {t('eosHolder')}
               </RouterLink>
-              <RouterLink className={classes.menuLink} to="/">
+              <RouterLink className={classes.menuLink} to="/news">
                 {t('news')}
               </RouterLink>
             </div>
@@ -91,46 +91,103 @@ const Main = ({
         </Drawer>
         {children}
       </div>
-      <div className={classes.footer}>
-        <span className={classes.titleFooter}>{t('joinCommunity')}</span>
-        <div className={classes.iconWrapper}>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <img
-              className={classes.socialIcons}
-              alt="Logo"
-              src="/images/discord.svg"
-            />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <img
-              className={classes.socialIcons}
-              alt="Logo"
-              src="/images/twitter.svg"
-            />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <img
-              className={classes.socialIcons}
-              alt="Logo"
-              src="/images/telegram.svg"
-            />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <img
-              className={classes.socialIcons}
-              alt="Logo"
-              src="/images/message.svg"
-            />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <img
-              className={classes.socialIcons}
-              alt="Logo"
-              src="/images/medium.svg"
-            />
-          </a>
+      <div className={classes.footerBox}>
+        <div className={classes.footer}>
+          <div className={classes.footerLogo}>
+            <span className={classes.noVote}>{t('noVoteBuy')}</span>
+            <img alt="Logo" src="/images/logo-dark.png" />
+          </div>
+          <div className={classes.socialWrapper}>
+            <div>
+              <span className={classes.socialTitle}>{t('quicklinks')}</span>
+              <a
+                href="#"
+                className={classes.menuLink}
+                rel="noopener noreferrer"
+              >
+                {t('home')}
+              </a>
+              <a
+                href="#"
+                className={classes.menuLink}
+                rel="noopener noreferrer"
+              >
+                {t('bPs')}
+              </a>
+              <a
+                href="#"
+                className={classes.menuLink}
+                rel="noopener noreferrer"
+              >
+                {t('exchanges')}
+              </a>
+              <a
+                href="#"
+                className={classes.menuLink}
+                rel="noopener noreferrer"
+              >
+                {t('eosHolder')}
+              </a>
+              <a
+                href="#"
+                className={classes.menuLink}
+                rel="noopener noreferrer"
+              >
+                {t('news')}
+              </a>
+            </div>
+
+            <div>
+              <span className={classes.socialTitle}>{t('social')}</span>
+              <a
+                href="#"
+                className={classes.menuLink}
+                rel="noopener noreferrer"
+              >
+                {t('blog')}
+              </a>
+              <a
+                href="#"
+                className={classes.menuLink}
+                rel="noopener noreferrer"
+              >
+                {t('twitter')}
+              </a>
+              <a
+                href="#"
+                className={classes.menuLink}
+                rel="noopener noreferrer"
+              >
+                {t('discord')}
+              </a>
+              <a
+                href="#"
+                className={classes.menuLink}
+                rel="noopener noreferrer"
+              >
+                {t('telegram')}
+              </a>
+            </div>
+
+            <div>
+              <span className={classes.socialTitle}>{t('assets')}</span>
+              <a
+                href="#"
+                className={classes.menuLink}
+                rel="noopener noreferrer"
+              >
+                {t('litepaper')}
+              </a>
+              <a
+                href="#"
+                className={classes.menuLink}
+                rel="noopener noreferrer"
+              >
+                {t('deck')}
+              </a>
+            </div>
+          </div>
         </div>
-        <span className={classes.titleFooter}>{t('copyRight')}</span>
       </div>
     </Container>
   )

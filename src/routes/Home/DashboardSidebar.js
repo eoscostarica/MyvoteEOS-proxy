@@ -9,6 +9,10 @@ import HouseIcon from '@mui/icons-material/Home'
 import NewspaperIcon from '@mui/icons-material/Newspaper'
 import FingerprintIcon from '@mui/icons-material/Fingerprint'
 import InputIcon from '@mui/icons-material/Input'
+import InfoIcon from '@mui/icons-material/Info'
+import GridViewIcon from '@mui/icons-material/GridView'
+import TrendingUpIcon from '@mui/icons-material/TrendingUp'
+import GroupIcon from '@mui/icons-material/Group'
 
 import CustomRouterLink from 'components/CustomRouterLink'
 
@@ -21,6 +25,26 @@ const PAGES = [
     title: 'home',
     href: '/',
     icon: <HouseIcon />
+  },
+  {
+    title: 'about',
+    href: '#about',
+    icon: <InfoIcon />
+  },
+  {
+    title: 'bPs',
+    href: '#bps',
+    icon: <GridViewIcon />
+  },
+  {
+    title: 'exchanges',
+    href: '#exchanges',
+    icon: <TrendingUpIcon />
+  },
+  {
+    title: 'eosHolder',
+    href: '#holders',
+    icon: <GroupIcon />
   },
   {
     title: 'news',
