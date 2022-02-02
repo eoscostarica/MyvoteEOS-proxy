@@ -49,7 +49,7 @@ const Main = ({
                 <MenuIcon />
               </IconButton>
               <RouterLink className={classes.sof} to="/">
-                Soul of EOS Proxy
+                No Vote Buy EOS Proxy
               </RouterLink>
             </div>
 

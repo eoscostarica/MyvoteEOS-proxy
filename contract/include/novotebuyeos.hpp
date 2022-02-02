@@ -5,7 +5,7 @@
  * @section DESCRIPTION
  *  Header file for the declaration of all functions
  *
- *  GitHub: https://github.com/eoscostarica/soul-of-EOS-proxy
+ *  GitHub: https://github.com/eoscostarica/no-vote-buy-EOS-proxy
  *
  */
 #include <eosio/eosio.hpp>
@@ -97,7 +97,7 @@ bool is_proxy(name name) {
 }
 
 
-CONTRACT souleosproxy : public contract
+CONTRACT novotebuyeos : public contract
 {
     public:
     using contract::contract;
