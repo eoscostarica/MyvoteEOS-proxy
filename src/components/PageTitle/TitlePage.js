@@ -13,7 +13,7 @@ TitlePage.propTypes = {
 }
 
 TitlePage.defaultProps = {
-  title: 'Soul of EOS proxy'
+  title: 'No Vote Buy EOS Proxy'
 }
 
 export default TitlePage

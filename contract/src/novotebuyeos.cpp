@@ -1,6 +1,6 @@
-#include <souleosproxy.hpp>
+#include <novotebuyeos.hpp>
 
-ACTION souleosproxy::addproxy(name proxy) {
+ACTION novotebuyeos::addproxy(name proxy) {
   check( is_proxy(proxy), "Only registered proxies can be included" );
   require_auth(_self);
 
@@ -17,7 +17,7 @@ ACTION souleosproxy::addproxy(name proxy) {
   }
 }
 
-ACTION souleosproxy::rmproxy(name proxy) {
+ACTION novotebuyeos::rmproxy(name proxy) {
   require_auth(_self);
 
   // Init the proxies table
@@ -33,7 +33,7 @@ ACTION souleosproxy::rmproxy(name proxy) {
   _proxy.erase( proxy_itr );
 }
 
-ACTION souleosproxy::addproducer(name producer) {
+ACTION novotebuyeos::addproducer(name producer) {
   check( is_blockproducer(producer), "Only registered block producers can be included" );
   require_auth(_self);
 
@@ -50,7 +50,7 @@ ACTION souleosproxy::addproducer(name producer) {
   }
 }
 
-ACTION souleosproxy::rmproducer(name producer) {
+ACTION novotebuyeos::rmproducer(name producer) {
   require_auth(_self);
 
   // Init the producer table
@@ -65,7 +65,7 @@ ACTION souleosproxy::rmproducer(name producer) {
   _producer.erase( producer_itr );
 }
 
-ACTION souleosproxy::clear() {
+ACTION novotebuyeos::clear() {
     require_auth( get_self() );
 
     proxy_table _proxy( get_self(), get_self().value );
@@ -87,4 +87,4 @@ ACTION souleosproxy::clear() {
     }
 }
 
-EOSIO_DISPATCH( souleosproxy, ( addproxy )( rmproxy )( addproducer )( rmproducer )( clear ) )
+EOSIO_DISPATCH( novotebuyeos, ( addproxy )( rmproxy )( addproducer )( rmproducer )( clear ) )

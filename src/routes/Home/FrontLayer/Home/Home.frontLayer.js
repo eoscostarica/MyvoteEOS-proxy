@@ -86,7 +86,7 @@ const HomeFrontLayer = () => {
       </div>
       <div id="about" className={classes.aboutSection}>
         <div className="secondaryBoxColor">
-          <span className="aboutTitle">{t('whatIsSoul')}</span>
+          <span className="aboutTitle">{t('whatIsNVB')}</span>
           <span className="aboutInfo">{t('homeText.text7')}</span>
         </div>
         <span className="aboutTitle">{t('why')}</span>
