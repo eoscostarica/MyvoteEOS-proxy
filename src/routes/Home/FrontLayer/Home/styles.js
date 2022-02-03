@@ -45,7 +45,7 @@ export default (theme) => ({
     lineHeight: '22px',
     textAlign: 'center',
     letterSpacing: '-0.03em',
-    color: '#999999',
+    color: '#FFFFFF',
     marginBottom: theme.spacing(2)
   },
   headerHashtag: {
@@ -153,6 +153,16 @@ export default (theme) => ({
       }
     }
   },
+  joinLabel: {
+    fontStyle: 'normal',
+    fontWeight: '600',
+    fontSize: '22px',
+    lineHeight: '28px',
+    textAlign: 'center',
+    letterSpacing: '0.01em',
+    color: '#EEEEEE',
+    marginBottom: theme.spacing(4)
+  },
   joinBox: {
     width: '100%',
     maxWidth: 1024,
@@ -239,8 +249,8 @@ export default (theme) => ({
       padding: theme.spacing(0, 1)
     },
     '& .secondaryBoxColor': {
-      padding: theme.spacing(2, 0),
-      margin: theme.spacing(2, 0),
+      padding: theme.spacing(24, 0),
+      margin: theme.spacing(1, 0),
       backgroundColor: '#1C1C24',
       display: 'flex',
       flexDirection: 'column',

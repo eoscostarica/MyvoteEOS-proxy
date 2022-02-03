@@ -31,9 +31,6 @@ const HomeFrontLayer = () => {
         />
         <span className={classes.headerHashtag}>{t('noVoteBuy')}</span>
         <span className={classes.headerMessage}>{t('secondaryText')}</span>
-        <Button className={classes.headerDownloadBtn}>
-          {t('downloadButton')}
-        </Button>
         <div className={classes.headerOptionsBtns}>
           <div className="boxGroup">
             <span className={clsx('textLabel', classes.marginExtra)}>
@@ -73,6 +70,7 @@ const HomeFrontLayer = () => {
             <span className="infoLabel"> {t('homeText.text6')}</span>
           </div>
         </div>
+        <div className={classes.joinLabel}> {t('homeText.joinLabel')}</div>
         <div className={classes.joinBox}>
           <TextField
             className="textField"
@@ -85,24 +83,6 @@ const HomeFrontLayer = () => {
         </div>
       </div>
       <div id="about" className={classes.aboutSection}>
-        <div className="secondaryBoxColor">
-          <span className="aboutTitle">{t('whatIsNVB')}</span>
-          <span className="aboutInfo">{t('homeText.text7')}</span>
-        </div>
-        <span className="aboutTitle">{t('why')}</span>
-        <span className={clsx('infoLabel', classes.extraMarginBttom)}>
-          {t('homeText.text8')}
-        </span>
-        <span className={clsx('infoLabel', classes.extraMarginBttom)}>
-          {t('homeText.text9')}
-        </span>
-        <span className={clsx('infoLabel', classes.extraMarginBttom)}>
-          {t('homeText.text10')}
-        </span>
-        <span className={clsx('infoLabel', classes.extraMarginBttom)}>
-          {t('homeText.text11')}
-        </span>
-
         <div className="secondaryBoxColor">
           <span className="aboutTitle">{t('noVoteProxy')}</span>
           <span className="infoLabel">{t('homeText.text12')}</span>
