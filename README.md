@@ -1,4 +1,4 @@
-# No Vote Buy EOS Proxy Website
+# NovotebuyEOS Proxy Website
 
 <p align="center">
 	<a href="novotebuyeos.com">
