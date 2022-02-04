@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@mui/styles'
 import { useTranslation } from 'react-i18next'
 import clsx from 'clsx'
@@ -6,7 +6,7 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
 import TitlePage from 'components/PageTitle'
-import { mockBps, BPSArray, membersArray, partnersArray } from 'utils/mockData'
+import { mockBps, membersArray, partnersArray } from 'utils/mockData'
 import { useSharedState } from 'context/state.context'
 
 import { novotebuyeosUtil, axiosUtil } from '../../../../utils'
@@ -19,30 +19,34 @@ const HomeFrontLayer = () => {
   const classes = useStyles()
   const { t } = useTranslation('homePage')
   const [state] = useSharedState()
-  // const getBps = useImperativeQuery(GET_REFERRAL_BY_INVITEE)
+  const [bpsData, setBpsData] = useState([])
 
   useEffect(() => {
-    console.log('USER', state)
+    console.log(state)
   }, [state.user])
 
   useEffect(() => {
     const loadBps = async () => {
       const bpNames = await novotebuyeosUtil.getBps()
-      const bps = await Promise.resolve(
-        bpNames.reduce(async (previous, current) => {
-          const resolvedPrevious = await Promise.resolve(previous)
-          try {
-            const bpInfo = await novotebuyeosUtil.getBpInfo(current)
-            const bpjson = await axiosUtil.get(`${bpInfo.url}/bp.json`)
+      const bps = (
+        await Promise.resolve(
+          bpNames.reduce(async (previous, current) => {
+            const resolvedPrevious = await Promise.resolve(previous)
+            try {
+              const bpInfo = await novotebuyeosUtil.getBpInfo(current)
+              const bpjson = await axiosUtil.get(`${bpInfo.url}/bp.json`)
+              console.log('URL', `${bpInfo.url}/bp.json`)
 
-            return [...resolvedPrevious, bpjson]
-          } catch (err) {
-            console.log(err)
-            return resolvedPrevious
-          }
-        }, [])
-      )
-      console.log('BPS', bps)
+              return [...resolvedPrevious, bpjson]
+            } catch (err) {
+              console.log(err)
+              return resolvedPrevious
+            }
+          }, [])
+        )
+      ).map(({ data }) => data)
+
+      setBpsData(bps)
     }
 
     try {
@@ -160,9 +164,12 @@ const HomeFrontLayer = () => {
         </span>
         {/* remove this map when add BE integration */}
         <div className={classes.bpsBox}>
-          AAAA
-          {BPSArray.map((i, index) => (
-            <div key={`${i}-${index}`} className="boxExampleBps" />
+          {bpsData.map(({ org: { branding } }, index) => (
+            <img
+              key={`${index}`}
+              src={branding.logo_256}
+              className="boxExampleBps"
+            />
           ))}
         </div>
       </div>
