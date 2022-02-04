@@ -160,9 +160,8 @@ const HomeFrontLayer = () => {
         </span>
         <div className={classes.bpsBox}>
           {bpsData.map(({ org: { branding, website } }, index) => (
-            <a href={website}>
+            <a key={`img-${index}`} href={website}>
               <img
-                key={`${index}`}
                 src={branding.logo_256}
                 className="boxExampleBps"
                 alt="BP logo"
