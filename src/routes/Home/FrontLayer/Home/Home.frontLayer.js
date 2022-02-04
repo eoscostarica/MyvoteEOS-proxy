@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { makeStyles } from '@mui/styles'
 import { useTranslation } from 'react-i18next'
 import clsx from 'clsx'
@@ -9,6 +9,8 @@ import TitlePage from 'components/PageTitle'
 import { mockBps, BPSArray, membersArray, partnersArray } from 'utils/mockData'
 import { useSharedState } from 'context/state.context'
 
+import { novotebuyeosUtil, axiosUtil } from '../../../../utils'
+
 import styles from './styles'
 
 const useStyles = makeStyles(styles)
@@ -17,8 +19,38 @@ const HomeFrontLayer = () => {
   const classes = useStyles()
   const { t } = useTranslation('homePage')
   const [state] = useSharedState()
+  // const getBps = useImperativeQuery(GET_REFERRAL_BY_INVITEE)
 
-  console.log({ state })
+  useEffect(() => {
+    console.log('USER', state)
+  }, [state.user])
+
+  useEffect(() => {
+    const loadBps = async () => {
+      const bpNames = await novotebuyeosUtil.getBps()
+      const bps = await Promise.resolve(
+        bpNames.reduce(async (previous, current) => {
+          const resolvedPrevious = await Promise.resolve(previous)
+          try {
+            const bpInfo = await novotebuyeosUtil.getBpInfo(current)
+            const bpjson = await axiosUtil.get(`${bpInfo.url}/bp.json`)
+
+            return [...resolvedPrevious, bpjson]
+          } catch (err) {
+            console.log(err)
+            return resolvedPrevious
+          }
+        }, [])
+      )
+      console.log('BPS', bps)
+    }
+
+    try {
+      loadBps()
+    } catch (err) {
+      console.log(err)
+    }
+  }, [])
 
   return (
     <div className={classes.HomeFrontLayerRoot}>
@@ -128,6 +160,7 @@ const HomeFrontLayer = () => {
         </span>
         {/* remove this map when add BE integration */}
         <div className={classes.bpsBox}>
+          AAAA
           {BPSArray.map((i, index) => (
             <div key={`${i}-${index}`} className="boxExampleBps" />
           ))}
