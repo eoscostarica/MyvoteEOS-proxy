@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next'
 import clsx from 'clsx'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-
 import TitlePage from 'components/PageTitle'
 import { mockBps, membersArray, partnersArray } from 'utils/mockData'
 
