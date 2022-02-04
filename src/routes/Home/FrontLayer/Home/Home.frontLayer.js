@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@mui/styles'
 import { useTranslation } from 'react-i18next'
 import clsx from 'clsx'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
-
 import TitlePage from 'components/PageTitle'
-import { mockBps, BPSArray, membersArray, partnersArray } from 'utils/mockData'
-import { useSharedState } from 'context/state.context'
+import { mockBps, membersArray, partnersArray } from 'utils/mockData'
+
+import { novotebuyeosUtil, axiosUtil } from '../../../../utils'
 
 import styles from './styles'
 
@@ -16,9 +16,41 @@ const useStyles = makeStyles(styles)
 const HomeFrontLayer = () => {
   const classes = useStyles()
   const { t } = useTranslation('homePage')
-  const [state] = useSharedState()
+  const [bpsData, setBpsData] = useState([])
 
-  console.log({ state })
+  useEffect(() => {
+    const loadBps = async () => {
+      const bpNames = await novotebuyeosUtil.getBps()
+      const bps = (
+        await Promise.resolve(
+          bpNames.reduce(async (previous, current) => {
+            const resolvedPrevious = await Promise.resolve(previous)
+            try {
+              const bpInfo = await novotebuyeosUtil.getBpInfo(current)
+              const bpjson = await axiosUtil.get(
+                `${!bpInfo.url.includes('http') ? 'https://' : ''}${
+                  bpInfo.url
+                }/bp.json`
+              )
+
+              return [...resolvedPrevious, bpjson]
+            } catch (err) {
+              console.log(err)
+              return resolvedPrevious
+            }
+          }, [])
+        )
+      ).map(({ data }) => data)
+
+      setBpsData(bps)
+    }
+
+    try {
+      loadBps()
+    } catch (err) {
+      console.log(err)
+    }
+  }, [])
 
   return (
     <div className={classes.HomeFrontLayerRoot}>
@@ -126,10 +158,16 @@ const HomeFrontLayer = () => {
         >
           {t('joinTitle')}
         </span>
-        {/* remove this map when add BE integration */}
         <div className={classes.bpsBox}>
-          {BPSArray.map((i, index) => (
-            <div key={`${i}-${index}`} className="boxExampleBps" />
+          {bpsData.map(({ org: { branding, website } }, index) => (
+            <a href={website}>
+              <img
+                key={`${index}`}
+                src={branding.logo_256}
+                className="boxExampleBps"
+                alt="BP logo"
+              />
+            </a>
           ))}
         </div>
       </div>

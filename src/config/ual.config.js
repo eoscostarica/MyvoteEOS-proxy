@@ -14,9 +14,9 @@ const network = {
   rpcEndpoints: [
     {
       blockchain: 'eos',
-      protocol: process.env.REACT_APP_EOS_API_PROTOCOL || 'https',
-      host: process.env.REACT_APP_EOS_API_HOST || 'jungle.eosio.cr',
-      port: parseInt(process.env.REACT_APP_EOS_API_PORT || '443')
+      protocol: process.env.REACT_APP_UAL_API_PROTOCOL || 'https',
+      host: process.env.REACT_APP_UAL_API_HOST || 'jungle.eosio.cr',
+      port: parseInt(process.env.REACT_APP_UAL_API_PORT || '443')
     }
   ]
 }
