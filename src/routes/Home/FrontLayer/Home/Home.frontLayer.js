@@ -7,7 +7,6 @@ import TextField from '@mui/material/TextField'
 
 import TitlePage from 'components/PageTitle'
 import { mockBps, membersArray, partnersArray } from 'utils/mockData'
-import { useSharedState } from 'context/state.context'
 
 import { novotebuyeosUtil, axiosUtil } from '../../../../utils'
 
@@ -18,12 +17,7 @@ const useStyles = makeStyles(styles)
 const HomeFrontLayer = () => {
   const classes = useStyles()
   const { t } = useTranslation('homePage')
-  const [state] = useSharedState()
   const [bpsData, setBpsData] = useState([])
-
-  useEffect(() => {
-    console.log(state)
-  }, [state.user])
 
   useEffect(() => {
     const loadBps = async () => {
@@ -165,14 +159,16 @@ const HomeFrontLayer = () => {
         >
           {t('joinTitle')}
         </span>
-        {/* remove this map when add BE integration */}
         <div className={classes.bpsBox}>
-          {bpsData.map(({ org: { branding } }, index) => (
-            <img
-              key={`${index}`}
-              src={branding.logo_256}
-              className="boxExampleBps"
-            />
+          {bpsData.map(({ org: { branding, website } }, index) => (
+            <a href={website}>
+              <img
+                key={`${index}`}
+                src={branding.logo_256}
+                className="boxExampleBps"
+                alt="BP logo"
+              />
+            </a>
           ))}
         </div>
       </div>
