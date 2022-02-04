@@ -34,8 +34,11 @@ const HomeFrontLayer = () => {
             const resolvedPrevious = await Promise.resolve(previous)
             try {
               const bpInfo = await novotebuyeosUtil.getBpInfo(current)
-              const bpjson = await axiosUtil.get(`${bpInfo.url}/bp.json`)
-              console.log('URL', `${bpInfo.url}/bp.json`)
+              const bpjson = await axiosUtil.get(
+                `${!bpInfo.url.includes('http') ? 'https://' : ''}${
+                  bpInfo.url
+                }/bp.json`
+              )
 
               return [...resolvedPrevious, bpjson]
             } catch (err) {

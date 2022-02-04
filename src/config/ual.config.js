@@ -1,10 +1,10 @@
-import { Scatter } from 'ual-scatter'
-import { Ledger } from 'ual-ledger'
-import { Lynx } from 'ual-lynx'
-import { TokenPocket } from 'ual-token-pocket'
-import { MeetOne } from 'ual-meetone'
+// import { Scatter } from 'ual-scatter'
+// import { Ledger } from 'ual-ledger'
+// import { Lynx } from 'ual-lynx'
+// import { TokenPocket } from 'ual-token-pocket'
+// import { MeetOne } from 'ual-meetone'
 import { Anchor } from 'ual-anchor'
-import { Wombat } from 'ual-wombat'
+// import { Wombat } from 'ual-wombat'
 
 const appName = process.env.REACT_APP_EOS_APP_NAME || 'no-vote-buy'
 const network = {
@@ -14,19 +14,19 @@ const network = {
   rpcEndpoints: [
     {
       blockchain: 'eos',
-      protocol: process.env.REACT_APP_EOS_API_PROTOCOL || 'https',
-      host: process.env.REACT_APP_EOS_API_HOST || 'jungle.eosio.cr',
-      port: parseInt(process.env.REACT_APP_EOS_API_PORT || '443')
+      protocol: process.env.REACT_APP_UAL_API_PROTOCOL || 'https',
+      host: process.env.REACT_APP_UAL_API_HOST || 'jungle.eosio.cr',
+      port: parseInt(process.env.REACT_APP_UAL_API_PORT || '443')
     }
   ]
 }
 const authenticators = [
-  new Lynx([network]),
-  new Ledger([network]),
-  new Scatter([network], { appName }),
-  new Wombat([network], { appName }),
-  new TokenPocket([network]),
-  new MeetOne([network.chainId]),
+  // new Lynx([network]),
+  // new Ledger([network]),
+  // new Scatter([network], { appName }),
+  // new Wombat([network], { appName }),
+  // new TokenPocket([network]),
+  // new MeetOne([network.chainId]),
   new Anchor([network], { appName })
 ]
 
