@@ -73,7 +73,7 @@ const Main = ({
               <Link
                 className={classes.menuLink}
                 underline="false"
-                href="#exchages"
+                href="#exchanges"
               >
                 {t('exchanges')}
               </Link>

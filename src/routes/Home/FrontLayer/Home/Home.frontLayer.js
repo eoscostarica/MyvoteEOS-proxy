@@ -228,7 +228,7 @@ const HomeFrontLayer = () => {
         </div>
       </div>
 
-      <div id="exchages" className={classes.exchageSection}>
+      <div id="exchanges" className={classes.exchageSection}>
         <span
           className={clsx(classes.generalTitle, classes.secondaryColorTitle)}
         >
