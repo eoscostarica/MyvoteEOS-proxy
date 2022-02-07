@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 import clsx from 'clsx'
 import { Link as RouterLink } from 'react-router-dom'
+import Link from '@mui/material/Link'
 import { makeStyles, useTheme } from '@mui/styles'
 import AppBar from '@mui/material/AppBar'
 import Container from '@mui/material/Container'
@@ -11,6 +12,8 @@ import Toolbar from '@mui/material/Toolbar'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
+
+import Message from '../../components/Message'
 
 import styles from './styles'
 
@@ -57,18 +60,30 @@ const Main = ({
               <RouterLink className={classes.menuLink} to="/">
                 {t('home')}
               </RouterLink>
-              <RouterLink className={classes.menuLink} to="#about">
+              <Link
+                className={classes.menuLink}
+                underline="false"
+                href="#about"
+              >
                 {t('about')}
-              </RouterLink>
-              <RouterLink className={classes.menuLink} to="#bps">
+              </Link>
+              <Link className={classes.menuLink} underline="false" href="#bps">
                 {t('bPs')}
-              </RouterLink>
-              <RouterLink className={classes.menuLink} to="#exchages">
+              </Link>
+              <Link
+                className={classes.menuLink}
+                underline="false"
+                href="#exchanges"
+              >
                 {t('exchanges')}
-              </RouterLink>
-              <RouterLink className={classes.menuLink} to="#holders">
+              </Link>
+              <Link
+                className={classes.menuLink}
+                underline="false"
+                href="#holders"
+              >
                 {t('eosHolder')}
-              </RouterLink>
+              </Link>
               <RouterLink className={classes.menuLink} to="/news">
                 {t('news')}
               </RouterLink>
@@ -76,6 +91,7 @@ const Main = ({
             <div>{topbarContent}</div>
           </Toolbar>
         </AppBar>
+        <Message />
         <Drawer
           anchor="left"
           classes={{ paper: classes.drawerPaper }}

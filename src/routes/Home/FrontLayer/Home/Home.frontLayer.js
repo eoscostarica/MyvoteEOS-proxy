@@ -7,7 +7,9 @@ import TextField from '@mui/material/TextField'
 import TitlePage from 'components/PageTitle'
 import { mockBps, membersArray, partnersArray } from 'utils/mockData'
 
-import { novotebuyeosUtil, axiosUtil } from '../../../../utils'
+import { novotebuyeosUtil, axiosUtil, charactersUtil } from '../../../../utils'
+import { useSharedState } from '../../../../context/state.context'
+import { mainConfig } from '../../../../config'
 
 import styles from './styles'
 
@@ -17,6 +19,57 @@ const HomeFrontLayer = () => {
   const classes = useStyles()
   const { t } = useTranslation('homePage')
   const [bpsData, setBpsData] = useState([])
+  const [state, { showMessage }] = useSharedState()
+
+  const delegateVote = async () => {
+    if (!state.user) return
+
+    const transaction = {
+      actions: [
+        {
+          account: 'eosio',
+          name: 'voteproducer',
+          authorization: [
+            {
+              actor: state.user?.accountName,
+              permission: 'active'
+            }
+          ],
+          data: {
+            voter: state.user?.accountName,
+            proxy: mainConfig.novotebuyeosAccount,
+            producers: []
+          }
+        }
+      ]
+    }
+
+    try {
+      const { transactionId } = await state.ual.activeUser.signTransaction(
+        transaction,
+        {
+          broadcast: true
+        }
+      )
+
+      showMessage({
+        type: 'success',
+        content: (
+          <a
+            href={`${mainConfig.blockExplorer}/transaction/${transactionId}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {`${t('success')} ${charactersUtil.getLastCharacters(
+              transactionId
+            )}`}
+          </a>
+        )
+      })
+    } catch (error) {
+      showMessage({ type: 'error', content: error })
+    }
+  }
 
   useEffect(() => {
     const loadBps = async () => {
@@ -82,7 +135,11 @@ const HomeFrontLayer = () => {
             <span className={clsx('textLabel', classes.marginExtra)}>
               {t('homeText.text3')}
             </span>
-            <Button className={classes.optionBtn} variant="contained">
+            <Button
+              className={classes.optionBtn}
+              variant="contained"
+              onClick={delegateVote}
+            >
               {t('delegateVote')}
             </Button>
           </div>
@@ -90,7 +147,7 @@ const HomeFrontLayer = () => {
         <span className={classes.titleHeader}>{t('joinMovement')}</span>
         <div className={classes.headerOptionsInfo}>
           <div className="boxGroup">
-            <span className="coloredLabel">17</span>
+            <span className="coloredLabel">{bpsData.length}</span>
             <span className="infoLabel"> {t('homeText.text4')}</span>
           </div>
           <div className="boxGroup">
@@ -152,7 +209,7 @@ const HomeFrontLayer = () => {
         </Button>
       </div>
 
-      <div className={classes.bpsSection}>
+      <div id="bps" className={classes.bpsSection}>
         <span
           className={clsx(classes.generalTitle, classes.secondaryColorTitle)}
         >
@@ -171,7 +228,7 @@ const HomeFrontLayer = () => {
         </div>
       </div>
 
-      <div className={classes.exchageSection}>
+      <div id="exchanges" className={classes.exchageSection}>
         <span
           className={clsx(classes.generalTitle, classes.secondaryColorTitle)}
         >
@@ -198,7 +255,7 @@ const HomeFrontLayer = () => {
           ))}
         </div>
       </div>
-      <div className={classes.membersSection}>
+      <div id="holders" className={classes.membersSection}>
         <span className={classes.generalTitle}>{t('participating')}</span>
         {/* remove this map when add BE integration */}
         <div className={classes.bpsBox}>
@@ -211,7 +268,11 @@ const HomeFrontLayer = () => {
             </div>
           ))}
         </div>
-        <Button className={classes.optionBtn} variant="contained">
+        <Button
+          className={classes.optionBtn}
+          variant="contained"
+          onClick={delegateVote}
+        >
           {t('delegateVote')}
         </Button>
       </div>

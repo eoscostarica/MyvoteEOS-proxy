@@ -354,7 +354,6 @@ export default (theme) => ({
     '& .boxExampleBps': {
       background: 'rgba(238, 238, 238, 0.6)',
       width: 107,
-      height: 88,
       margin: theme.spacing(1)
     }
   },
