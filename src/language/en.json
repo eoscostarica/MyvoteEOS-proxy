@@ -22,7 +22,8 @@
     "deck": "Intro Deck",
     "quicklinks": "Quicklinks",
     "social": "Social",
-    "assets": "Assets"
+    "assets": "Assets",
+    "success": "success"
   },
   "homePage": {
     "htmlTitle": "NovotebuyEOS Proxy",

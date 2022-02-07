@@ -143,10 +143,10 @@ export default (theme) => ({
     fontSize: '16px',
     lineHeight: '20px',
     letterSpacing: '-0.03em',
-    color: '#EEEEEE',
+    color: '#EEEEEE !important',
     textTransform: 'uppercase',
     textDecoration: 'none',
-    margin: '0 8px'
+    padding: theme.spacing(0, 1)
   },
   footerBox: {
     display: 'flex',
