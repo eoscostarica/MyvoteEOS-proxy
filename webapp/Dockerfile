@@ -27,9 +27,7 @@ ENV REACT_APP_HASURA_URL $react_app_hasura_url
 ENV TOOL_NODE_FLAGS --max_old_space_size=4096
 ENV REACT_APP_API_ENTRYPOINT $react_app_api_entrypoint
 
-RUN mkdir -p $WORK_DIR
-
-WORKDIR $WORK_DIR
+WORKDIR /usr/src/app
 
 COPY package.json .
 
