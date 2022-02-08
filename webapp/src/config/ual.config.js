@@ -6,10 +6,10 @@ import { MeetOne } from 'ual-meetone'
 import { Anchor } from 'ual-anchor'
 import { Wombat } from 'ual-wombat'
 
-const appName = process.env.REACT_APP_EOS_APP_NAME || 'no-vote-buy'
+const appName = process.env.REACT_APP_UAL_APP_NAME || 'no-vote-buy'
 const network = {
   chainId:
-    process.env.REACT_APP_EOS_CHAIN_ID ||
+    process.env.REACT_APP_UAL_CHAIN_ID ||
     '2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840',
   rpcEndpoints: [
     {
