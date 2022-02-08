@@ -3,6 +3,7 @@
   "version": "1.0",
   "private": true,
   "dependencies": {
+    "env-cmd": "^10.1.0",
     "@apollo/client": "^3.5.8",
     "@apollo/react-hooks": "^4.0.0",
     "@date-io/date-fns": "^2.11.0",
@@ -60,7 +61,8 @@
     "eject": "react-scripts eject",
     "format": "precise-commits --check-only",
     "lint": "eslint --ext .jsx,.js src",
-    "test": "react-app-rewired test"
+    "test": "react-app-rewired test",
+    "start:local": "env-cmd -f ../.env react-app-rewired start"
   },
   "browserslist": [
     ">0.2%",

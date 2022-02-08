@@ -1,21 +1,12 @@
 
 # See https://help.github.com/ignore-files/ for more about ignoring files.
-*.key
-# dependencies
-/node_modules
-
-# testing
-/coverage
-
-# production
-/build
-/contract/build
-
-# misc
 .env*
 !.env.example
-
-npm-debug.log*
+node_modules
+tmp/
+*.key
+*.pass
+build_k8s
 
 # yarn
 .yarn/*
@@ -25,3 +16,4 @@ npm-debug.log*
 !.yarn/plugins
 !*/.yarn/plugins
 .pnp.*
+.yarnrc.yml
