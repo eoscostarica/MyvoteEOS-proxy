@@ -13,10 +13,6 @@ ARG react_app_ual_api_port
 ARG react_app_ual_chain_id
 ARG react_app_hasura_url
 
-ENV WORK_DIR /usr/src/app
-ENV PATH $WORK_DIR/node_modules/.bin:$PATH
-ENV NODE_ENV production
-ENV NODE_PATH ./src
 ENV REACT_APP_TAG $react_app_tag
 ENV REACT_APP_NAME $react_app_name
 ENV REACT_APP_TITLE $react_app_title
@@ -32,11 +28,20 @@ ENV TOOL_NODE_FLAGS --max_old_space_size=4096
 ENV REACT_APP_API_ENTRYPOINT $react_app_api_entrypoint
 
 RUN mkdir -p $WORK_DIR
+
 WORKDIR $WORK_DIR
 
-COPY ./ $WORK_DIR
+COPY package.json .
 
-RUN yarn install && yarn build
+COPY yarn*.lock .
+
+RUN yarn --frozen-lockfile
+
+COPY . .
+
+ENV GENERATE_SOURCEMAP false
+
+RUN yarn build
 
 FROM nginx:1.17.10-alpine as run-stage
 
