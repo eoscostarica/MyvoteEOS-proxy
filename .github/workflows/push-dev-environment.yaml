@@ -54,7 +54,7 @@ jobs:
             build-kubernetes
         env:
           # general
-          NAMESPACE: boilerplate
+          NAMESPACE: novotebuyeos
           INGRESS_HOST: novotebuyeos.eosio.cr
           INGRESS_GRAPHQL_HOST: graphql-novotebuyeos.eosio.cr
           # Postgres
@@ -83,7 +83,7 @@ jobs:
         uses: steebchen/kubectl@v1.1.0
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-          NAMESPACE: boilerplate
+          NAMESPACE: novotebuyeos
           K8S_BUILD_DIR: build_k8s
         with:
           args: version && make deploy-kubernetes
