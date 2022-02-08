@@ -3,7 +3,6 @@
   "version": "1.0",
   "private": true,
   "dependencies": {
-    "env-cmd": "^10.1.0",
     "@apollo/client": "^3.5.8",
     "@apollo/react-hooks": "^4.0.0",
     "@date-io/date-fns": "^2.11.0",
@@ -28,6 +27,7 @@
     "clsx": "^1.1.0",
     "core-js": "^3.18.3",
     "date-fns": "^2.25.0",
+    "env-cmd": "^10.1.0",
     "graphql": "^15.3.0",
     "graphql-tag": "^2.10.4",
     "https": "^1.0.0",

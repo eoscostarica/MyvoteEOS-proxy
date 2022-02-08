@@ -13,4 +13,4 @@ EXPOSE $HASURA_PORT
 
 CMD graphql-engine \
   serve \
-  --database-url $HASURA_GRAPHQL_DATABASE_URL 
+  --database-url $HASURA_GRAPHQL_DATABASE_URL
