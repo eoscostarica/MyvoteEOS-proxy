@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import clsx from 'clsx'
 import { useTranslation } from 'react-i18next'
+import { useHistory } from 'react-router-dom'
 import { makeStyles } from '@mui/styles'
+import Link from '@mui/material/Link'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import Button from '@mui/material/Button'
@@ -23,32 +26,38 @@ const useStyles = makeStyles(styles)
 const PAGES = [
   {
     title: 'home',
-    href: '/',
+    href: '/home',
+    useLink: false,
     icon: <HouseIcon />
   },
   {
     title: 'about',
     href: '#about',
+    useLink: true,
     icon: <InfoIcon />
   },
   {
     title: 'bPs',
     href: '#bps',
+    useLink: true,
     icon: <GridViewIcon />
   },
   {
     title: 'exchanges',
     href: '#exchanges',
+    useLink: true,
     icon: <TrendingUpIcon />
   },
   {
     title: 'eosHolder',
     href: '#holders',
+    useLink: true,
     icon: <GroupIcon />
   },
   {
     title: 'news',
     href: '/news',
+    useLink: false,
     icon: <NewspaperIcon />
   }
 ]
@@ -59,24 +68,55 @@ const DashboardSidebarContent = ({
   onLogin,
   setOpenSidebar
 }) => {
+  const history = useHistory()
   const classes = useStyles()
   const { t } = useTranslation('translations')
+  const [route, setRoute] = useState({ hash: null, path: '/' })
+
+  useEffect(() => {
+    setRoute({ hash: history.location.hash, path: history.location.pathname })
+
+    return history.listen((location) => {
+      setRoute({ hash: location.hash, path: location.pathname })
+    })
+  }, [history])
 
   return (
     <>
       <List className={classes.nav}>
         {PAGES.map((page) => (
           <ListItem className={classes.item} disableGutters key={page.title}>
-            <Button
-              activeClassName={classes.active}
-              className={classes.button}
-              component={CustomRouterLink}
-              to={page.href}
-              onClick={() => setOpenSidebar(false)}
-            >
-              <div className={classes.icon}>{page.icon}</div>
-              {t(page.title)}
-            </Button>
+            {page.useLink ? (
+              <Link
+                className={classes.button}
+                underline="none"
+                href={page.href}
+                onClick={() => setOpenSidebar(false)}
+              >
+                <div
+                  className={clsx(classes.noLinkBox, {
+                    [classes.active]: page.href === route.hash
+                  })}
+                >
+                  <div className={classes.icon}>{page.icon}</div>
+                  {t(page.title)}
+                </div>
+              </Link>
+            ) : (
+              <Button
+                activeClassName={clsx({
+                  [classes.active]:
+                    route.path === page.href && !route.hash?.length
+                })}
+                className={classes.button}
+                component={CustomRouterLink}
+                to={page.href}
+                onClick={() => setOpenSidebar(false)}
+              >
+                <div className={classes.icon}>{page.icon}</div>
+                {t(page.title)}
+              </Button>
+            )}
           </ListItem>
         ))}
         {!user && (

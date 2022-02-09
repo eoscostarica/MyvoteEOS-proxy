@@ -52,13 +52,16 @@ export default (theme) => ({
     margin: theme.spacing(1, 0),
     fontStyle: 'normal',
     fontWeight: 'bold',
-    fontSize: '70px',
+    fontSize: 55,
     lineHeight: '110px',
     textAlign: 'center',
     letterSpacing: '-0.03em',
     background: 'linear-gradient(277.32deg, #43378F 2.34%, #F53844 100%)',
     '-webkit-background-clip': 'text',
-    '-webkit-text-fill-color': 'transparent'
+    '-webkit-text-fill-color': 'transparent',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: 70
+    }
   },
   headerDownloadBtn: {
     width: '214px',
@@ -225,7 +228,7 @@ export default (theme) => ({
     '& .aboutTitle': {
       fontStyle: 'normal',
       fontWeight: 'bold',
-      fontSize: '55px',
+      fontSize: '50px',
       lineHeight: '73px',
       textAlign: 'center',
       letterSpacing: '0.01em',

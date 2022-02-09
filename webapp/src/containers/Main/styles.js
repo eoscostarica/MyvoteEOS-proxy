@@ -14,6 +14,9 @@ export default (theme) => ({
     justifyContent: 'center !important',
     alignItems: 'center'
   },
+  active: {
+    color: '#F53844 !important'
+  },
   logo: {
     height: 36
   },
@@ -31,7 +34,6 @@ export default (theme) => ({
     }
   },
   drawerToggle: {
-    marginLeft: -12,
     [theme.breakpoints.up('md')]: {
       display: 'none !important'
     }
@@ -101,7 +103,7 @@ export default (theme) => ({
   socialTitle: {
     fontStyle: 'normal',
     fontWeight: 'bold',
-    fontSize: '30px',
+    fontSize: 24,
     textAlign: 'center',
     lineHeight: '73px',
     letterSpacing: '0.03em',
@@ -114,7 +116,10 @@ export default (theme) => ({
     lineHeight: '22px',
     letterSpacing: '-0.03em',
     color: '#FFFFFF',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    background: 'linear-gradient(277.32deg, #43378F 2.34%, #F53844 100%)',
+    '-webkit-background-clip': 'text',
+    '-webkit-text-fill-color': 'transparent'
   },
   toolbar: {
     maxWidth: 1024,
@@ -143,10 +148,12 @@ export default (theme) => ({
     fontSize: '16px',
     lineHeight: '20px',
     letterSpacing: '-0.03em',
-    color: '#EEEEEE !important',
     textTransform: 'uppercase',
     textDecoration: 'none',
     padding: theme.spacing(0, 1)
+  },
+  noActive: {
+    color: '#EEEEEE !important'
   },
   footerBox: {
     display: 'flex',
@@ -154,5 +161,10 @@ export default (theme) => ({
     alignItems: 'center',
     width: '100%',
     backgroundColor: '#1C1C24'
+  },
+  menuLinkFooter: {
+    textTransform: 'capitalize !important',
+    fontSize: '20px !important',
+    color: '#EEEEEE !important'
   }
 })
