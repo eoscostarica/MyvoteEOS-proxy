@@ -1,5 +1,3 @@
-const eosioNewAccountUpdaters = require('./eosio-newaccount.updater')
+const eosioVoteProducerUpdater = require('./eosio-voteproducer.updater')
 
-module.exports = [
-  eosioNewAccountUpdaters
-]
+module.exports = [eosioVoteProducerUpdater]
