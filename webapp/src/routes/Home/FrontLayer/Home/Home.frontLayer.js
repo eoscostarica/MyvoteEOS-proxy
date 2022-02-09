@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@mui/styles'
 import { useTranslation } from 'react-i18next'
+import { useQuery } from '@apollo/client'
 import clsx from 'clsx'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
@@ -10,6 +11,7 @@ import { mockBps, membersArray, partnersArray } from 'utils/mockData'
 import { novotebuyeosUtil, axiosUtil, charactersUtil } from '../../../../utils'
 import { useSharedState } from '../../../../context/state.context'
 import { mainConfig } from '../../../../config'
+import { COUNT_VOTES_QUERY } from '../../../../gql'
 
 import styles from './styles'
 
@@ -18,8 +20,12 @@ const useStyles = makeStyles(styles)
 const HomeFrontLayer = () => {
   const classes = useStyles()
   const { t } = useTranslation('homePage')
+  const { data: dataCountVotes } = useQuery(COUNT_VOTES_QUERY, {
+    fetchPolicy: 'network-only'
+  })
   const [bpsData, setBpsData] = useState([])
   const [state, { showMessage }] = useSharedState()
+  const [totalProxyVotes, setTotalProxyVotes] = useState(0)
 
   const delegateVote = async () => {
     if (!state.user) return
@@ -70,6 +76,18 @@ const HomeFrontLayer = () => {
       showMessage({ type: 'error', content: error })
     }
   }
+
+  useEffect(() => {
+    if (!dataCountVotes) return
+
+    const {
+      proxy_votes_aggregate: {
+        aggregate: { count }
+      }
+    } = dataCountVotes
+
+    setTotalProxyVotes(count)
+  }, [dataCountVotes])
 
   useEffect(() => {
     const loadBps = async () => {
@@ -155,7 +173,7 @@ const HomeFrontLayer = () => {
             <span className="infoLabel"> {t('homeText.text5')}</span>
           </div>
           <div className="boxGroup">
-            <span className="coloredLabel">152</span>
+            <span className="coloredLabel">{totalProxyVotes}</span>
             <span className="infoLabel"> {t('homeText.text6')}</span>
           </div>
         </div>

@@ -25,6 +25,7 @@
     "graphql-request": "^3.7.0",
     "http-status-codes": "^2.2.0",
     "joi": "^17.5.0",
+    "moment": "^2.29.1",
     "node-fetch": "^3.2.0"
   },
   "devDependencies": {

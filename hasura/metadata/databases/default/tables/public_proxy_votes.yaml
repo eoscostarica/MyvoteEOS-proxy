@@ -1,0 +1,3 @@
+table:
+  name: proxy_votes
+  schema: public
