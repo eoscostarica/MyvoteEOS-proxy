@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 import clsx from 'clsx'
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink, useHistory } from 'react-router-dom'
 import Link from '@mui/material/Link'
 import { makeStyles, useTheme } from '@mui/styles'
 import AppBar from '@mui/material/AppBar'
@@ -28,10 +28,20 @@ const Main = ({
 }) => {
   const classes = useStyles()
   const theme = useTheme()
+  const history = useHistory()
   const { t } = useTranslation('translations')
+  const [route, setRoute] = useState({ hash: null, path: '/' })
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true
   })
+
+  useEffect(() => {
+    setRoute({ hash: history.location.hash, path: history.location.pathname })
+
+    return history.listen((location) => {
+      setRoute({ hash: location.hash, path: location.pathname })
+    })
+  }, [history])
 
   return (
     <Container
@@ -51,40 +61,70 @@ const Main = ({
               >
                 <MenuIcon />
               </IconButton>
-              <RouterLink className={classes.sof} to="/">
-                NovotebuyEOS Proxy
+              <RouterLink className={classes.sof} to="/home">
+                {t('noVoteBuy')}
               </RouterLink>
             </div>
 
             <div className="menuDesktop">
-              <RouterLink className={classes.menuLink} to="/">
+              <RouterLink
+                className={clsx(classes.menuLink, {
+                  [classes.active]:
+                    route.path === '/home' && !route.hash?.length,
+                  [classes.noActive]:
+                    route.path !== '/home' || route.hash?.length
+                })}
+                to="/home"
+              >
                 {t('home')}
               </RouterLink>
               <Link
-                className={classes.menuLink}
-                underline="false"
+                className={clsx(classes.menuLink, {
+                  [classes.active]: route.hash === '#about',
+                  [classes.noActive]: route.hash !== '#about'
+                })}
+                underline="none"
                 href="#about"
               >
                 {t('about')}
               </Link>
-              <Link className={classes.menuLink} underline="false" href="#bps">
+              <Link
+                className={clsx(classes.menuLink, {
+                  [classes.active]: route.hash === '#bps',
+                  [classes.noActive]: route.hash !== '#bps'
+                })}
+                underline="none"
+                href="#bps"
+              >
                 {t('bPs')}
               </Link>
               <Link
-                className={classes.menuLink}
-                underline="false"
+                className={clsx(classes.menuLink, {
+                  [classes.active]: route.hash === '#exchanges',
+                  [classes.noActive]: route.hash !== '#exchanges'
+                })}
+                underline="none"
                 href="#exchanges"
               >
                 {t('exchanges')}
               </Link>
               <Link
-                className={classes.menuLink}
-                underline="false"
+                className={clsx(classes.menuLink, {
+                  [classes.active]: route.hash === '#holders',
+                  [classes.noActive]: route.hash !== '#holders'
+                })}
+                underline="none"
                 href="#holders"
               >
                 {t('eosHolder')}
               </Link>
-              <RouterLink className={classes.menuLink} to="/news">
+              <RouterLink
+                className={clsx(classes.menuLink, {
+                  [classes.active]: route.path === '/news',
+                  [classes.noActive]: route.path !== '/news'
+                })}
+                to="/news"
+              >
                 {t('news')}
               </RouterLink>
             </div>
@@ -116,69 +156,71 @@ const Main = ({
           <div className={classes.socialWrapper}>
             <div>
               <span className={classes.socialTitle}>{t('quicklinks')}</span>
-              <a
-                href="#"
-                className={classes.menuLink}
-                rel="noopener noreferrer"
+              <RouterLink
+                to="/home"
+                className={clsx(classes.menuLink, classes.menuLinkFooter)}
               >
                 {t('home')}
-              </a>
-              <a
-                href="#"
-                className={classes.menuLink}
-                rel="noopener noreferrer"
+              </RouterLink>
+              <Link
+                href="#bps"
+                underline="none"
+                className={clsx(classes.menuLink, classes.menuLinkFooter)}
               >
                 {t('bPs')}
-              </a>
-              <a
-                href="#"
-                className={classes.menuLink}
-                rel="noopener noreferrer"
+              </Link>
+              <Link
+                href="#exchanges"
+                underline="none"
+                className={clsx(classes.menuLink, classes.menuLinkFooter)}
               >
                 {t('exchanges')}
-              </a>
-              <a
-                href="#"
-                className={classes.menuLink}
-                rel="noopener noreferrer"
+              </Link>
+              <Link
+                href="#holders"
+                underline="none"
+                className={clsx(classes.menuLink, classes.menuLinkFooter)}
               >
                 {t('eosHolder')}
-              </a>
-              <a
-                href="#"
-                className={classes.menuLink}
-                rel="noopener noreferrer"
+              </Link>
+              <RouterLink
+                to="/news"
+                className={clsx(classes.menuLink, classes.menuLinkFooter)}
               >
                 {t('news')}
-              </a>
+              </RouterLink>
             </div>
 
             <div>
               <span className={classes.socialTitle}>{t('social')}</span>
               <a
-                href="#"
-                className={classes.menuLink}
+                href="https://medium.com/@NovotebuyEOS"
+                target="_blank"
+                className={clsx(classes.menuLink, classes.menuLinkFooter)}
                 rel="noopener noreferrer"
               >
                 {t('blog')}
               </a>
               <a
-                href="#"
-                className={classes.menuLink}
+                href="https://twitter.com/NovotebuyEOS"
+                target="_blank"
+                className={clsx(classes.menuLink, classes.menuLinkFooter)}
                 rel="noopener noreferrer"
               >
                 {t('twitter')}
               </a>
               <a
                 href="#"
-                className={classes.menuLink}
+                target="_blank"
+                className={clsx(classes.menuLink, classes.menuLinkFooter)}
                 rel="noopener noreferrer"
               >
                 {t('discord')}
               </a>
               <a
                 href="#"
-                className={classes.menuLink}
+                target="_blank"
+                className={clsx(classes.menuLink, classes.menuLinkFooter)}
                 rel="noopener noreferrer"
               >
                 {t('telegram')}
@@ -188,15 +230,17 @@ const Main = ({
             <div>
               <span className={classes.socialTitle}>{t('assets')}</span>
               <a
-                href="#"
-                className={classes.menuLink}
+                href="https://docs.google.com/document/d/1-dtaq09xMlxctpZ-1vvrBnFLkiLd4hXmozPvf7jsuqA/edit#"
+                target="_blank"
+                className={clsx(classes.menuLink, classes.menuLinkFooter)}
                 rel="noopener noreferrer"
               >
                 {t('litepaper')}
               </a>
               <a
                 href="#"
-                className={classes.menuLink}
+                target="_blank"
+                className={clsx(classes.menuLink, classes.menuLinkFooter)}
                 rel="noopener noreferrer"
               >
                 {t('deck')}

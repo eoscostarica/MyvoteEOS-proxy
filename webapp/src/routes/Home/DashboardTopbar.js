@@ -4,7 +4,6 @@ import { makeStyles } from '@mui/styles'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import IconButton from '@mui/material/IconButton'
 import Button from '@mui/material/Button'
-import { useTranslation } from 'react-i18next'
 import LogoutIcon from '@mui/icons-material/ExitToApp'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
@@ -17,7 +16,6 @@ const useStyles = makeStyles(styles)
 
 const DashboardTopbar = ({ user, onLogout, onLogin }) => {
   const classes = useStyles()
-  const { t } = useTranslation('translations')
 
   return (
     <Box className={classes.box}>
@@ -43,7 +41,7 @@ const DashboardTopbar = ({ user, onLogout, onLogin }) => {
           className={classes.loginBtn}
         >
           <Typography className={classes.sessionText} variant="subtitle1">
-            {t('login')}
+            login
           </Typography>
         </Button>
       )}

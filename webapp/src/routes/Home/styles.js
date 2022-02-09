@@ -3,6 +3,9 @@ export default (theme) => ({
   nav: {
     marginBottom: theme.spacing(2)
   },
+  noLinkBox: {
+    display: 'flex'
+  },
   divider: {
     margin: theme.spacing(2, 0)
   },
@@ -27,10 +30,10 @@ export default (theme) => ({
     marginRight: theme.spacing(1)
   },
   active: {
-    color: theme.palette.primary.main,
+    color: '#F53844 !important',
     fontWeight: theme.typography.fontWeightMedium,
     '& $icon': {
-      color: theme.palette.primary.main
+      color: '#F53844 !important'
     }
   },
   // top bar
