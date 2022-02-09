@@ -1,7 +1,5 @@
 const { hasuraUtil } = require('../utils')
 
-// const affiliateService = require('./affiliate.service')
-// const joinRequestService = require('./join-request.service')
 const hyperionService = require('./hyperion')
 
 const sleep = seconds => {
