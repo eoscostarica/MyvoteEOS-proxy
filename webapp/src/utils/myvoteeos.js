@@ -3,8 +3,8 @@ import { mainConfig } from '../config'
 
 const getBps = async () => {
   const { rows } = await eosApi.getTableRows({
-    code: mainConfig.novotebuyeosAccount,
-    scope: mainConfig.novotebuyeosAccount,
+    code: mainConfig.myvoteeosAccount,
+    scope: mainConfig.myvoteeosAccount,
     table: 'producer',
     json: true
   })
@@ -25,4 +25,4 @@ const getBpInfo = async (bp) => {
   return rows.length ? { owner: rows[0].owner, url: rows[0].url } : null
 }
 
-export const novotebuyeosUtil = { getBps, getBpInfo }
+export const myvoteeosUtil = { getBps, getBpInfo }

@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   postgres:
-    container_name: 'novotebuy-postgres'
+    container_name: 'myvoteeos-postgres'
     restart: always
     image: postgres:13.5-alpine
     ports:
@@ -13,7 +13,7 @@ services:
       POSTGRES_PASSWORD: '${POSTGRES_PASSWORD}'
       POSTGRES_DB: '${POSTGRES_DB}'
   hapi:
-    container_name: 'novotebuy-hapi'
+    container_name: 'myvoteeos-hapi'
     image: node:16.13.2-slim
     ports:
       - '9090:9090'
@@ -37,7 +37,7 @@ services:
       HAPI_HYPERION_API: '${HAPI_HYPERION_API}'
       HAPI_HYPERION_START_AT: '${HAPI_HYPERION_START_AT}'
   hasura:
-    container_name: 'novotebuy-hasura'
+    container_name: 'myvoteeos-hasura'
     image: hasura/graphql-engine:v2.2.0.cli-migrations-v3
     ports:
       - '8080:8080'
@@ -62,7 +62,7 @@ services:
       # HASURA_GRAPHQL_ADMIN_SECRET: "${HASURA_GRAPHQL_ADMIN_SECRET}"
       # HASURA_GRAPHQL_UNAUTHORIZED_ROLE: "${HASURA_GRAPHQL_UNAUTHORIZED_ROLE}"
   webapp:
-    container_name: 'novotebuy-webapp'
+    container_name: 'myvoteeos-webapp'
     image: node:14.2.0
     stdin_open: true
     ports:

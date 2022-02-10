@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField'
 import TitlePage from 'components/PageTitle'
 import { mockBps, partnersArray } from 'utils/mockData'
 
-import { novotebuyeosUtil, axiosUtil, charactersUtil } from '../../../../utils'
+import { myvoteeosUtil, axiosUtil, charactersUtil } from '../../../../utils'
 import { useSharedState } from '../../../../context/state.context'
 import { mainConfig } from '../../../../config'
 import { COUNT_VOTES_QUERY, GET_VOTERS_QUERY } from '../../../../gql'
@@ -47,7 +47,7 @@ const HomeFrontLayer = () => {
           ],
           data: {
             voter: state.user?.accountName,
-            proxy: mainConfig.novotebuyeosAccount,
+            proxy: mainConfig.myvoteeosAccount,
             producers: []
           }
         }
@@ -102,13 +102,13 @@ const HomeFrontLayer = () => {
 
   useEffect(() => {
     const loadBps = async () => {
-      const bpNames = await novotebuyeosUtil.getBps()
+      const bpNames = await myvoteeosUtil.getBps()
       const bps = (
         await Promise.resolve(
           bpNames.reduce(async (previous, current) => {
             const resolvedPrevious = await Promise.resolve(previous)
             try {
-              const bpInfo = await novotebuyeosUtil.getBpInfo(current)
+              const bpInfo = await myvoteeosUtil.getBpInfo(current)
               const bpjson = await axiosUtil.get(
                 `${!bpInfo.url.includes('http') ? 'https://' : ''}${
                   bpInfo.url
@@ -143,7 +143,7 @@ const HomeFrontLayer = () => {
           alt="Logo"
           src="/images/logo-dark.png"
         />
-        <span className={classes.headerHashtag}>{t('noVoteBuy')}</span>
+        <span className={classes.headerHashtag}>{t('myVoteEos')}</span>
         <span className={classes.headerMessage}>{t('secondaryText')}</span>
         <div className={classes.headerOptionsBtns}>
           <div className="boxGroup">
@@ -202,7 +202,7 @@ const HomeFrontLayer = () => {
       </div>
       <div id="about" className={classes.aboutSection}>
         <div className="secondaryBoxColor">
-          <span className="aboutTitle">{t('noVoteProxy')}</span>
+          <span className="aboutTitle">{t('myVoteProxy')}</span>
           <span className="infoLabel">{t('homeText.text12')}</span>
         </div>
         <span className={clsx('aboutTitle', classes.coreValueTitle)}>

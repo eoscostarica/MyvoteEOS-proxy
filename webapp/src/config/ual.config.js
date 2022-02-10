@@ -6,7 +6,7 @@ import { MeetOne } from 'ual-meetone'
 import { Anchor } from 'ual-anchor'
 import { Wombat } from 'ual-wombat'
 
-const appName = process.env.REACT_APP_UAL_APP_NAME || 'no-vote-buy'
+const appName = process.env.REACT_APP_UAL_APP_NAME || 'my-vote-eos'
 const network = {
   chainId:
     process.env.REACT_APP_UAL_CHAIN_ID ||

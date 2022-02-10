@@ -3,9 +3,9 @@
 VERSION ?= $(shell git rev-parse --short HEAD)
 CURRENT_BRANCH ?= $(shell git rev-parse --abbrev-ref HEAD)
 
-IMAGE_NAME_WEBAPP=novotebuy-webapp
-IMAGE_NAME_HAPI=novotebuy-hapi
-IMAGE_NAME_HASURA=novotebuy-hasura
+IMAGE_NAME_WEBAPP=myvoteeos-webapp
+IMAGE_NAME_HAPI=myvoteeos-hapi
+IMAGE_NAME_HASURA=myvoteeos-hasura
 
 DOCKER_REGISTRY=eoscostarica506
 SUBDIRS = webapp hapi hasura

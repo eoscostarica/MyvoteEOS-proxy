@@ -38,7 +38,7 @@ spec:
         name: postgres
       spec:
         accessModes: ['ReadWriteOnce']
-        storageClassName: novotebuy-storage
+        storageClassName: myvoteeos-storage
         resources:
           requests:
             storage: 100Gi

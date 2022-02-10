@@ -1,6 +1,6 @@
-#include <novotebuyeos.hpp>
+#include <myvoteeosdao.hpp>
 
-ACTION novotebuyeos::addproxy(name proxy) {
+ACTION myvoteeosdao::addproxy(name proxy) {
   check( is_proxy(proxy), "Only registered proxies can be included" );
   require_auth(_self);
 
@@ -17,7 +17,7 @@ ACTION novotebuyeos::addproxy(name proxy) {
   }
 }
 
-ACTION novotebuyeos::rmproxy(name proxy) {
+ACTION myvoteeosdao::rmproxy(name proxy) {
   require_auth(_self);
 
   // Init the proxies table
@@ -33,7 +33,7 @@ ACTION novotebuyeos::rmproxy(name proxy) {
   _proxy.erase( proxy_itr );
 }
 
-ACTION novotebuyeos::addproducer(name producer) {
+ACTION myvoteeosdao::addproducer(name producer) {
   check( is_blockproducer(producer), "Only registered block producers can be included" );
   require_auth(_self);
 
@@ -50,7 +50,7 @@ ACTION novotebuyeos::addproducer(name producer) {
   }
 }
 
-ACTION novotebuyeos::rmproducer(name producer) {
+ACTION myvoteeosdao::rmproducer(name producer) {
   require_auth(_self);
 
   // Init the producer table
@@ -65,7 +65,7 @@ ACTION novotebuyeos::rmproducer(name producer) {
   _producer.erase( producer_itr );
 }
 
-ACTION novotebuyeos::clear() {
+ACTION myvoteeosdao::clear() {
     require_auth( get_self() );
 
     proxy_table _proxy( get_self(), get_self().value );
@@ -87,4 +87,4 @@ ACTION novotebuyeos::clear() {
     }
 }
 
-EOSIO_DISPATCH( novotebuyeos, ( addproxy )( rmproxy )( addproducer )( rmproducer )( clear ) )
+EOSIO_DISPATCH( myvoteeosdao, ( addproxy )( rmproxy )( addproducer )( rmproducer )( clear ) )
