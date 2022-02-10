@@ -9,3 +9,11 @@ export const COUNT_VOTES_QUERY = gql`
     }
   }
 `
+export const GET_VOTERS_QUERY = gql`
+  query {
+    proxy_votes(distinct_on: voter) {
+      voter
+      balance
+    }
+  }
+`
