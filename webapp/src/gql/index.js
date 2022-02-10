@@ -1,1 +1,1 @@
-export * from './myvoteeosdao'
+export * from './myvoteeos'
