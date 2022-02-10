@@ -62,7 +62,7 @@ const Main = ({
                 <MenuIcon />
               </IconButton>
               <RouterLink className={classes.sof} to="/home">
-                {t('noVoteBuy')}
+                {t('myVoteEos')}
               </RouterLink>
             </div>
 
@@ -150,7 +150,7 @@ const Main = ({
       <div className={classes.footerBox}>
         <div className={classes.footer}>
           <div className={classes.footerLogo}>
-            <span className={classes.noVote}>{t('noVoteBuy')}</span>
+            <span className={classes.noVote}>{t('myVoteEos')}</span>
             <img alt="Logo" src="/images/logo-dark.png" />
           </div>
           <div className={classes.socialWrapper}>
@@ -194,7 +194,7 @@ const Main = ({
             <div>
               <span className={classes.socialTitle}>{t('social')}</span>
               <a
-                href="https://medium.com/@NovotebuyEOS"
+                href="https://medium.com/@MyvoteEOS"
                 target="_blank"
                 className={clsx(classes.menuLink, classes.menuLinkFooter)}
                 rel="noopener noreferrer"
@@ -202,7 +202,7 @@ const Main = ({
                 {t('blog')}
               </a>
               <a
-                href="https://twitter.com/NovotebuyEOS"
+                href="https://twitter.com/MyvoteEOS"
                 target="_blank"
                 className={clsx(classes.menuLink, classes.menuLinkFooter)}
                 rel="noopener noreferrer"

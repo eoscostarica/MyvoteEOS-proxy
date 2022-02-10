@@ -1,3 +1,3 @@
-export const novotebuyeosAccount =
-  process.env.REACT_APP_NOVOTEBUYEOS_ACCOUNT || 'novotebuyeos'
+export const myvoteeosAccount =
+  process.env.REACT_APP_MYVOTEEOS_ACCOUNT || 'myvoteeosdao'
 export const blockExplorer = process.env.REACT_APP_BLOCK_EXPLORER_URL

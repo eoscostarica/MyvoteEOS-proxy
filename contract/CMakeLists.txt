@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(novotebuyeos)
+project(myvoteeosdao)
 
 include(ExternalProject)
 # if no cdt root is given use default path
@@ -8,7 +8,7 @@ if(EOSIO_CDT_ROOT STREQUAL "" OR NOT EOSIO_CDT_ROOT)
 endif()
 
 ExternalProject_Add(
-   novotebuyeos_project
+   myvoteeosdao_project
    SOURCE_DIR ${CMAKE_SOURCE_DIR}/src
    BINARY_DIR ${CMAKE_BINARY_DIR}/contract
    CMAKE_ARGS -DCMAKE_TOOLCHAIN_FILE=${EOSIO_CDT_ROOT}/lib/cmake/eosio.cdt/EosioWasmToolchain.cmake

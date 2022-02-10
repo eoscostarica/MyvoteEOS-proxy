@@ -33,18 +33,18 @@ jobs:
           # webapp
           PORT: 80
           REACT_APP_TAG: ${{ github.ref }}
-          REACT_APP_NAME: 'novotebuy_eos'
-          REACT_APP_TITLE: 'NovotebuyEOS Proxy'
+          REACT_APP_NAME: 'myvoteeos'
+          REACT_APP_TITLE: 'MyvoteEOS Proxy'
           REACT_APP_LOGO: 'https://raw.githubusercontent.com/eoscostarica/design-assets/master/logos/eosCR/fullColor-vertiall-transparent-white.png'
           REACT_APP_FOOTER_LINKS: '[]'
-          REACT_APP_UAL_APP_NAME: 'no-vote-buy-eos-proxy'
+          REACT_APP_UAL_APP_NAME: 'my-vote-eos-proxy'
           REACT_APP_UAL_API_PROTOCOL: 'https'
           REACT_APP_UAL_API_HOST: 'api.jungle3.alohaeos.com'
           REACT_APP_UAL_API_PORT: '443'
           REACT_APP_UAL_CHAIN_ID: '2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840'
-          REACT_APP_HASURA_URL: 'https://graphql-novotebuyeos.eosio.cr/v1/graphql'
+          REACT_APP_HASURA_URL: 'https://graphql-myvoteeos.eosio.cr/v1/graphql'
           REACT_APP_BLOCK_EXPLORER_URL: 'https://jungle3.bloks.io'
-          REACT_APP_NOVOTEBUYEOS_ACCOUNT: 'novotebuyeos'
+          REACT_APP_MYVOTEEOS_ACCOUNT: 'myvoteeosdao'
 
       - name: Build kubernetes files
         id: build_kubernetes_files
@@ -53,9 +53,9 @@ jobs:
             build-kubernetes
         env:
           # general
-          NAMESPACE: novotebuyeos
-          INGRESS_HOST: novotebuyeos.eosio.cr
-          INGRESS_GRAPHQL_HOST: graphql-novotebuyeos.eosio.cr
+          NAMESPACE: myvoteeos
+          INGRESS_HOST: myvoteeos.eosio.cr
+          INGRESS_GRAPHQL_HOST: graphql-myvoteeos.eosio.cr
           # Postgres
           POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
@@ -66,7 +66,7 @@ jobs:
           HAPI_SERVER_ADDRESS: 0.0.0.0
           HAPI_NETWORK_API: 'https://jungle.eosio.cr'
           HAPI_NETWORK_CHAIN_ID: '2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840'
-          HAPI_NETWORK_BASE_ACCOUNT: 'novotebuyeos'
+          HAPI_NETWORK_BASE_ACCOUNT: 'myvoteeosdao'
           HAPI_NETWORK_BASE_PASSWORD: ${{ secrets.HAPI_NETWORK_BASE_PASSWORD }}
           HAPI_NETWORK_WALLET_URL: ${{ secrets.HAPI_NETWORK_WALLET_URL }}
           HAPI_HASURA_URL: ${{ secrets.HAPI_HASURA_URL }}
@@ -84,7 +84,7 @@ jobs:
         uses: steebchen/kubectl@v1.1.0
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-          NAMESPACE: novotebuyeos
+          NAMESPACE: myvoteeos
           K8S_BUILD_DIR: build_k8s
         with:
           args: version && make deploy-kubernetes

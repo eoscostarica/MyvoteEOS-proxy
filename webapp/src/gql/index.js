@@ -1,1 +1,1 @@
-export * from './novotebuyeos'
+export * from './myvoteeos'

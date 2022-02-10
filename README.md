@@ -1,13 +1,13 @@
-# NovotebuyEOS Proxy Website
+# MyvoteEOS Proxy Website
 
 <p align="center">
-	<a href="novotebuyeos.com">
-		<img src="./docs/no-vote-buy-logo.png" />
+	<a href="myvoteeos.com">
+		<img src="./docs/my-vote-eos-logo.png" />
 	</a>
 </p>
 <br/>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7e88118e-c0d0-4bf3-966f-d485946cb06b/deploy-status)](https://app.netlify.com/sites/novotebuyeos/deploys) ![](https://img.shields.io/github/license/eoscostarica/no-vote-buy-EOS-proxy) ![](https://img.shields.io/badge/code%20style-standard-brightgreen.svg) ![](https://img.shields.io/github/forks/eoscostarica/no-vote-buy-EOS-proxy?style=social)
+![](https://img.shields.io/github/license/eoscostarica/MyvoteEOS-proxy) ![](https://img.shields.io/badge/code%20style-standard-brightgreen.svg) ![](https://img.shields.io/github/forks/eoscostarica/MyvoteEOS-proxy?style=social)
 
 The EOS based proxy facilitates the transition into a truly democratic based chain that is free from Pareto control by voting for BP’s that do not engage with direct vote rebate.
 
@@ -46,7 +46,7 @@ _If you want to the website using UAL login integration, please make sure that `
 
 ### Quick start
 
-1.  Clone this repo using `git clone --depth=1 https://github.com/eoscostarica/no-vote-buy-EOS-proxy.git <YOUR_PROJECT_NAME>`
+1.  Clone this repo using `git clone --depth=1 https://github.com/eoscostarica/MyvoteEOS-proxy.git <YOUR_PROJECT_NAME>`
 2.  Move to the appropriate directory: `cd <YOUR_PROJECT_NAME>`.
 3.  Run `yarn` in order to install dependencies.
     _At this point you can run `yarn start` to see the example app at `http://localhost:3000`._
@@ -88,11 +88,11 @@ Within the download you'll find the following directories and files:
 
 ## Smart Contract
 
-Deployed on Jungle3 testnet as: [`novotebuyeos`](https://jungle3.bloks.io/account/novotebuyeos)
+Deployed on Jungle3 testnet as: [`myvoteeosdao`](https://jungle3.bloks.io/account/myvoteeosdao)
 
 ## Contributing
 
-Let us know if you have any cool ideas for this project and please report bugs big and small by [opening an issue](https://github.com/eoscostarica/no-vote-buy-EOS-proxy/issues/new/choose)
+Let us know if you have any cool ideas for this project and please report bugs big and small by [opening an issue](https://github.com/eoscostarica/MyvoteEOS-proxy/issues/new/choose)
 
 Please Read EOS Costa Rica's [Open Source Contributing Guidelines](https://developers.eoscostarica.io/docs/open-source-guidelines).
 
