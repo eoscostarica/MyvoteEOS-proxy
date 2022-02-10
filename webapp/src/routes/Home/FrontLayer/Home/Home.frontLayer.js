@@ -6,12 +6,12 @@ import clsx from 'clsx'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import TitlePage from 'components/PageTitle'
-import { mockBps, membersArray, partnersArray } from 'utils/mockData'
+import { mockBps, partnersArray } from 'utils/mockData'
 
 import { novotebuyeosUtil, axiosUtil, charactersUtil } from '../../../../utils'
 import { useSharedState } from '../../../../context/state.context'
 import { mainConfig } from '../../../../config'
-import { COUNT_VOTES_QUERY } from '../../../../gql'
+import { COUNT_VOTES_QUERY, GET_VOTERS_QUERY } from '../../../../gql'
 
 import styles from './styles'
 
@@ -23,9 +23,13 @@ const HomeFrontLayer = () => {
   const { data: dataCountVotes } = useQuery(COUNT_VOTES_QUERY, {
     fetchPolicy: 'network-only'
   })
+  const { data: dataGetVoters } = useQuery(GET_VOTERS_QUERY, {
+    fetchPolicy: 'network-only'
+  })
   const [bpsData, setBpsData] = useState([])
   const [state, { showMessage }] = useSharedState()
   const [totalProxyVotes, setTotalProxyVotes] = useState(0)
+  const [proxyVoters, setProxyVoters] = useState([])
 
   const delegateVote = async () => {
     if (!state.user) return
@@ -88,6 +92,13 @@ const HomeFrontLayer = () => {
 
     setTotalProxyVotes(count)
   }, [dataCountVotes])
+
+  useEffect(() => {
+    if (!dataGetVoters) return
+
+    const { proxy_votes: voters } = dataGetVoters
+    setProxyVoters(voters)
+  }, [dataGetVoters])
 
   useEffect(() => {
     const loadBps = async () => {
@@ -277,11 +288,11 @@ const HomeFrontLayer = () => {
         <span className={classes.generalTitle}>{t('participating')}</span>
         {/* remove this map when add BE integration */}
         <div className={classes.bpsBox}>
-          {membersArray.map((member, index) => (
-            <div key={`${member.name}-${index}`} className="boxExampleMembers">
-              <span className="memberLabel">{member.name}</span>
+          {proxyVoters.map(({ voter, balance }) => (
+            <div key={voter} className="boxExampleMembers">
+              <span className="memberLabel">{voter}</span>
               <span className={clsx('memberLabel', 'memberAmount')}>
-                {member.amount}
+                {balance}
               </span>
             </div>
           ))}
