@@ -6,7 +6,7 @@ module.exports = {
   type: 'eosio:voteproducer',
   apply: async action => {
     try {
-      if (!action.data.proxy && action.data.proxy !== eosConfig.baseAccount) {
+      if (!action.data.proxy || action.data.proxy !== eosConfig.baseAccount) {
         return
       }
 
