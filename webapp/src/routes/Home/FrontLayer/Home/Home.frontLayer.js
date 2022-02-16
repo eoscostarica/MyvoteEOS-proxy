@@ -32,7 +32,14 @@ const HomeFrontLayer = () => {
   const [proxyVoters, setProxyVoters] = useState([])
 
   const delegateVote = async () => {
-    if (!state.user) return
+    if (!state.user) {
+      showMessage({
+        type: 'warning',
+        content: <span>{t('loginWarning')}</span>
+      })
+
+      return
+    }
 
     const transaction = {
       actions: [
@@ -77,7 +84,10 @@ const HomeFrontLayer = () => {
         )
       })
     } catch (error) {
-      showMessage({ type: 'error', content: error })
+      showMessage({
+        type: 'error',
+        content: <span>{error.message}</span>
+      })
     }
   }
 
