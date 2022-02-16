@@ -72,6 +72,7 @@
       "text17": "Nos comprometemos a rendir cuentas participando en llamadas de verificación y brindando informes financieros y operativos públicos de manera regular.",
       "text18": "Reconocemos que podemos dejar de votar de inmediato y no seremos elegibles para los votos de este DAO nunca más si nos involucramos con votos comprometidos en el futuro.",
       "text19": "Nos comprometemos a no operar más de un BP con el mismo dueño."
-    }
+    },
+    "loginWarning": "Inicie sesión para delegar su voto"
   }
 }

@@ -72,6 +72,7 @@
       "text17": "We will commit to being held accountable by engaging in check up calls and providing public financial and operation reports on a regular basis.",
       "text18": "We acknowledge that we can be unvoted immediately and won’t be eligible for votes from this DAO ever again if we engage with compromised votes hereafter.",
       "text19": "We will commit to not operating more than one BP with the same ownership."
-    }
+    },
+    "loginWarning": "Please login to delegate your vote"
   }
 }
