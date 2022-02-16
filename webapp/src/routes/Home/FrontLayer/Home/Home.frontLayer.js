@@ -77,7 +77,10 @@ const HomeFrontLayer = () => {
         )
       })
     } catch (error) {
-      showMessage({ type: 'error', content: error })
+      showMessage({
+        type: 'error',
+        content: <span>{error.message}</span>
+      })
     }
   }
 
