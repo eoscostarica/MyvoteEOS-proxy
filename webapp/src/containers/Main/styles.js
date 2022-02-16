@@ -15,7 +15,8 @@ export default (theme) => ({
     alignItems: 'center'
   },
   active: {
-    color: '#F53844 !important'
+    color: '#F53844 !important',
+    fontWeight: 'bold !important'
   },
   logo: {
     height: 36
@@ -74,7 +75,8 @@ export default (theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     '& img': {
-      width: 100
+      width: 100,
+      visibility: 'hidden'
     }
   },
   socialWrapper: {

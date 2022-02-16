@@ -150,9 +150,9 @@ const HomeFrontLayer = () => {
             <span className={clsx('textLabel', classes.marginExtra)}>
               {t('homeText.text1')}
             </span>
-            <Button className={classes.optionBtn} variant="contained">
+            <a className={clsx(classes.optionBtn, classes.aBtn)} href="#bps">
               {t('joinAlliance')}
-            </Button>
+            </a>
           </div>
           <div className="boxGroup">
             <span className="textLabel">{t('homeText.text2')}</span>
@@ -230,6 +230,11 @@ const HomeFrontLayer = () => {
           <div className={classes.coreInfo}>
             <span className={clsx(classes.coreInfoLabel, 'criteriaLabel')}>
               {t('homeText.text18')}
+            </span>
+          </div>
+          <div className={classes.coreInfo}>
+            <span className={clsx(classes.coreInfoLabel, 'criteriaLabel')}>
+              {t('homeText.text19')}
             </span>
           </div>
         </div>
