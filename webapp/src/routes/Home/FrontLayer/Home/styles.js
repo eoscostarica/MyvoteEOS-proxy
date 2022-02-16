@@ -308,10 +308,11 @@ export default (theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     width: '100%',
-    maxWidth: 1024,
+    maxWidth: 1200,
     marginBottom: theme.spacing(3),
-    [theme.breakpoints.up('md')]: {
-      justifyContent: 'space-between',
+    [theme.breakpoints.up('sm')]: {
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
       alignItems: 'center',
       flexDirection: 'row'
     }
@@ -325,7 +326,10 @@ export default (theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: theme.spacing(3)
+    marginBottom: theme.spacing(3),
+    [theme.breakpoints.up('sm')]: {
+      width: 265
+    }
   },
   coreInfoLabel: {
     fontStyle: 'normal',
@@ -335,7 +339,10 @@ export default (theme) => ({
     textAlign: 'center',
     letterSpacing: '-0.03em',
     color: '#999999',
-    width: 288
+    width: 288,
+    [theme.breakpoints.up('sm')]: {
+      width: 230
+    }
   },
   generalTitle: {
     fontStyle: 'normal',
@@ -438,7 +445,11 @@ export default (theme) => ({
       maxWidth: 500,
       justifyContent: 'space-between',
       margin: theme.spacing(2, 0, 3, 0),
-      flexDirection: 'column'
+      flexDirection: 'column',
+      '& img': {
+        maxWidth: 170,
+        width: 'auto'
+      }
     },
     [theme.breakpoints.up('sm')]: {
       '& .exchangeBox': {
@@ -447,7 +458,11 @@ export default (theme) => ({
     },
     [theme.breakpoints.up('lg')]: {
       '& .exchangeBox': {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+      },
+      '& .twitBtn': {
+        marginTop: 0
       }
     }
   },
@@ -494,7 +509,6 @@ export default (theme) => ({
     '& .boxExamplePartner': {
       width: '100%',
       height: 150,
-      background: 'rgba(238, 238, 238, 0.6)',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -509,5 +523,11 @@ export default (theme) => ({
         width: '45%'
       }
     }
+  },
+  aBtn: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textDecoration: 'none'
   }
 })

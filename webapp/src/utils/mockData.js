@@ -38,12 +38,6 @@ const membersArray = [
 const partnersArray = [
   { src: '/images/keosa.svg', isValid: true },
   { src: '/images/boid.svg', isValid: true },
-  { src: '', isValid: false },
-  { src: '', isValid: false },
-  { src: '', isValid: false },
-  { src: '', isValid: false },
-  { src: '', isValid: false },
-  { src: '', isValid: false },
   { src: '', isValid: false }
 ]
 
