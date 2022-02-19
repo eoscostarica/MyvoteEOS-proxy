@@ -56,7 +56,7 @@ const PAGES = [
   },
   {
     title: 'news',
-    href: '/news',
+    href: 'https://medium.com/@MyvoteEOS',
     useLink: false,
     icon: <NewspaperIcon />
   }
