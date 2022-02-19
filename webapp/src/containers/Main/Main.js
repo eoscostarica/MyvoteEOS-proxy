@@ -185,12 +185,14 @@ const Main = ({
               >
                 {t('eosHolder')}
               </Link>
-              <RouterLink
-                to="/news"
+              <a
+                href="https://medium.com/@MyvoteEOS"
+                target="_blank"
                 className={clsx(classes.menuLink, classes.menuLinkFooter)}
+                rel="noopener noreferrer"
               >
                 {t('news')}
-              </RouterLink>
+              </a>
             </div>
 
             <div>
@@ -212,7 +214,7 @@ const Main = ({
                 {t('twitter')}
               </a>
               <a
-                href="#"
+                href="https://discord.gg/EuZS6wbPWt"
                 target="_blank"
                 className={clsx(classes.menuLink, classes.menuLinkFooter)}
                 rel="noopener noreferrer"
@@ -220,12 +222,20 @@ const Main = ({
                 {t('discord')}
               </a>
               <a
-                href="#"
+                href="https://t.me/MyvoteEOSDAO"
                 target="_blank"
                 className={clsx(classes.menuLink, classes.menuLinkFooter)}
                 rel="noopener noreferrer"
               >
                 {t('telegram')}
+              </a>
+              <a
+                href="https://github.com/eoscostarica/MyvoteEOS-proxy"
+                target="_blank"
+                className={clsx(classes.menuLink, classes.menuLinkFooter)}
+                rel="noopener noreferrer"
+              >
+                {t('github')}
               </a>
             </div>
 
