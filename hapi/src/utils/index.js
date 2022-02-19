@@ -3,5 +3,6 @@ module.exports = {
   eosUtil: require('./eos.util'),
   hasuraUtil: require('./hasura.util'),
   walletUtil: require('./wallet.util'),
-  sleepUtil: require('./sleep.util')
+  sleepUtil: require('./sleep.util'),
+  twitterUtil: require('./twitter.util')
 }
