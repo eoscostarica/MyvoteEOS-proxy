@@ -3,8 +3,8 @@ import { Ledger } from 'ual-ledger'
 import { Lynx } from 'ual-lynx'
 import { TokenPocket } from 'ual-token-pocket'
 import { MeetOne } from 'ual-meetone'
-import { Anchor } from 'ual-anchor'
 import { Wombat } from 'ual-wombat'
+import { Anchor } from 'ual-anchor'
 
 const appName = process.env.REACT_APP_UAL_APP_NAME || 'my-vote-eos'
 const network = {
