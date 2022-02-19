@@ -10,12 +10,12 @@ const appName = process.env.REACT_APP_UAL_APP_NAME || 'my-vote-eos'
 const network = {
   chainId:
     process.env.REACT_APP_UAL_CHAIN_ID ||
-    '2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840',
+    'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
   rpcEndpoints: [
     {
       blockchain: 'eos',
       protocol: process.env.REACT_APP_UAL_API_PROTOCOL || 'https',
-      host: process.env.REACT_APP_UAL_API_HOST || 'jungle.eosio.cr',
+      host: process.env.REACT_APP_UAL_API_HOST || 'eos.greymass.com',
       port: parseInt(process.env.REACT_APP_UAL_API_PORT || '443')
     }
   ]
