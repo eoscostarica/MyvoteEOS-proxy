@@ -38,6 +38,19 @@ const membersArray = [
 const partnersArray = [
   { src: '/images/keosa.svg', isValid: true },
   { src: '/images/boid.svg', isValid: true },
+  { src: '/images/partners/Korea-University.png', isValid: true },
+  { src: '/images/partners/HELIOS.png', isValid: true },
+  { src: '/images/partners/EOS-NEWS.png', isValid: true },
+  { src: '/images/partners/bulleos.png', isValid: true },
+  { src: '/images/partners/EOS-Channel.png', isValid: true },
+  { src: '/images/partners/EOS_Graduation.png', isValid: true },
+  { src: '/images/partners/EOS_Longterm_Holders.png', isValid: true },
+  { src: '/images/partners/EOSKorea.png', isValid: true },
+  { src: '/images/partners/KOREOS.png', isValid: true },
+  { src: '/images/partners/KNK.png', isValid: true },
+  { src: '/images/partners/EOS_PowerUp.png', isValid: true },
+  { src: '/images/partners/EOSTARTER.png', isValid: true },
+  { src: '/images/partners/EOS_Micoro_Loan.png', isValid: true },
   { src: '', isValid: false }
 ]
 

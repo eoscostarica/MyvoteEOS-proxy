@@ -1,7 +1,7 @@
 {
   "name": "myvoteeosdao",
   "version": "1.0.0",
-  "description": "MyvoteEOS Proxy WebApp",
+  "description": "MyvoteEOS - The EOS BP Proxy and DAO to replace vote buying",
   "repository": "https://github.com/eoscostarica/MyvoteEOS-proxy.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

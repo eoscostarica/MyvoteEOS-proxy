@@ -476,7 +476,6 @@ export default (theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     '& .boxExampleMembers': {
-      background: 'rgba(238, 238, 238, 0.6)',
       width: 170,
       height: 91,
       margin: theme.spacing(1),
@@ -492,10 +491,10 @@ export default (theme) => ({
       lineHeight: '20px',
       textAlign: 'center',
       letterSpacing: '-0.03em',
-      color: '#000000'
+      color: '#FFF'
     },
     '& .memberAmount': {
-      color: '#505050'
+      color: '#808080'
     },
     [theme.breakpoints.up('sm')]: {
       padding: theme.spacing(7, 1)

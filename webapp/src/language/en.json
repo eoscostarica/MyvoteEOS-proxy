@@ -7,7 +7,7 @@
     "about": "About",
     "exchanges": "Exchanges",
     "eosHolder": "Holders",
-    "htmlTitle": "MyvoteEOS Proxy",
+    "htmlTitle": "MyvoteEOS - The EOS BP Proxy and DAO to replace vote buying",
     "homeTitle": "Welcome to MyvoteEOS Proxy",
     "newsTitle": "EOS News",
     "logout": "Logout",
@@ -18,6 +18,7 @@
     "twitter": "Follow us on Twitter",
     "discord": "Connect on Discord",
     "telegram": "Chat on Telegram",
+    "github": "Code on GitHub",
     "litepaper": "Litepaper",
     "deck": "Intro Deck",
     "quicklinks": "Quicklinks",
@@ -26,7 +27,7 @@
     "success": "success"
   },
   "homePage": {
-    "htmlTitle": "MyvoteEOS Proxy",
+    "htmlTitle": "MyvoteEOS - The EOS BP Proxy and DAO to replace vote buying",
     "headerTitle": "Secondary Title",
     "secondaryText": "Reestablish legitimacy and accountability in blockchain governance by uncompromised consensus of all EOS holders on and off chain.",
     "myVoteEos": "#MyvoteEOS",

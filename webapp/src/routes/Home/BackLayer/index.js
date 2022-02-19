@@ -5,7 +5,6 @@ import { makeStyles } from '@mui/styles'
 import Box from '@mui/material/Box'
 
 import HomeBackLayer from './Home'
-import NewsBackLayer from './News'
 import styles from '../styles'
 
 const useStyles = makeStyles(styles)
@@ -17,7 +16,6 @@ const BackLayer = ({ ual }) => {
     <Box className={classes.layer}>
       <Switch>
         <Route exact path="/home" component={HomeBackLayer} />
-        <Route exact path="/news" component={NewsBackLayer} />
         <Redirect from="/" to="/home" />
       </Switch>
     </Box>
