@@ -4,7 +4,7 @@ const { twitterConfig } = require('../config')
 
 const twitterClient = new TwitterApi(twitterConfig.bearerToken)
 
-const getMentions = async ({account, options = {}}) => {tweetCountRecent
+const getMentions = async ({account, options = {}}) => {
     const {_realData: { data, meta }} = await twitterClient.v2.userMentionTimeline(
         account,
         {...options}
@@ -14,10 +14,18 @@ const getMentions = async ({account, options = {}}) => {tweetCountRecent
 }
 
 const countMentions = async () => {
-    const { meta: { total_tweet_count: totalMentions} } = await twitterClient.v2.tweetCountRecent('#MyvoteEOS')
+    const exchanges = twitterConfig.exchanges.split(',')
+    const exchangesMentions = {}
+
+    const { meta: { total_tweet_count: totalMentions} } = await twitterClient.v2.tweetCountRecent(`#${twitterConfig.hashtag}`)
+    for(const exchange of exchanges) {
+        const { meta: { total_tweet_count: exchangeMentions} } = await twitterClient.v2.tweetCountRecent(`#${twitterConfig.hashtag} ${exchange}`)
+        exchangesMentions[exchange] = exchangeMentions
+    }
 
     return {
-        totalMentions
+        totalMentions,
+        exchangesMentions
     }
 }
 

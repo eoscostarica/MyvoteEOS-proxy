@@ -1,2 +1,11 @@
+type Query {
+  countMentions : CountMentionsOutput
+}
 
+
+
+
+type CountMentionsOutput {
+  mentions : jsonb!
+}
 

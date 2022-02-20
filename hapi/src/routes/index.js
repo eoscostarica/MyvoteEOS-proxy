@@ -1,4 +1,4 @@
 const healthzRoute = require('./healthz.route')
-const testRoute = require('./test.route')
+const countMentionsRoute = require('./countMentions.route')
 
-module.exports = [healthzRoute, testRoute]
+module.exports = [healthzRoute, countMentionsRoute]

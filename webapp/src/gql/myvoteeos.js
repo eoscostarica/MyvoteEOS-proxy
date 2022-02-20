@@ -17,3 +17,10 @@ export const GET_VOTERS_QUERY = gql`
     }
   }
 `
+export const COUNT_MENTIONS_QUERY = gql`
+  query {
+    countMentions {
+      mentions
+    }
+  }
+`
