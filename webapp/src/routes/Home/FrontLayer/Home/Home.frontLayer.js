@@ -31,13 +31,12 @@ const HomeFrontLayer = () => {
   const [totalProxyVotes, setTotalProxyVotes] = useState(0)
   const [proxyVoters, setProxyVoters] = useState([])
 
+  const joinFormUrl =
+    'https://docs.google.com/forms/d/e/1FAIpQLScLQHUtZrx8JMdVhk32x0rIEh78t4HkdplxcbTG0f7UoTRR7w/viewform'
 
-  const joinFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScLQHUtZrx8JMdVhk32x0rIEh78t4HkdplxcbTG0f7UoTRR7w/viewform"
-  
-  const joinAlliance =  () => {
-    window.open(joinFormUrl, "_blank") 
-   }
-
+  const joinAlliance = () => {
+    window.open(joinFormUrl, '_blank')
+  }
 
   const delegateVote = async () => {
     if (!state.user) {
@@ -168,7 +167,11 @@ const HomeFrontLayer = () => {
             <span className={clsx('textLabel', classes.marginExtra)}>
               {t('homeText.text1')}
             </span>
-            <a className={clsx(classes.optionBtn, classes.aBtn)} href={joinFormUrl} target="_blank" >
+            <a
+              className={clsx(classes.optionBtn, classes.aBtn)}
+              href={joinFormUrl}
+              target="_blank"
+            >
               {t('joinAlliance')}
             </a>
           </div>
@@ -256,7 +259,7 @@ const HomeFrontLayer = () => {
             </span>
           </div>
         </div>
-        <Button 
+        <Button
           className={classes.optionBtn}
           variant="contained"
           onClick={joinAlliance}

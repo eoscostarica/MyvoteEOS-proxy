@@ -36,6 +36,7 @@ services:
       HAPI_HASURA_ADMIN_SECRET: '${HAPI_HASURA_ADMIN_SECRET}'
       HAPI_HYPERION_API: '${HAPI_HYPERION_API}'
       HAPI_HYPERION_START_AT: '${HAPI_HYPERION_START_AT}'
+      HAPI_TWITTER_BEARER_TOKEN: '${HAPI_TWITTER_BEARER_TOKEN}'
   hasura:
     container_name: 'myvoteeos-hasura'
     image: hasura/graphql-engine:v2.2.0.cli-migrations-v3
