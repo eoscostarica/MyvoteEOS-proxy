@@ -74,6 +74,7 @@
       "text18": "우리는 동일한 소유권을 가진 2개 이상의 BP를 운영하지 않을 것을 약속합니다.",
       "text19": "We will commit to not operating more than one BP with the same ownership."
     },
-    "loginWarning": "Please login to delegate your vote"
+    "loginWarning": "Please login to delegate your vote",
+    "twitterContent": "{{ exchange }} Respect your EOS holders right by letting them have a say by delegating their votes to #MyvoteEOS proxy."
   }
 }

@@ -3,3 +3,4 @@ export const myvoteeosAccount =
 
 export const blockExplorer = process.env.REACT_APP_BLOCK_EXPLORER_URL
 export const joinFormUrl = process.env.REACT_APP_GOOGLE_FORM_URL
+export const twitterAccount = process.env.REACT_APP_TWITTER_ACCOUNT

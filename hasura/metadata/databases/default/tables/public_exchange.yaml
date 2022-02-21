@@ -2,6 +2,7 @@ select_permissions:
 - permission:
     columns:
     - created_at
+    - image_url
     - name
     - t_username
     - total_mention

@@ -74,6 +74,7 @@
       "text18": "Reconocemos que podemos dejar de votar de inmediato y no seremos elegibles para los votos de este DAO nunca más si nos involucramos con votos comprometidos en el futuro.",
       "text19": "Nos comprometemos a no operar más de un BP con el mismo dueño."
     },
-    "loginWarning": "Inicie sesión para delegar su voto"
+    "loginWarning": "Inicie sesión para delegar su voto",
+    "twitterContent": "{{ exchange }} Respect your EOS holders right by letting them have a say by delegating their votes to #MyvoteEOS proxy."
   }
 }
