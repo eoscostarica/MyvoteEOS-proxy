@@ -11,7 +11,11 @@ import { mockBps, partnersArray } from 'utils/mockData'
 import { myvoteeosUtil, axiosUtil, charactersUtil } from '../../../../utils'
 import { useSharedState } from '../../../../context/state.context'
 import { mainConfig } from '../../../../config'
-import { COUNT_VOTES_QUERY, GET_VOTERS_QUERY } from '../../../../gql'
+import {
+  COUNT_VOTES_QUERY,
+  GET_VOTERS_QUERY,
+  COUNT_MENTIONS_QUERY
+} from '../../../../gql'
 
 import styles from './styles'
 
@@ -26,18 +30,21 @@ const HomeFrontLayer = () => {
   const { data: dataGetVoters } = useQuery(GET_VOTERS_QUERY, {
     fetchPolicy: 'network-only'
   })
+  const { data: totalMentions } = useQuery(COUNT_MENTIONS_QUERY, {
+    fetchPolicy: 'network-only'
+  })
   const [bpsData, setBpsData] = useState([])
   const [state, { showMessage }] = useSharedState()
   const [totalProxyVotes, setTotalProxyVotes] = useState(0)
   const [proxyVoters, setProxyVoters] = useState([])
+  const [mentions, setMentions] = useState({})
 
+  const joinFormUrl =
+    'https://docs.google.com/forms/d/e/1FAIpQLScLQHUtZrx8JMdVhk32x0rIEh78t4HkdplxcbTG0f7UoTRR7w/viewform'
 
-  const joinFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScLQHUtZrx8JMdVhk32x0rIEh78t4HkdplxcbTG0f7UoTRR7w/viewform"
-  
-  const joinAlliance =  () => {
-    window.open(joinFormUrl, "_blank") 
-   }
-
+  const joinAlliance = () => {
+    window.open(joinFormUrl, '_blank')
+  }
 
   const delegateVote = async () => {
     if (!state.user) {
@@ -115,8 +122,19 @@ const HomeFrontLayer = () => {
     if (!dataGetVoters) return
 
     const { proxy_votes: voters } = dataGetVoters
+
     setProxyVoters(voters)
   }, [dataGetVoters])
+
+  useEffect(() => {
+    if (!totalMentions) return
+
+    const {
+      countMentions: { mentions }
+    } = totalMentions
+
+    setMentions(mentions)
+  }, [totalMentions])
 
   useEffect(() => {
     const loadBps = async () => {
@@ -168,7 +186,11 @@ const HomeFrontLayer = () => {
             <span className={clsx('textLabel', classes.marginExtra)}>
               {t('homeText.text1')}
             </span>
-            <a className={clsx(classes.optionBtn, classes.aBtn)} href={joinFormUrl} target="_blank" >
+            <a
+              className={clsx(classes.optionBtn, classes.aBtn)}
+              href={joinFormUrl}
+              target="_blank"
+            >
               {t('joinAlliance')}
             </a>
           </div>
@@ -198,7 +220,7 @@ const HomeFrontLayer = () => {
             <span className="infoLabel"> {t('homeText.text4')}</span>
           </div>
           <div className="boxGroup">
-            <span className="coloredLabel">12,246</span>
+            <span className="coloredLabel">{mentions?.totalMentions || 0}</span>
             <span className="infoLabel"> {t('homeText.text5')}</span>
           </div>
           <div className="boxGroup">
@@ -256,7 +278,7 @@ const HomeFrontLayer = () => {
             </span>
           </div>
         </div>
-        <Button 
+        <Button
           className={classes.optionBtn}
           variant="contained"
           onClick={joinAlliance}

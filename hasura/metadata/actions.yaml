@@ -1,6 +1,13 @@
-actions: []
+actions:
+- name: countMentions
+  definition:
+    kind: ""
+    handler: '{{HASURA_GRAPHQL_ACTION_BASE_URL}}/countMentions'
+  permissions:
+  - role: guest
 custom_types:
   enums: []
   input_objects: []
-  objects: []
+  objects:
+  - name: CountMentionsOutput
   scalars: []
