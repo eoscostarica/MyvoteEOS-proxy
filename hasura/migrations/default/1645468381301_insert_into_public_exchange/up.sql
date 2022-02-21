@@ -1,0 +1,1 @@
+INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at") VALUES (E'e53ecaed-5805-49db-b98f-491031e7be9f', E'@coinbase', E'Coinbase', 0, null, E'2022-02-21T18:33:01.286268+00:00', E'2022-02-21T18:33:01.286268+00:00');

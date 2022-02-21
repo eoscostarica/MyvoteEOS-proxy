@@ -1,0 +1,1 @@
+INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at") VALUES (E'b0371141-0b96-4ee3-84c8-3af665b12dd4', E'@krakenfx', E'Kraken', 0, null, E'2022-02-21T18:31:36.343549+00:00', E'2022-02-21T18:31:36.343549+00:00');

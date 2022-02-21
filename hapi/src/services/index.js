@@ -1,7 +1,9 @@
 const workerService = require('./worker.service')
-const proxyVotes = require('./proxy-votes.service')
+const proxyVotesService = require('./proxy-votes.service')
+const exchangeService = require('./exchange.service')
 
 module.exports = {
     workerService,
-    proxyVotes
+    proxyVotesService,
+    exchangeService
 }
