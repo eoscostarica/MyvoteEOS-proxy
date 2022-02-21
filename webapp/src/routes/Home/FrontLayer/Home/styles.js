@@ -512,7 +512,7 @@ export default (theme) => ({
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      margin: theme.spacing(1),
+      margin: theme.spacing(2),
       '& img': {
         width: '100%'
       }
