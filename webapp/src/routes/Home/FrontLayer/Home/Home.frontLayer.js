@@ -364,7 +364,7 @@ const HomeFrontLayer = () => {
         <div className={classes.bpsBox}>
           {partnersArray.map((partner, index) => (
             <div key={`partner-${index}`} className="boxExamplePartner">
-              {partner.isValid && <img alt="exchage" src={partner.src} />}
+              {partner.isValid && <img alt="Partner" src={partner.src} />}
             </div>
           ))}
         </div>
