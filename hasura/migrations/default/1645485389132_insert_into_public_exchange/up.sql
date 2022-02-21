@@ -1,0 +1,1 @@
+INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at", "image_url") VALUES (E'50690906-6d34-41e9-9eb4-2bf1a23a24d4', E'@binance', E'Binance', 0, null, E'2022-02-21T23:16:29.085603+00:00', E'2022-02-21T23:16:29.085603+00:00', E'/images/binance.svg');

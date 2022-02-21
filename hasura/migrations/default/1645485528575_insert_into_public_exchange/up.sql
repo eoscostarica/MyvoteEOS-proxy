@@ -1,0 +1,1 @@
+INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at", "image_url") VALUES (E'37aaa482-3135-453e-8e4f-327721ad7034', E'@bitfinex', E'Bitfinex', 0, null, E'2022-02-21T23:18:48.552585+00:00', E'2022-02-21T23:18:48.552585+00:00', E'/images/bitfinex.svg');

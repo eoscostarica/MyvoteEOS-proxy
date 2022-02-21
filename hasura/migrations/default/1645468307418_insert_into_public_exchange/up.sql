@@ -1,1 +1,0 @@
-INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at") VALUES (E'137fd9b5-acf4-4412-9728-073dd7db594a', E'@HuobiFutures_', E'Huobi', 0, null, E'2022-02-21T18:31:47.428349+00:00', E'2022-02-21T18:31:47.428349+00:00');

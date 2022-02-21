@@ -1,0 +1,1 @@
+INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at", "image_url") VALUES (E'ff412d2b-3655-4ee4-af1f-9648115d164b', E'@coinbase', E'Coinbase', 0, null, E'2022-02-21T23:19:04.431111+00:00', E'2022-02-21T23:19:04.431111+00:00', E'/images/coinbase.svg');

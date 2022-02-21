@@ -1,1 +1,0 @@
-INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at") VALUES (E'2946ce5d-5a92-4399-be28-2ec6311dfd3e', E'@upbitglobal', E'Upbit', 0, null, E'2022-02-21T18:32:12.584973+00:00', E'2022-02-21T18:32:12.584973+00:00');

@@ -1,0 +1,1 @@
+INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at", "image_url") VALUES (E'af5e0bb7-317b-4e8b-8e6c-e86ed90f64b2', E'@upbitglobal', E'Upbit', 0, null, E'2022-02-21T23:18:01.594188+00:00', E'2022-02-21T23:18:01.594188+00:00', E'/images/upbit.svg');

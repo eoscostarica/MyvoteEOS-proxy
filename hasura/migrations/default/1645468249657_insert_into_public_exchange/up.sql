@@ -1,1 +1,0 @@
-INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at") VALUES (E'cef5d50d-39b5-4345-87c1-e86b1f0f4754', E'@BithumbOfficial', E'Bithumb', 0, null, E'2022-02-21T18:30:49.659277+00:00', E'2022-02-21T18:30:49.659277+00:00');

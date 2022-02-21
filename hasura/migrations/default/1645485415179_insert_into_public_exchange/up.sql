@@ -1,0 +1,1 @@
+INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at", "image_url") VALUES (E'84ada290-4310-4a9a-aa98-cb8705e82105', E'@krakenfx', E'Kraken', 0, null, E'2022-02-21T23:16:55.165989+00:00', E'2022-02-21T23:16:55.165989+00:00', E'/images/kraken.svg');

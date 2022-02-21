@@ -1,1 +1,0 @@
-INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at") VALUES (E'4c941716-337d-4984-9a4b-5c40df91a1bf', E'@CoinoneOfficial', E'Coinone', 0, null, E'2022-02-21T18:32:25.107755+00:00', E'2022-02-21T18:32:25.107755+00:00');
