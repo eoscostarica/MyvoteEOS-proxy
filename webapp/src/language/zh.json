@@ -1,6 +1,6 @@
 {
  "translations": {
-  "login": "登陆",
+  "login": "Log-in",
   "home": "主页",
   "news": "新闻",
   "bPs": "BPs",
@@ -10,7 +10,7 @@
   "htmlTitle": "MyvoteEOS 代理",
   "homeTitle": "欢迎来到MyvoteEOS 代理",
   "newsTitle": "EOS 新闻",
-  "logout": "登出",
+  "logout": "Log-out",
   "joinCommunity": "加入社区",
   "copyRight": "拥有你的选票",
   "myVoteEos": "#MyvoteEOS",
