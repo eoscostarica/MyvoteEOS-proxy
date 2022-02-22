@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@mui/styles'
 import { useTranslation } from 'react-i18next'
-import { useQuery } from '@apollo/client'
+import { useQuery, useLazyQuery } from '@apollo/client'
 import clsx from 'clsx'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
+import Pagination from '@mui/material/Pagination'
+import Stack from '@mui/material/Stack'
+
 import TitlePage from 'components/PageTitle'
 import { partnersArray } from 'utils/mockData'
-
-import { myvoteeosUtil, axiosUtil, charactersUtil } from '../../../../utils'
-import { useSharedState } from '../../../../context/state.context'
-import { mainConfig } from '../../../../config'
-import {
-  COUNT_VOTES_QUERY,
-  GET_VOTERS_QUERY,
-  GET_EXCHANGES_QUERY
-} from '../../../../gql'
+import { myvoteeosUtil, axiosUtil, charactersUtil } from 'utils'
+import { useSharedState } from 'context/state.context'
+import { mainConfig } from 'config'
+import { GET_VOTERS_QUERY, GET_EXCHANGES_QUERY } from 'gql'
 
 import styles from './styles'
 
@@ -24,12 +22,8 @@ const useStyles = makeStyles(styles)
 const HomeFrontLayer = () => {
   const classes = useStyles()
   const { t } = useTranslation('homePage')
-  const { data: dataCountVotes } = useQuery(COUNT_VOTES_QUERY, {
-    fetchPolicy: 'network-only'
-  })
-  const { data: dataGetVoters } = useQuery(GET_VOTERS_QUERY, {
-    fetchPolicy: 'network-only'
-  })
+  const [loadVoters, { loading = true, data: dataGetVoters = {} }] =
+    useLazyQuery(GET_VOTERS_QUERY)
   const { data: exchangesData } = useQuery(GET_EXCHANGES_QUERY, {
     fetchPolicy: 'network-only'
   })
@@ -38,6 +32,11 @@ const HomeFrontLayer = () => {
   const [totalProxyVotes, setTotalProxyVotes] = useState(0)
   const [proxyVoters, setProxyVoters] = useState([])
   const [exchanges, setExchanges] = useState([])
+  const [pagOption, setPagOption] = useState({
+    page: 1,
+    limit: 15,
+    totalPages: 0
+  })
 
   const joinFormUrl =
     'https://docs.google.com/forms/d/e/1FAIpQLScLQHUtZrx8JMdVhk32x0rIEh78t4HkdplxcbTG0f7UoTRR7w/viewform'
@@ -106,24 +105,24 @@ const HomeFrontLayer = () => {
     }
   }
 
-  useEffect(() => {
-    if (!dataCountVotes) return
-
-    const {
-      proxy_votes_aggregate: {
-        aggregate: { count }
-      }
-    } = dataCountVotes
-
-    setTotalProxyVotes(count)
-  }, [dataCountVotes])
+  const handleOnPageChange = (_, page) => {
+    setPagOption((prev) => ({
+      ...prev,
+      page
+    }))
+  }
 
   useEffect(() => {
     if (!dataGetVoters) return
 
-    const { proxy_votes: voters } = dataGetVoters
+    const { voters = [], pagination } = dataGetVoters
 
     setProxyVoters(voters)
+    setTotalProxyVotes(pagination?.aggregate?.count)
+    setPagOption((prev) => ({
+      ...prev,
+      totalPages: Math.ceil(pagination?.aggregate?.count / pagOption.limit)
+    }))
   }, [dataGetVoters])
 
   useEffect(() => {
@@ -131,6 +130,15 @@ const HomeFrontLayer = () => {
 
     setExchanges(exchangesData.exchange)
   }, [exchangesData])
+
+  useEffect(() => {
+    loadVoters({
+      variables: {
+        offset: (pagOption.page - 1) * pagOption.limit,
+        limit: pagOption.limit
+      }
+    })
+  }, [pagOption.page, pagOption.limit])
 
   useEffect(() => {
     const loadBps = async () => {
@@ -164,6 +172,17 @@ const HomeFrontLayer = () => {
     } catch (err) {
       console.log(err)
     }
+  }, [])
+
+  useEffect(() => {
+    if (loading) return
+
+    loadVoters({
+      variables: {
+        offset: (pagOption.page - 1) * pagOption.limit,
+        limit: pagOption.limit
+      }
+    })
   }, [])
 
   return (
@@ -357,10 +376,9 @@ const HomeFrontLayer = () => {
       </div>
       <div id="holders" className={classes.membersSection}>
         <span className={classes.generalTitle}>{t('participating')}</span>
-        {/* remove this map when add BE integration */}
         <div className={classes.bpsBox}>
-          {proxyVoters.map(({ voter, balance }) => (
-            <div key={voter} className="boxExampleMembers">
+          {proxyVoters.map(({ voter, balance }, index) => (
+            <div key={`${voter}-${index}`} className="boxExampleMembers">
               <span className="memberLabel">{voter}</span>
               <span className={clsx('memberLabel', 'memberAmount')}>
                 {balance}
@@ -368,6 +386,15 @@ const HomeFrontLayer = () => {
             </div>
           ))}
         </div>
+        <Stack spacing={2} className={classes.paginationWrapper}>
+          <Pagination
+            count={pagOption.totalPages}
+            siblingCount={0}
+            className={classes.pagination}
+            onChange={handleOnPageChange}
+          />
+        </Stack>
+
         <Button
           className={classes.optionBtn}
           variant="contained"
