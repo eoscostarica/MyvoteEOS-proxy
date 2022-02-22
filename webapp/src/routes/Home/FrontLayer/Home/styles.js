@@ -52,7 +52,7 @@ export default (theme) => ({
     margin: theme.spacing(1, 0),
     fontStyle: 'normal',
     fontWeight: 'bold',
-    fontSize: 55,
+    fontSize: 50,
     lineHeight: '110px',
     textAlign: 'center',
     letterSpacing: '-0.03em',
@@ -228,14 +228,14 @@ export default (theme) => ({
     '& .aboutTitle': {
       fontStyle: 'normal',
       fontWeight: 'bold',
-      fontSize: '50px',
+      fontSize: 45,
       lineHeight: '73px',
       textAlign: 'center',
       letterSpacing: '0.01em',
       color: '#FFFFFF',
       marginBottom: theme.spacing(2),
       [theme.breakpoints.up('md')]: {
-        fontSize: '60px'
+        fontSize: 60
       }
     },
     '& .aboutInfo': {
@@ -347,13 +347,13 @@ export default (theme) => ({
   generalTitle: {
     fontStyle: 'normal',
     fontWeight: 'bold',
-    fontSize: '55px',
+    fontSize: 45,
     textAlign: 'center',
     lineHeight: '73px',
     letterSpacing: '0.03em',
     color: '#FFFFFF',
     [theme.breakpoints.up('md')]: {
-      fontSize: '60px'
+      fontSize: 60
     }
   },
   bpsSection: {
@@ -531,5 +531,16 @@ export default (theme) => ({
   },
   unableUnderline: {
     textDecoration: 'none !important'
+  },
+  pagination: {
+    '& button, & div': {
+      color: theme.palette.common.white
+    },
+    '& .Mui-selected': {
+      fontWeight: 'bold !important'
+    }
+  },
+  paginationWrapper: {
+    marginBottom: theme.spacing(2)
   }
 })

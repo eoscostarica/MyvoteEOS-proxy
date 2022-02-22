@@ -18,21 +18,21 @@ const BPSArray = [
 ]
 
 const membersArray = [
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' },
-  { name: 'ABCDEFGHIJKL', amount: '10,000 EOS' }
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' },
+  { voter: 'ABCDEFGHIJKL', balance: '10,000 EOS' }
 ]
 
 const partnersArray = [
