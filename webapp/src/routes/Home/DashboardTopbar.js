@@ -7,7 +7,6 @@ import Button from '@mui/material/Button'
 import LogoutIcon from '@mui/icons-material/ExitToApp'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-
 import LanguageSelector from 'components/LanguageSelector'
 
 import styles from './styles'
