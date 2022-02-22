@@ -36,8 +36,8 @@ const membersArray = [
 ]
 
 const partnersArray = [
-  { src: '/images/keosa.svg', isValid: true },
-  { src: '/images/boid.svg', isValid: true },
+  { src: '/images/partners/keosa.svg', isValid: true },
+  { src: '/images/partners/boid.png', isValid: true },
   { src: '/images/partners/eos-bees.png', isValid: true },
   { src: '/images/partners/eostarter.png', isValid: true },
   { src: '/images/partners/korea-university.png', isValid: true },

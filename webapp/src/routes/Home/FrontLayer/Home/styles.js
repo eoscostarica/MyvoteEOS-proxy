@@ -512,9 +512,9 @@ export default (theme) => ({
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      margin: theme.spacing(2),
+      margin: theme.spacing(1),
       '& img': {
-        width: '100%'
+        width: '66%'
       }
     },
     [theme.breakpoints.up('sm')]: {
