@@ -1,8 +1,3 @@
-type Query {
-  countMentions : CountMentionsOutput
-}
-
-
 
 
 type CountMentionsOutput {

@@ -1,0 +1,1 @@
+INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at", "image_url") VALUES (E'6ae3b7f5-a5df-44dc-8947-762d513164a8', E'@Bybit_Official', E'Bybit', 0, null, E'2022-02-21T23:19:38.753018+00:00', E'2022-02-21T23:19:38.753018+00:00', E'/images/bybit.svg');

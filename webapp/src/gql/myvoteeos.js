@@ -17,10 +17,14 @@ export const GET_VOTERS_QUERY = gql`
     }
   }
 `
-export const COUNT_MENTIONS_QUERY = gql`
+export const GET_EXCHANGES_QUERY = gql`
   query {
-    countMentions {
-      mentions
+    exchange {
+      name
+      t_username
+      total_mention
+      url
+      image_url
     }
   }
 `

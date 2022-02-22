@@ -45,6 +45,7 @@ jobs:
           REACT_APP_HASURA_URL: 'https://graphql-myvoteeos.eosio.cr/v1/graphql'
           REACT_APP_BLOCK_EXPLORER_URL: 'https://jungle3.bloks.io'
           REACT_APP_MYVOTEEOS_ACCOUNT: 'myvoteeosdao'
+          REACT_APP_TWITTER_ACCOUNT: '@MyvoteEOS'
 
       - name: Build kubernetes files
         id: build_kubernetes_files
@@ -75,7 +76,8 @@ jobs:
           HAPI_HYPERION_START_AT: '2021-06-02T00:00:00.000+00:00'
           HAPI_TWITTER_BEARER_TOKEN: ${{ secrets.HAPI_TWITTER_BEARER_TOKEN }}
           HAPI_TWITTER_HASHTAG: ${{ secrets.HAPI_TWITTER_HASHTAG }}
-          HAPI_TWITTER_EXCHANGES: ${{ secrets.HAPI_TWITTER_EXCHANGES }}
+          HAPI_TWITTER_ACCOUNT: ${{ secrets.HAPI_TWITTER_ACCOUNT }}
+          HAPI_EXCHANGE_COUNT_MENTIONS_INTERVAL: 300000
           # hasura
           HASURA_GRAPHQL_ENABLE_CONSOLE: true
           HASURA_GRAPHQL_DATABASE_URL: ${{ secrets.HASURA_GRAPHQL_DATABASE_URL }}

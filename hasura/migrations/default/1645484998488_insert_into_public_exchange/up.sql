@@ -1,0 +1,1 @@
+INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at", "image_url") VALUES (E'6e3455e4-31a3-4bcd-8119-75ef601697f8', E'@BithumbOfficial', E'Bithumb', 0, null, E'2022-02-21T23:09:58.440068+00:00', E'2022-02-21T23:09:58.440068+00:00', E'/images/bithumb.svg');

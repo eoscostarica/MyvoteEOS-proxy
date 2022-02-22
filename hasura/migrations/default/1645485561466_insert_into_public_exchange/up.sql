@@ -1,0 +1,1 @@
+INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at", "image_url") VALUES (E'45877403-e17b-4e86-9bb5-d56c06f4e17c', E'@okx', E'Okex', 0, null, E'2022-02-21T23:19:21.448375+00:00', E'2022-02-21T23:19:21.448375+00:00', E'/images/okex.svg');

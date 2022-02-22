@@ -1,0 +1,1 @@
+INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at", "image_url") VALUES (E'59badf3e-d2af-4a09-afa4-c8148c96a5a4', E'@Bullish', E'Bullish', 0, null, E'2022-02-21T23:17:36.66322+00:00', E'2022-02-21T23:17:36.66322+00:00', E'/images/bullish.svg');

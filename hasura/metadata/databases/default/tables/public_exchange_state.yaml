@@ -1,0 +1,3 @@
+table:
+  name: exchange_state
+  schema: public

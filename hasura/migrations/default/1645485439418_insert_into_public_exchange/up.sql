@@ -1,0 +1,1 @@
+INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at", "image_url") VALUES (E'ef68dc0b-0495-4663-a53b-976cf2389837', E'@HuobiFutures_', E'Huobi', 0, null, E'2022-02-21T23:17:19.399973+00:00', E'2022-02-21T23:17:19.399973+00:00', E'/images/houbi.svg');

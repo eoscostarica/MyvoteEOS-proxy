@@ -1,0 +1,15 @@
+select_permissions:
+- permission:
+    columns:
+    - created_at
+    - image_url
+    - name
+    - t_username
+    - total_mention
+    - updated_at
+    - url
+    filter: {}
+  role: guest
+table:
+  name: exchange
+  schema: public

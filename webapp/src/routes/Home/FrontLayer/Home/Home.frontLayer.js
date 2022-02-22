@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import TitlePage from 'components/PageTitle'
-import { mockBps, partnersArray } from 'utils/mockData'
+import { partnersArray } from 'utils/mockData'
 
 import { myvoteeosUtil, axiosUtil, charactersUtil } from '../../../../utils'
 import { useSharedState } from '../../../../context/state.context'
@@ -14,7 +14,7 @@ import { mainConfig } from '../../../../config'
 import {
   COUNT_VOTES_QUERY,
   GET_VOTERS_QUERY,
-  COUNT_MENTIONS_QUERY
+  GET_EXCHANGES_QUERY
 } from '../../../../gql'
 
 import styles from './styles'
@@ -30,14 +30,14 @@ const HomeFrontLayer = () => {
   const { data: dataGetVoters } = useQuery(GET_VOTERS_QUERY, {
     fetchPolicy: 'network-only'
   })
-  const { data: totalMentions } = useQuery(COUNT_MENTIONS_QUERY, {
+  const { data: exchangesData } = useQuery(GET_EXCHANGES_QUERY, {
     fetchPolicy: 'network-only'
   })
   const [bpsData, setBpsData] = useState([])
   const [state, { showMessage }] = useSharedState()
   const [totalProxyVotes, setTotalProxyVotes] = useState(0)
   const [proxyVoters, setProxyVoters] = useState([])
-  const [mentions, setMentions] = useState({})
+  const [exchanges, setExchanges] = useState([])
 
   const joinFormUrl =
     'https://docs.google.com/forms/d/e/1FAIpQLScLQHUtZrx8JMdVhk32x0rIEh78t4HkdplxcbTG0f7UoTRR7w/viewform'
@@ -127,14 +127,10 @@ const HomeFrontLayer = () => {
   }, [dataGetVoters])
 
   useEffect(() => {
-    if (!totalMentions) return
+    if (!exchangesData) return
 
-    const {
-      countMentions: { mentions }
-    } = totalMentions
-
-    setMentions(mentions)
-  }, [totalMentions])
+    setExchanges(exchangesData.exchange)
+  }, [exchangesData])
 
   useEffect(() => {
     const loadBps = async () => {
@@ -220,7 +216,12 @@ const HomeFrontLayer = () => {
             <span className="infoLabel"> {t('homeText.text4')}</span>
           </div>
           <div className="boxGroup">
-            <span className="coloredLabel">{mentions?.totalMentions || 0}</span>
+            <span className="coloredLabel">
+              {exchanges.find(
+                ({ t_username: tUsername }) =>
+                  tUsername === mainConfig.twitterAccount
+              )?.total_mention || 0}
+            </span>
             <span className="infoLabel"> {t('homeText.text5')}</span>
           </div>
           <div className="boxGroup">
@@ -312,25 +313,46 @@ const HomeFrontLayer = () => {
         >
           {t('exchangeStatus')}
         </span>
-        {/* remove this map when add BE integration */}
         <div className={clsx(classes.bpsBox, classes.exchangeBox)}>
-          {mockBps.map((image, index) => (
-            <div key={`img-${index}`} className="exchangeBox">
-              <img alt="exchage" src={image} />
-              <div className="twitBtn">
-                <span>{t('twitToUrge')}</span>
-                <div className="divisorTwitBtn" />
-                <span>
-                  <img
-                    alt="message"
-                    className="messageIcon"
-                    src="/images/evaMessage.svg"
-                  />
-                  1,500
-                </span>
-              </div>
-            </div>
-          ))}
+          {exchanges.map(
+            (
+              {
+                t_username: tUsername,
+                image_url: img,
+                total_mention: mentions
+              },
+              index
+            ) => {
+              if (tUsername === mainConfig.twitterAccount) return <></>
+
+              return (
+                <div key={`img-${index}`} className="exchangeBox">
+                  <img alt="exchage" src={img} />
+                  <div className="twitBtn">
+                    <a
+                      className={classes.unableUnderline}
+                      target="_blank"
+                      href={`https://twitter.com/intent/tweet?text=${t(
+                        'twitterContent',
+                        { exchange: tUsername }
+                      )}`}
+                    >
+                      <span>{t('twitToUrge')}</span>
+                    </a>
+                    <div className="divisorTwitBtn" />
+                    <span>
+                      <img
+                        alt="message"
+                        className="messageIcon"
+                        src="/images/evaMessage.svg"
+                      />
+                      {mentions}
+                    </span>
+                  </div>
+                </div>
+              )
+            }
+          )}
         </div>
       </div>
       <div id="holders" className={classes.membersSection}>

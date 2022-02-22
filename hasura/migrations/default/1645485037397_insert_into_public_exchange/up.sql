@@ -1,0 +1,1 @@
+INSERT INTO "public"."exchange"("id", "t_username", "name", "total_mention", "url", "created_at", "updated_at", "image_url") VALUES (E'07bc488b-ed84-4d88-85dd-8c80c811b113', E'@korbit_official', E'Korbit', 0, null, E'2022-02-21T23:10:37.395125+00:00', E'2022-02-21T23:10:37.395125+00:00', E'/images/korbit.svg');
