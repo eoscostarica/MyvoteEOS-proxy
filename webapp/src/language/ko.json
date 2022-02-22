@@ -67,14 +67,14 @@
       "text11": "But it needs support from the BPs.",
       "text12": "MyvoteEOS 프록시는 EOS BP 투표 프록시로, 단순 매표 이익이 아닌 EOS 생태계와 커뮤니티를 대변하는 것을 목표로 합니다.",
       "text13": "MyvoteEOS 프록시의 기본 기능은 투표의 무결성과 그 깨끗한 투표를 받아 유권자의 뜻을 대변하고 받들어야할 할 BP의 책임을 보장하는 것입니다. 이는 BP와 정기 점검 미팅을 하고 재정 및 활동 보고서를 검토함으로써 달성될 것입니다.",
-      "text14": "MyvoteEOS proxy will only votes from among the list that passes the integrity bar.",
+      "text14": " ",
       "text15": "Heal the governance with greater alignment of interests",
       "text16": "우리는 그 어떤 형태의 매표행위에도 가담하지 않겠습니다. (리베이트를 제공하는 자체 프록시 운영 및/또는 제3자 거래소 또는 프록시에서 투표권 구매)",
       "text17": "우리는 정기적으로 '점검 미팅'을 실시하고 정기 재무 및 운영보고서를 제공하겠습니다.",
       "text18": "우리는 동일한 소유권을 가진 2개 이상의 BP를 운영하지 않을 것을 약속합니다.",
-      "text19": "We will commit to not operating more than one BP with the same ownership."
+      "text19": "우리는 매표행위 가담시 투표는 언제든 철회될 수 있음을 인정합니다."
     },
-    "loginWarning": "Please login to delegate your vote",
-    "twitterContent": "{{ exchange }} Respect your EOS holders right by letting them have a say by delegating their votes to %23MyvoteEOS proxy."
+    "loginWarning": "투표 위임을 위해서는 로그인이 필요합니다.",
+    "twitterContent": "{{ exchange }} Respect your $EOS holders right by letting them have a say by delegating their votes to %23MyvoteEOS proxy."
   }
 }
