@@ -33,10 +33,10 @@ build-docker: ./Dockerfile
 		--build-arg react_app_ual_api_port="$(REACT_APP_UAL_API_PORT)" \
 		--build-arg react_app_ual_chain_id="$(REACT_APP_UAL_CHAIN_ID)" \
 		--build-arg react_app_hasura_url="$(REACT_APP_HASURA_URL)" \
-		--build-arg react_app_hasura_url="$(REACT_APP_MYVOTEEOS_ACCOUNT)" \
-		--build-arg react_app_hasura_url="$(REACT_APP_BLOCK_EXPLORER_URL)" \
-		--build-arg react_app_hasura_url="$(REACT_APP_GOOGLE_FORM_URL)" \
-		--build-arg react_app_hasura_url="$(REACT_APP_TWITTER_ACCOUNT)" \
+		--build-arg react_app_myvoteeos_account="$(REACT_APP_MYVOTEEOS_ACCOUNT)" \
+		--build-arg react_app_block_explorer_url="$(REACT_APP_BLOCK_EXPLORER_URL)" \
+		--build-arg react_app_google_form_url="$(REACT_APP_GOOGLE_FORM_URL)" \
+		--build-arg react_app_twitter_account="$(REACT_APP_TWITTER_ACCOUNT)" \
 		.
 
 pull-image: ##@devops Pull the latest image from registry for caching
