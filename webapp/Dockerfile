@@ -12,6 +12,10 @@ ARG react_app_ual_api_host
 ARG react_app_ual_api_port
 ARG react_app_ual_chain_id
 ARG react_app_hasura_url
+ARG react_app_myvoteeos_account
+ARG react_app_block_explorer_url
+ARG react_app_google_form_url
+ARG react_app_twitter_account
 
 ENV REACT_APP_TAG $react_app_tag
 ENV REACT_APP_NAME $react_app_name
@@ -24,6 +28,10 @@ ENV REACT_APP_UAL_API_HOST $react_app_ual_api_host
 ENV REACT_APP_UAL_API_PORT $react_app_ual_api_port
 ENV REACT_APP_UAL_CHAIN_ID $react_app_ual_chain_id
 ENV REACT_APP_HASURA_URL $react_app_hasura_url
+ENV REACT_APP_MYVOTEEOS_ACCOUNT $react_app_myvoteeos_account
+ENV REACT_APP_BLOCK_EXPLORER_URL $react_app_block_explorer_url
+ENV REACT_APP_GOOGLE_FORM_URL $react_app_google_form_url
+ENV REACT_APP_TWITTER_ACCOUNT $react_app_twitter_account
 ENV TOOL_NODE_FLAGS --max_old_space_size=4096
 ENV REACT_APP_API_ENTRYPOINT $react_app_api_entrypoint
 
