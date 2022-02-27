@@ -41,6 +41,7 @@ const partnersArray = [
   { src: '/images/partners/eostarter.png', isValid: true },
   { src: '/images/partners/korea-university.png', isValid: true },
   { src: '/images/partners/helios.png', isValid: true },
+  { src: '/images/partners/voiceits.png', isValid: true },
   { src: '/images/partners/eos-news.png', isValid: true },
   { src: '/images/partners/crypto-writer.png', isValid: true },
   { src: '/images/partners/bulleos.png', isValid: true },
