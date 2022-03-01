@@ -160,7 +160,7 @@ const HomeFrontLayer = () => {
     try {
       const {
         data: { bp }
-      } = await filterBp({ account: 'eoscostarica' })
+      } = await filterBp({ account: bpInfo.owner })
 
       if (!bp.length) return
 
