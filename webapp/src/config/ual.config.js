@@ -1,4 +1,4 @@
-// import { Scatter } from 'ual-scatter'
+import { Scatter } from 'ual-scatter'
 import { Ledger } from 'ual-ledger'
 import { Lynx } from 'ual-lynx'
 import { TokenPocket } from 'ual-token-pocket'
