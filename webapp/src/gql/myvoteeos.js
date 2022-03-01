@@ -24,3 +24,13 @@ export const GET_EXCHANGES_QUERY = gql`
     }
   }
 `
+
+export const FILTER_BP_QUERY = gql`
+  query ($account: String!) {
+    bp(where: { account: { _eq: $account } }) {
+      account
+      image_url
+      website
+    }
+  }
+`

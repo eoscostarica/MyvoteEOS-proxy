@@ -10,10 +10,15 @@ import Stack from '@mui/material/Stack'
 
 import TitlePage from 'components/PageTitle'
 import { partnersArray } from 'utils/mockData'
-import { myvoteeosUtil, axiosUtil, charactersUtil } from 'utils'
+import {
+  myvoteeosUtil,
+  axiosUtil,
+  charactersUtil,
+  useImperativeQuery
+} from 'utils'
 import { useSharedState } from 'context/state.context'
 import { mainConfig } from 'config'
-import { GET_VOTERS_QUERY, GET_EXCHANGES_QUERY } from 'gql'
+import { GET_VOTERS_QUERY, GET_EXCHANGES_QUERY, FILTER_BP_QUERY } from 'gql'
 
 import styles from './styles'
 
@@ -27,6 +32,7 @@ const HomeFrontLayer = () => {
   const { data: exchangesData } = useQuery(GET_EXCHANGES_QUERY, {
     fetchPolicy: 'network-only'
   })
+  const filterBp = useImperativeQuery(FILTER_BP_QUERY)
   const [bpsData, setBpsData] = useState([])
   const [state, { showMessage }] = useSharedState()
   const [totalProxyVotes, setTotalProxyVotes] = useState(0)
@@ -140,6 +146,42 @@ const HomeFrontLayer = () => {
     })
   }, [pagOption.page, pagOption.limit])
 
+  const loadBpJson = async (bpInfo) => {
+    try {
+      return await axiosUtil.get(
+        `${!bpInfo.url.includes('http') ? 'https://' : ''}${bpInfo.url}/bp.json`
+      )
+    } catch (err) {
+      console.log(
+        `Fail to fetch for ${bpInfo.owner} caused by CORS, trying to solve locally`
+      )
+    }
+
+    try {
+      const {
+        data: { bp }
+      } = await filterBp({ account: 'eoscostarica' })
+
+      if (!bp.length) return
+
+      const { image_url: imageUrl, website } = bp[0]
+
+      return {
+        data: {
+          org: {
+            branding: {
+              logo_256: imageUrl
+            },
+            website
+          }
+        }
+      }
+    } catch (err) {
+      console.log('ERROR', err)
+      return null
+    }
+  }
+
   useEffect(() => {
     const loadBps = async () => {
       const bpNames = await myvoteeosUtil.getBps()
@@ -149,11 +191,9 @@ const HomeFrontLayer = () => {
             const resolvedPrevious = await Promise.resolve(previous)
             try {
               const bpInfo = await myvoteeosUtil.getBpInfo(current)
-              const bpjson = await axiosUtil.get(
-                `${!bpInfo.url.includes('http') ? 'https://' : ''}${
-                  bpInfo.url
-                }/bp.json`
-              )
+              const bpjson = await loadBpJson(bpInfo)
+
+              if (!bpjson) return resolvedPrevious
 
               return [...resolvedPrevious, bpjson]
             } catch (err) {
