@@ -1,3 +1,4 @@
+- "!include public_bp.yaml"
 - "!include public_exchange.yaml"
 - "!include public_exchange_state.yaml"
 - "!include public_hyperion_state.yaml"
