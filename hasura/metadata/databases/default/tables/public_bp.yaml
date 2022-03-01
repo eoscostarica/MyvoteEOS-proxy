@@ -1,11 +1,11 @@
 table:
-  name: proxy_votes
+  name: bp
   schema: public
 select_permissions:
 - permission:
-    allow_aggregations: true
     columns:
-    - balance
-    - voter
+    - account
+    - image_url
+    - website
     filter: {}
   role: guest

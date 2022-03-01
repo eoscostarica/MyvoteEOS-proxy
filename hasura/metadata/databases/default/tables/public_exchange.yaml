@@ -1,3 +1,6 @@
+table:
+  name: exchange
+  schema: public
 select_permissions:
 - permission:
     columns:
@@ -10,6 +13,3 @@ select_permissions:
     - url
     filter: {}
   role: guest
-table:
-  name: exchange
-  schema: public
