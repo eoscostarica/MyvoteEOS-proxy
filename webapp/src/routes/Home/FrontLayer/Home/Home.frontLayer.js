@@ -251,9 +251,11 @@ const HomeFrontLayer = () => {
           </div>
           <div className="boxGroup">
             <span className="textLabel">{t('homeText.text2')}</span>
-            <Button className={classes.optionBtn} variant="contained">
-              {t('tellExchange')}
-            </Button>
+            <a className={classes.unableUnderline} href="#exchanges">
+              <Button className={classes.optionBtn} variant="contained">
+                {t('tellExchange')}
+              </Button>
+            </a>
           </div>
           <div className="boxGroup">
             <span className={clsx('textLabel', classes.marginExtra)}>
