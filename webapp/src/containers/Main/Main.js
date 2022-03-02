@@ -120,8 +120,10 @@ const Main = ({
               </Link>
               <Link
                 className={clsx(classes.menuLink, {
-                  [classes.active]: route.hash === 'https://medium.com/@MyvoteEOS',
-                  [classes.noActive]: route.hash !== 'https://medium.com/@MyvoteEOS'
+                  [classes.active]:
+                    route.hash === 'https://medium.com/@MyvoteEOS',
+                  [classes.noActive]:
+                    route.hash !== 'https://medium.com/@MyvoteEOS'
                 })}
                 underline="none"
                 href="https://medium.com/@MyvoteEOS"
@@ -158,12 +160,13 @@ const Main = ({
           <div className={classes.socialWrapper}>
             <div>
               <span className={classes.socialTitle}>{t('quicklinks')}</span>
-              <RouterLink
-                to="/home"
+              <Link
+                href="#"
+                underline="none"
                 className={clsx(classes.menuLink, classes.menuLinkFooter)}
               >
                 {t('home')}
-              </RouterLink>
+              </Link>
               <Link
                 href="#bps"
                 underline="none"
@@ -222,7 +225,7 @@ const Main = ({
                 {t('discord')}
               </a>
               <a
-                href="https://t.me/MyvoteEOSDAO"
+                href="https://t.me/MyvoteEOS"
                 target="_blank"
                 className={clsx(classes.menuLink, classes.menuLinkFooter)}
                 rel="noopener noreferrer"
