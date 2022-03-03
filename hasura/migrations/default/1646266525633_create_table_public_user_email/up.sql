@@ -1,0 +1,1 @@
+CREATE TABLE "public"."user_email" ("id" serial NOT NULL, "email" Text NOT NULL, "pdf_sent" boolean NOT NULL DEFAULT false, PRIMARY KEY ("id") , UNIQUE ("id"));COMMENT ON TABLE "public"."user_email" IS E'Join the movement and receive intro PDF deck';

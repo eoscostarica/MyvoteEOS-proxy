@@ -34,3 +34,11 @@ export const FILTER_BP_QUERY = gql`
     }
   }
 `
+
+export const ADD_USER_MAIL_MUTATION = gql`
+  mutation insertEmail($object: user_email_insert_input!) {
+    insert_user_email_one(object: $object) {
+      id
+    }
+  }
+`

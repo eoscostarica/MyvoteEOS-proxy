@@ -52,6 +52,7 @@
     "twitToUrge": "Tweet to urge them",
     "participating": "Participating EOS members",
     "supportPartner": "Partners and Contributors",
+    "invalidMail": "*Invalid format",
     "homeText": {
       "joinLabel": "Join the movement and receive intro PDF deck.",
       "text1": "Are you a BP?",

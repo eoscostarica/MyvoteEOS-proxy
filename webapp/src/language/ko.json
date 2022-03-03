@@ -52,6 +52,7 @@
     "twitToUrge": "참가 요청 트윗",
     "participating": "참여 EOS 홀더",
     "supportPartner": "지지 파트너",
+    "invalidMail": "*잘못된 형식",
     "homeText": {
       "joinLabel": "서명운동에 동참하고 소개 PDF 내려받기",
       "text1": "BP이신가요?",
