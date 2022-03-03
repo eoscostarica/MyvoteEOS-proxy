@@ -9,6 +9,7 @@ import Pagination from '@mui/material/Pagination'
 import Stack from '@mui/material/Stack'
 
 import TitlePage from 'components/PageTitle'
+import SnackAlert from 'components/SnackAlert'
 import { partnersArray } from 'utils/mockData'
 import {
   myvoteeosUtil,
@@ -45,6 +46,11 @@ const HomeFrontLayer = () => {
   const [proxyVoters, setProxyVoters] = useState([])
   const [exchanges, setExchanges] = useState([])
   const [mail, setMail] = useState({ value: '', isValid: false, error: '' })
+  const [openSnackMailer, setOpenSnackMailer] = useState({
+    open: true,
+    message: null,
+    severity: 'error'
+  })
   const [pagOption, setPagOption] = useState({
     page: 1,
     limit: 15,
@@ -152,9 +158,27 @@ const HomeFrontLayer = () => {
 
       await insertMail({ variables: { object: { email: mail.value } } })
       setMail({ value: '', isValid: false, error: '' })
+      setOpenSnackMailer({
+        open: true,
+        message: t('mailSuccess'),
+        severity: 'success'
+      })
     } catch (error) {
       console.error(error)
+      setOpenSnackMailer({
+        open: true,
+        message: error?.message || 'please try again.',
+        severity: 'error'
+      })
     }
+  }
+
+  const handleCloseJoinEmail = (e, reason) => {
+    if (reason === 'clickaway') {
+      return
+    }
+
+    setOpenSnackMailer({ open: false })
   }
 
   useEffect(() => {
@@ -443,7 +467,7 @@ const HomeFrontLayer = () => {
                         { exchange: tUsername }
                       )}`}
                     >
-                      <span>{ tUsername }</span>
+                      <span>{tUsername}</span>
                     </a>
                     <div className="divisorTwitBtn" />
                     <span>
@@ -505,6 +529,13 @@ const HomeFrontLayer = () => {
           ))}
         </div>
       </div>
+      <SnackAlert
+        openSnack={openSnackMailer.open}
+        handleClose={handleCloseJoinEmail}
+        severity={openSnackMailer.severity}
+      >
+        {openSnackMailer.message}
+      </SnackAlert>
     </div>
   )
 }
