@@ -53,6 +53,7 @@
     "participating": "参与eos会员",
     "supportPartner": "合作伙伴和贡献者",
     "invalidMail": "*無效的格式",
+    "mailSuccess": "You joined the movement! you'll receive intro PDF deck!",
     "homeText": {
       "joinLabel": "加入运动并接收 PDF deck.",
       "text1": "你是 BP吗?",
