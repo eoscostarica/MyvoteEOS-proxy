@@ -191,6 +191,10 @@ export default (theme) => ({
           letterSpacing: '-0.03em',
           color: '#999999'
         }
+      },
+      '& p': {
+        color: theme.palette.common.white,
+        fontWeight: '500'
       }
     },
     '& .joinBtn': {
@@ -206,7 +210,8 @@ export default (theme) => ({
       textAlign: 'center',
       letterSpacing: '-0.03em',
       color: '#FFFFFF',
-      textTransform: 'none !important'
+      textTransform: 'none !important',
+      marginTop: `${theme.spacing(1)}`
     },
     [theme.breakpoints.up('sm')]: {
       flexDirection: 'row',
@@ -216,7 +221,8 @@ export default (theme) => ({
       },
       '& .joinBtn': {
         width: 100,
-        marginLeft: '10px !important'
+        marginLeft: '10px !important',
+        marginTop: 0
       }
     }
   },

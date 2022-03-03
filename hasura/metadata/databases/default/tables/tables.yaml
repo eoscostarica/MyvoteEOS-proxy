@@ -3,3 +3,4 @@
 - "!include public_exchange_state.yaml"
 - "!include public_hyperion_state.yaml"
 - "!include public_proxy_votes.yaml"
+- "!include public_user_email.yaml"

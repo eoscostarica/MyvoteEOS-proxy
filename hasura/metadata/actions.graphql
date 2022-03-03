@@ -1,4 +1,6 @@
+
+
 type CountMentionsOutput {
-  mentions: jsonb!
+  mentions : jsonb!
 }
 
