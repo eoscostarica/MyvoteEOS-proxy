@@ -53,6 +53,7 @@
     "participating": "참여 EOS 홀더",
     "supportPartner": "지지 파트너",
     "invalidMail": "*잘못된 형식",
+    "mailSuccess": "You joined the movement! you'll receive intro PDF deck!",
     "homeText": {
       "joinLabel": "서명운동에 동참하고 소개 PDF 내려받기",
       "text1": "BP이신가요?",
