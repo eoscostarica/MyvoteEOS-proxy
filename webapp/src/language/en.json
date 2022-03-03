@@ -48,10 +48,11 @@
     "selectionCriteria": "Voting Principle",
     "eligibility": "Only those BPs who join the #MyvoteEOS Alliance by signing the pledge below will be considered for vote:",
     "joinTitle": "BPs in the Alliance",
-    "exchangeStatus": "Exchange Status",
+    "exchangeStatus": "Tweet to urge your exchange",
     "twitToUrge": "Tweet to urge them",
     "participating": "Participating EOS members",
     "supportPartner": "Partners and Contributors",
+    "invalidMail": "*Invalid format",
     "homeText": {
       "joinLabel": "Join the movement and receive intro PDF deck.",
       "text1": "Are you a BP?",
@@ -75,6 +76,6 @@
       "text19": "We will commit to not operating more than one BP with the same ownership."
     },
     "loginWarning": "Please login to delegate your vote",
-    "twitterContent": "{{ exchange }} Respect your EOS holders right by letting them have a say by delegating their votes to %23MyvoteEOS proxy."
+    "twitterContent": "{{ exchange }} Please support %23EOS token holders' right to have their voice heard by delegating their %24EOS votes to the %23MyVoteEOS proxy. You may have custody of their tokens, but it isn't right to vote on their behalf. More info: https://myvoteeos.com"
   }
 }

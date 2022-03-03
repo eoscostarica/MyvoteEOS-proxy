@@ -225,14 +225,6 @@ const Main = ({
                 {t('discord')}
               </a>
               <a
-                href="https://t.me/MyvoteEOS"
-                target="_blank"
-                className={clsx(classes.menuLink, classes.menuLinkFooter)}
-                rel="noopener noreferrer"
-              >
-                {t('telegram')}
-              </a>
-              <a
                 href="https://github.com/eoscostarica/MyvoteEOS-proxy"
                 target="_blank"
                 className={clsx(classes.menuLink, classes.menuLinkFooter)}

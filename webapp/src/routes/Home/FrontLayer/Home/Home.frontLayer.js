@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@mui/styles'
 import { useTranslation } from 'react-i18next'
-import { useQuery, useLazyQuery } from '@apollo/client'
+import { useQuery, useLazyQuery, useMutation } from '@apollo/client'
 import clsx from 'clsx'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
@@ -18,7 +18,12 @@ import {
 } from 'utils'
 import { useSharedState } from 'context/state.context'
 import { mainConfig } from 'config'
-import { GET_VOTERS_QUERY, GET_EXCHANGES_QUERY, FILTER_BP_QUERY } from 'gql'
+import {
+  GET_VOTERS_QUERY,
+  GET_EXCHANGES_QUERY,
+  FILTER_BP_QUERY,
+  ADD_USER_MAIL_MUTATION
+} from 'gql'
 
 import styles from './styles'
 
@@ -33,11 +38,13 @@ const HomeFrontLayer = () => {
     fetchPolicy: 'network-only'
   })
   const filterBp = useImperativeQuery(FILTER_BP_QUERY)
+  const [insertMail] = useMutation(ADD_USER_MAIL_MUTATION)
   const [bpsData, setBpsData] = useState([])
   const [state, { showMessage }] = useSharedState()
   const [totalProxyVotes, setTotalProxyVotes] = useState(0)
   const [proxyVoters, setProxyVoters] = useState([])
   const [exchanges, setExchanges] = useState([])
+  const [mail, setMail] = useState({ value: '', isValid: false, error: '' })
   const [pagOption, setPagOption] = useState({
     page: 1,
     limit: 15,
@@ -116,6 +123,38 @@ const HomeFrontLayer = () => {
       ...prev,
       page
     }))
+  }
+
+  const handleInputChange = (e) => {
+    const isValid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(
+      e.target.value
+    )
+    if (!e.target.value.length) {
+      setMail({
+        value: e.target.value,
+        isValid: false,
+        error: ''
+      })
+
+      return
+    }
+
+    setMail({
+      value: e.target.value,
+      isValid,
+      error: isValid ? '' : t('invalidMail')
+    })
+  }
+
+  const handleSentEmail = async () => {
+    try {
+      if (!mail.isValid) return
+
+      await insertMail({ variables: { object: { email: mail.value } } })
+      setMail({ value: '', isValid: false, error: '' })
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   useEffect(() => {
@@ -296,8 +335,15 @@ const HomeFrontLayer = () => {
             className="textField"
             placeholder={t('placeholder')}
             variant="outlined"
+            helperText={mail.error}
+            value={mail.value}
+            onChange={handleInputChange}
           />
-          <Button className="joinBtn" variant="contained">
+          <Button
+            className="joinBtn"
+            variant="contained"
+            onClick={handleSentEmail}
+          >
             {t('join')}
           </Button>
         </div>
@@ -388,7 +434,6 @@ const HomeFrontLayer = () => {
 
               return (
                 <div key={`img-${index}`} className="exchangeBox">
-                  <img alt="exchage" src={img} />
                   <div className="twitBtn">
                     <a
                       className={classes.unableUnderline}
@@ -398,7 +443,7 @@ const HomeFrontLayer = () => {
                         { exchange: tUsername }
                       )}`}
                     >
-                      <span>{t('twitToUrge')}</span>
+                      <span>{ tUsername }</span>
                     </a>
                     <div className="divisorTwitBtn" />
                     <span>
