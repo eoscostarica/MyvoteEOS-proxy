@@ -47,7 +47,7 @@ const HomeFrontLayer = () => {
   const [exchanges, setExchanges] = useState([])
   const [mail, setMail] = useState({ value: '', isValid: false, error: '' })
   const [openSnackMailer, setOpenSnackMailer] = useState({
-    open: true,
+    open: false,
     message: null,
     severity: 'error'
   })
