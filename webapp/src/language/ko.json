@@ -48,7 +48,7 @@
     "selectionCriteria": "투표 원칙",
     "eligibility": "BP가 MyvoteEOS 프록시의 투표를 받기 위해서는 아래 조건에 동의해야만 합니다:",
     "joinTitle": "MyvoteEOS 프록시 얼라이언스",
-    "exchangeStatus": "거래소 현황",
+    "exchangeStatus": "거래소에 메시지 보내기",
     "twitToUrge": "참가 요청 트윗",
     "participating": "참여 EOS 홀더",
     "supportPartner": "지지 파트너",
@@ -76,6 +76,6 @@
       "text19": "우리는 매표행위 가담시 투표는 언제든 철회될 수 있음을 인정합니다."
     },
     "loginWarning": "투표 위임을 위해서는 로그인이 필요합니다.",
-    "twitterContent": "{{ exchange }} Respect your $EOS holders right by letting them have a say by delegating their votes to %23MyvoteEOS proxy."
+    "twitterContent": "{{ exchange }} 매표 없는 %23MyvoteEOS proxy에 %23EOS 투표권을 위임해 %24EOS 홀더의 온체인 투표권을 존중해 주세요. 일반 주식 HTS로도 주총에 참여할 수 있는 시대입니다. https://myvoteeos.com"
   }
 }

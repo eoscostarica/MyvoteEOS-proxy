@@ -76,6 +76,6 @@
       "text19": "We will commit to not operating more than one BP with the same ownership."
     },
     "loginWarning": "Please login to delegate your vote",
-    "twitterContent": "{{ exchange }} Please support %23EOS token holders' right to have their voice heard by delegating their %24EOS votes to the %23MyVoteEOS proxy. You may have custody of their tokens, but it isn't right to vote on their behalf. More info: https://myvoteeos.com"
+    "twitterContent": "{{ exchange }} Please support %23EOS token holders' right to have their voice heard by delegating their %24EOS votes to the %23MyvoteEOS proxy. More info: https://myvoteeos.com"
   }
 }
