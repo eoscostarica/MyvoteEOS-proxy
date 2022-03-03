@@ -388,7 +388,6 @@ const HomeFrontLayer = () => {
 
               return (
                 <div key={`img-${index}`} className="exchangeBox">
-                  <img alt="exchage" src={img} />
                   <div className="twitBtn">
                     <a
                       className={classes.unableUnderline}
@@ -398,7 +397,7 @@ const HomeFrontLayer = () => {
                         { exchange: tUsername }
                       )}`}
                     >
-                      <span>{t('twitToUrge')}</span>
+                      <span>{ tUsername }</span>
                     </a>
                     <div className="divisorTwitBtn" />
                     <span>

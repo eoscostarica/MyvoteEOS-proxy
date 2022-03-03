@@ -48,7 +48,7 @@
     "selectionCriteria": "Principio de votación",
     "eligibility": "Solo aquellos BP que se unan a la Alianza #MyvoteEOS firmando el siguiente compromiso serán considerados para votar:",
     "joinTitle": "BPs en la Alianza",
-    "exchangeStatus": "Estado de Casas de Cambio",
+    "exchangeStatus": "Dígale as su exchange por Twitter",
     "twitToUrge": "Tweet para animarlos",
     "participating": "Miembros EOS participantes",
     "supportPartner": "Socios y colaboradores",
@@ -75,6 +75,6 @@
       "text19": "Nos comprometemos a no operar más de un BP con el mismo dueño."
     },
     "loginWarning": "Inicie sesión para delegar su voto",
-    "twitterContent": "{{ exchange }} Respete el derecho de los titulares de EOS permitiéndoles opinar al delegar sus votos al proxy %23MyvoteEOS."
+    "twitterContent": "{{ exchange }} Please support %23EOS token holders' right to have their voice heard by delegating their %24EOS votes to the %23MyVoteEOS proxy. You may have custody of their tokens, but it isn't right to vote on their behalf. More info: https://myvoteeos.com"
   }
 }

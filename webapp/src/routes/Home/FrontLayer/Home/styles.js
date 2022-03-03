@@ -427,7 +427,7 @@ export default (theme) => ({
       padding: theme.spacing(0, 4),
       '& span': {
         fontStyle: 'normal',
-        fontWeight: '500',
+        fontWeight: 'bold',
         fontSize: '14px',
         lineHeight: '17px',
         letterSpacing: '-0.05em',
