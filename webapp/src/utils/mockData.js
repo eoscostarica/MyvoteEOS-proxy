@@ -56,6 +56,8 @@ const partnersArray = [
   { src: '/images/partners/eos-powerup.png', isValid: true },
   { src: '/images/partners/crypto-dunker.png', isValid: true },
   { src: '/images/partners/eos-microloan.png', isValid: true },
+  { src: '/images/partners/eos-israel.png', isValid: true },
+  { src: '/images/partners/creamy-vanilla.png', isValid: true },
   { src: '', isValid: false }
 ]
 
