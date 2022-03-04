@@ -245,7 +245,7 @@ const Main = ({
                 {t('litepaper')}
               </a>
               <a
-                href="#"
+                href="https://myvoteeos.com/ENMyvoteEOS.pdf"
                 target="_blank"
                 className={clsx(classes.menuLink, classes.menuLinkFooter)}
                 rel="noopener noreferrer"
