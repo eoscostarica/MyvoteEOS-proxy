@@ -42,7 +42,7 @@ jobs:
           REACT_APP_UAL_API_HOST: 'api.jungle3.alohaeos.com'
           REACT_APP_UAL_API_PORT: '443'
           REACT_APP_UAL_CHAIN_ID: '2a02a0053e5a8cf73a56ba0fda11e4d92e0238a4a2aa74fccf46d5a910746840'
-          REACT_APP_HASURA_URL: 'https://graphql-myvoteeos.eosio.cr/v1/graphql'
+          REACT_APP_HASURA_URL: 'https://graphql-myvoteeos.edenia.cloud/v1/graphql'
           REACT_APP_BLOCK_EXPLORER_URL: 'https://jungle3.bloks.io'
           REACT_APP_MYVOTEEOS_ACCOUNT: 'myvoteeosdao'
           REACT_APP_TWITTER_ACCOUNT: '@MyvoteEOS'
@@ -55,8 +55,8 @@ jobs:
         env:
           # general
           NAMESPACE: myvoteeos
-          INGRESS_HOST: myvoteeos.eosio.cr
-          INGRESS_GRAPHQL_HOST: graphql-myvoteeos.eosio.cr
+          INGRESS_HOST: myvoteeos.edenia.cloud
+          INGRESS_GRAPHQL_HOST: graphql-myvoteeos.edenia.cloud
           # Postgres
           POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
