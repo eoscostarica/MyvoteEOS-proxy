@@ -68,13 +68,13 @@
       "text10": "EOS is on the verge of becoming the only blockchain that is free from the grip of pareto distribution with fractal democracy.",
       "text11": "But it needs support from the BPs.",
       "text12": "MyvoteEOS Proxy is an EOS BP voting proxy that aims to properly represent the uncompromised will of EOS holders on and off chain.",
-      "text13": "The baseline function of MyvoteEOS Proxy is to ensure the integrity of its vote and the accountability of BPs representing communities' will for the votes they receive. This will be achieved through holding regular check-up calls with BPs and reviewing reports of their finances and activities.",
+      "text13": "The baseline function of MyvoteEOS Proxy as an self regulatory body of EOS is to ensure the integrity of its vote and the accountability of BPs representing communities' will for the votes they receive. This will be achieved through holding regular check-up calls with BPs and reviewing reports of their finances and activities.",
       "text14": "MyvoteEOS proxy will only votes from among the list that passes the integrity bar.",
       "text15": "Heal the governance with greater alignment of interests",
-      "text16": "We will not engage in vote compromise in any form. (operating our own proxy with direct APR, buying votes from 3rd party exchanges or proxies.)",
-      "text17": "We will commit to being held accountable by engaging in check up calls and providing public financial and operation reports on a regular basis.",
-      "text18": "We acknowledge that we can be unvoted immediately and won’t be eligible for votes from this DAO ever again if we engage with compromised votes hereafter.",
-      "text19": "We will commit to not operating more than one BP with the same ownership."
+      "text16": "No engagement in vote compromise in any form. (operating our own proxy with direct APR, buying votes from 3rd party exchanges or proxies.)",
+      "text17": "Commitment to being held accountable by engaging in check up calls and providing public financial and operation reports on a regular basis.",
+      "text18": "No more than one BP with the same ownership.",
+      "text19": ""
     },
     "loginWarning": "Please login to delegate your vote",
     "twitterContent": "{{ exchange }} Please support %23EOS token holders' right to have their voice heard by delegating their %24EOS votes to the %23MyvoteEOS proxy. More info: https://myvoteeos.com"
