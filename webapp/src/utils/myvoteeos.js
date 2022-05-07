@@ -6,7 +6,8 @@ const getBps = async () => {
     code: mainConfig.myvoteeosAccount,
     scope: mainConfig.myvoteeosAccount,
     table: 'producer',
-    json: true
+    json: true,
+    limit: 30
   })
 
   return rows.length > 0 ? rows.map((bp) => bp.producer) : []
