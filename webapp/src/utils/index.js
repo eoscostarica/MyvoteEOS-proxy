@@ -1,5 +1,6 @@
 export * from './eosapi'
 export * from './myvoteeos'
 export * as axiosUtil from './axios'
+export * as bpsUtil from './bps'
 export * as charactersUtil from './get-last-characters'
 export * from './use-imperative-query'

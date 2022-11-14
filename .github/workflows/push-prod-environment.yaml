@@ -40,6 +40,7 @@ jobs:
           REACT_APP_UAL_APP_NAME: 'my-vote-eos-proxy'
           REACT_APP_UAL_API_PROTOCOL: 'https'
           REACT_APP_UAL_API_HOST: 'eos.greymass.com'
+          REACT_APP_PRODUCERS_INFO_API_URL: 'https://graphql-eos.antelope.tools/api/rest/get-producers-info'
           REACT_APP_UAL_API_PORT: '443'
           REACT_APP_UAL_CHAIN_ID: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906'
           REACT_APP_HASURA_URL: 'https://graphql.myvoteeos.com/v1/graphql'
