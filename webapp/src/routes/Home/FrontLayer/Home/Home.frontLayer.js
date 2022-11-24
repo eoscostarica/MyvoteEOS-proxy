@@ -384,7 +384,10 @@ const HomeFrontLayer = () => {
           {t('keepBps')}
         </span>
         <span className="infoLabel">{t('homeText.text13')}</span>
+        <br />
         <span className="infoLabel">{t('homeText.text14')}</span>
+        <br />
+        <span className="infoLabel">{t('homeText.text20')}</span>
       </div>
       <div className={classes.bpsCriteria}>
         <span className={classes.generalTitle}>{t('selectionCriteria')}</span>
