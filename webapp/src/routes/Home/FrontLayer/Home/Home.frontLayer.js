@@ -15,6 +15,7 @@ import {
   myvoteeosUtil,
   axiosUtil,
   charactersUtil,
+  bpsUtil,
   useImperativeQuery
 } from 'utils'
 import { useSharedState } from 'context/state.context'
@@ -247,23 +248,27 @@ const HomeFrontLayer = () => {
   useEffect(() => {
     const loadBps = async () => {
       const bpNames = await myvoteeosUtil.getBps()
-      const bps = (
-        await Promise.resolve(
-          bpNames.reduce(async (previous, current) => {
-            const resolvedPrevious = await Promise.resolve(previous)
-            try {
-              const bpInfo = await myvoteeosUtil.getBpInfo(current)
-              const bpjson = await loadBpJson(bpInfo)
+      let bps = await bpsUtil.getBpJons(bpNames)
 
-              if (!bpjson) return resolvedPrevious
+      if (!bps.length) {
+        bps = (
+          await Promise.resolve(
+            bpNames.reduce(async (previous, current) => {
+              const resolvedPrevious = await Promise.resolve(previous)
+              try {
+                const bpInfo = await myvoteeosUtil.getBpInfo(current)
+                const bpjson = await loadBpJson(bpInfo)
 
-              return [...resolvedPrevious, bpjson]
-            } catch (err) {
-              return resolvedPrevious
-            }
-          }, [])
-        )
-      ).map(({ data }) => data)
+                if (!bpjson) return resolvedPrevious
+
+                return [...resolvedPrevious, bpjson]
+              } catch (err) {
+                return resolvedPrevious
+              }
+            }, [])
+          )
+        ).map(({ data }) => data)
+      }
 
       setBpsData(bps)
     }
@@ -379,13 +384,14 @@ const HomeFrontLayer = () => {
           {t('keepBps')}
         </span>
         <span className="infoLabel">{t('homeText.text13')}</span>
+        <br />
         <span className="infoLabel">{t('homeText.text14')}</span>
+        <br />
+        <span className="infoLabel">{t('homeText.text20')}</span>
       </div>
-
       <div className={classes.bpsCriteria}>
         <span className={classes.generalTitle}>{t('selectionCriteria')}</span>
         <span className="subTitleCriteria">{t('eligibility')}</span>
-
         <div className={classes.valuesBox}>
           <div className={classes.coreInfo}>
             <span className={clsx(classes.coreInfoLabel, 'criteriaLabel')}>
@@ -416,7 +422,6 @@ const HomeFrontLayer = () => {
           {t('joinAlliance')}
         </Button>
       </div>
-
       <div id="bps" className={classes.bpsSection}>
         <span
           className={clsx(classes.generalTitle, classes.secondaryColorTitle)}
@@ -425,17 +430,26 @@ const HomeFrontLayer = () => {
         </span>
         <div className={classes.bpsBox}>
           {bpsData.map((bp, index) => (
-            <a key={`img-${index}`} href={bp?.org?.website}>
+            <a
+              key={`img-${index}`}
+              href={bp?.org?.website || bp?.bp_json?.org?.website}
+            >
               <img
-                src={bp?.org?.branding.logo_256}
+                src={
+                  bp?.org?.branding?.logo_256 ||
+                  bp?.bp_json?.org?.branding?.logo_256
+                }
                 className="boxExampleBps"
-                alt={`${bp?.producer_account_name || 'Bp'} logo`}
+                alt={`${
+                  bp?.org?.branding?.logo_256 ||
+                  bp?.bp_json?.org?.branding?.logo_256 ||
+                  'Bp'
+                } logo`}
               />
             </a>
           ))}
         </div>
       </div>
-
       <div id="exchanges" className={classes.exchageSection}>
         <span
           className={clsx(classes.generalTitle, classes.secondaryColorTitle)}
