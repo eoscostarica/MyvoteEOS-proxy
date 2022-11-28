@@ -164,7 +164,6 @@ const HomeFrontLayer = () => {
         severity: 'success'
       })
     } catch (error) {
-      console.error(error)
       setOpenSnackMailer({
         open: true,
         message: error?.message || 'please try again.',
@@ -260,7 +259,6 @@ const HomeFrontLayer = () => {
 
               return [...resolvedPrevious, bpjson]
             } catch (err) {
-              console.log(err)
               return resolvedPrevious
             }
           }, [])
@@ -381,7 +379,10 @@ const HomeFrontLayer = () => {
           {t('keepBps')}
         </span>
         <span className="infoLabel">{t('homeText.text13')}</span>
+        <br />
         <span className="infoLabel">{t('homeText.text14')}</span>
+        <br />
+        <span className="infoLabel">{t('homeText.text20')}</span>
       </div>
 
       <div className={classes.bpsCriteria}>
@@ -426,12 +427,12 @@ const HomeFrontLayer = () => {
           {t('joinTitle')}
         </span>
         <div className={classes.bpsBox}>
-          {bpsData.map(({ org: { branding, website } }, index) => (
-            <a key={`img-${index}`} href={website}>
+          {bpsData.map((bp, index) => (
+            <a key={`img-${index}`} href={bp?.org?.website}>
               <img
-                src={branding.logo_256}
+                src={bp?.org?.branding.logo_256}
                 className="boxExampleBps"
-                alt="BP logo"
+                alt={`${bp?.producer_account_name || 'Bp'} logo`}
               />
             </a>
           ))}
