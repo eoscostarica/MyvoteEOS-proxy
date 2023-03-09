@@ -21,7 +21,7 @@ spec:
       imagePullSecrets:
         - name: regcred
       containers:
-        - image: postgres:13.5-alpine
+        - image: postgres:13.10-alpine
           imagePullPolicy: 'Always'
           name: postgres
           envFrom:
